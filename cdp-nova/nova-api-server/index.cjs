@@ -178,7 +178,26 @@ async function verifyPayment(req, res, next) {
   
   req.payerAddress = payload.from || null;
   req.paymentData = payload;
+  
+  // Store full auth with signature for on-chain execution
+  appendAuth({
+    ...payload,
+    signature: req.x402Signature || payload.signature
+  });
   next();
+}
+
+// ─── Auth Storage ────────────────────────────────────────────────────────────
+const AUTH_FILE = '/home/sntrblck/.openclaw/workspace/cdp-nova/pending_auths.jsonl';
+
+function appendAuth(auth) {
+  const entry = {
+    ...auth,
+    receivedAt: new Date().toISOString(),
+    status: 'pending'
+  };
+  const line = JSON.stringify(entry) + '\n';
+  require('fs').appendFileSync(AUTH_FILE, line);
 }
 
 // ─── Query Endpoint ───────────────────────────────────────────────────────────

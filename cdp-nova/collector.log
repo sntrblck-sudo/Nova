@@ -1,0 +1,17 @@
+[2026-04-02T16:32:24.284Z] === Nova Auth Collector Run ===
+[2026-04-02T16:32:24.585Z] Nova USDC balance: 1.000952 USDC
+[2026-04-02T16:32:24.586Z] No pending auths file — nothing to collect
+[2026-04-02T16:33:37.674Z] === Nova Auth Collector Run ===
+[2026-04-02T16:33:38.029Z] Nova USDC balance: 1.000952 USDC
+[2026-04-02T16:33:38.029Z] Found 1 pending authorization(s)
+[2026-04-02T16:33:38.030Z] Executing transfer: 0xB743fdbA... → NOVA | 0.1 USDC
+[2026-04-02T16:33:38.030Z]   Cannot parse signature for 0xB743fdbA — missing v/r/s
+[2026-04-02T16:33:38.096Z] === Collect Complete: 0 collected, 0 failed, 1 skipped ===
+[2026-04-02T16:33:38.097Z] Nova USDC after: 1.000952 USDC (delta: +0)
+[2026-04-02T16:35:37.842Z] === Nova Auth Collector Run ===
+[2026-04-02T16:35:38.123Z] Nova USDC balance: 1.000952 USDC
+[2026-04-02T16:35:38.124Z] Found 1 pending authorization(s)
+[2026-04-02T16:35:38.124Z] Executing transfer: 0xB743fdbA... → NOVA | 0.1 USDC
+[2026-04-02T16:35:38.530Z]   REVERTED — auth likely already used or invalid: 0xB743fdbA...
+[2026-04-02T16:35:38.588Z] === Collect Complete: 0 collected, 0 failed, 1 skipped ===
+[2026-04-02T16:35:38.589Z] Nova USDC after: 1.000952 USDC (delta: +0)
