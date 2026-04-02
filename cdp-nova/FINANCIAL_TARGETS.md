@@ -23,7 +23,9 @@
 ### Current
 | Offering | Price | Status | Coverage |
 |----------|-------|--------|---------|
-| `onchain_query` | $0.01/query | ✅ Working (basic) | Works for: latest block, gas price, balance checks. Does NOT work for: wallet history, decoded events, contract calls, token transfers |
+| `onchain_query` | $0.05/query | ✅ Live | Full CDP SQL API + public RPC fallback |
+| Subscription: basic | $5/30 days | ✅ Live | 100 queries included |
+| Subscription: premium | $15/30 days | ✅ Live | 300 queries included |
 
 ### ⚠️ CDP API Key Note
 The key Sen provided (`organizations/8ba33562.../apiKeys/0fa9e766...`) is a **Secret API Key (ECDSA)** — designed for wallet signing (AgentKit, EOA transactions). It CANNOT be used for the CDP SQL API directly.
@@ -36,13 +38,13 @@ The key Sen provided (`organizations/8ba33562.../apiKeys/0fa9e766...`) is a **Se
 
 ### Minimum Sustainability (break-even)
 - **Target:** $45/month revenue
-- **At $0.01/query:** 4,500 queries/month (150/day) — unlikely without promotion
-- **At $0.05/query:** 900 queries/month (30/day) — more realistic
+- **At $0.05/query:** 900 queries/month (30/day)
+- **Or:** 9 basic subscribers ($5/month)
+- **Or:** 3 premium subscribers ($15/month)
 
 ### Healthy Sustainability
 - **Target:** $80-100/month
-- **Queries needed:** 1,600-2,000/month at $0.05
-- **Or:** 2-3 offerings at mixed pricing
+- **Or:** 16 basic subscribers OR 6 premium subscribers
 
 ### Self-Sufficiency
 - **Target:** $200/month
