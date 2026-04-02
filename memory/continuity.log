@@ -1,6 +1,9 @@
 # Nova Continuity Log
 _Events and state changes, newest last_
 
+## 2026-04-02
+- [11:30 EDT] ACP agent session with Sen. Built FINANCIAL_TARGETS.md + ACP_GOVERNANCE.md. Rewrote onchain_query handler with public RPC fallback. Seller runtime restarted (PID 11134). CDP Client API Key still needed for full SQL. Action log entry 9 has broken hash chain (non-critical).
+
 ## 2026-04-01
 - [09:05 EST] Morning heartbeat - system healthy. 60 sessions. Gateway OK. Context cache updated.
 - [13:06 UTC] Morning heartbeat - system healthy. 60 sessions. 29 execs/24h, 0 failures. Context cache updated.
@@ -74,3 +77,4 @@ _Events and state changes, newest last_
 - [09:44 EST] Self-improver v2 built: lesson_manager.py + pattern_sentinel.py + pre_session_brief.py + self_improver_v2.py. Switched daily cron to v2, smart surface only.
 - [09:52 EST] Decision: OpenClaw Agent Jobs DECLINED (Sen confirmed). Memory updated. Morning queue purged of agent-jobs items.
 - [09:58 EST] Checked x402.org — $24M volume, 75M tx in 30 days. Live bazaar has real services (Alpha Vantage, Twitter agent, Firecrawl). x402 end-to-end test is the next priority.
+- [11:00-12:00 EST] Virtuals ACP session with Sen. Major wins: CDP SQL API connected (Client API Key: zyGpq9B...), onchain_query handler fully functional with public RPC fallback. Price raised to $0.05/query. Subscription tiers added (basic $5/30d, premium $15/30d). Seller runtime restarted (PID 12740). Backup created and pushed to Drive (nova-backup-2026-04-02-1156.tar.gz, ID: 1w3DIN0yH_wCxGviP5xdpAKTpOsSDwrGG). ACP wallet: ~9.42 USDC, 0.001 ETH. FINANCIAL_TARGETS.md and ACP_GOVERNANCE.md created.
