@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-02T12:01:00.125717",
+  "generated": "2026-04-02T12:30:08.724997",
   "avatar": {
     "valence": "engaged",
     "confidence": 0.7,
@@ -127,7 +127,7 @@
     ]
   },
   "open_threads": [],
-  "system_health": "# Health Summary\n\n**Generated:** 2026-04-02T08:02:35.445911\n**Status:** \u2705 NOMINAL\n\n## Circuit Breakers\n- **wallet_operations**: closed\n- **external_api**: closed\n- **memory_system**: closed\n\n## Deadletter Queue\n- **Pending:** 0\n- **Resolved:** 1\n\n## Recommendations\nNone\n\n## Quick Commands\n```\n# Chec",
+  "system_health": "# Health Summary - 2026-04-02 12:05\n\nOverall: **OK**\n\nNo issues detected.\n",
   "stats": {
     "memory_entries": 7,
     "active_goals": 1,

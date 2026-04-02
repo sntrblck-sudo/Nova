@@ -2,8 +2,8 @@
 _Last updated: 2026-04-02_
 
 ## Current Goals / Active Threads
-- ACP agent wallet management — agent_wallet_manager.py deployed (cron every 4h)
-- Get first paying customer for Nova API (or test with Sen)
+- ACP agent wallet management — 0x87FC...759E2 (0.0005 ETH + 9.42 USDC). agent_wallet_manager.py running cron every 4h for auto top-off
+- EIP-3009 payment collection — signed authorizations accumulate in server logs; need collection script to execute on-chain USDC transfers
 - x402 bazaar registration for Nova API service
 - Self-improver v2 live (2026-04-02): lesson library + pattern sentinel + pre-session brief
 - Disk offload system live (2026-04-02): x402-server + nova-api-server archived to Drive
@@ -27,7 +27,7 @@ _Last updated: 2026-04-02_
 
 ## x402 Status
 - x402 client: built (cdp-nova/x402_client.cjs), E2E confirmed working 2026-04-02 — paid 0.001 USDC, received on-chain data ✅
-- x402 server: LIVE on Base Mainnet (2026-04-02) at https://nova-nova-api.loca.lt via localtunnel. Port 3001. $0.10 USDC/query via EIP-3009. Endpoints: / (manifest), /health, /balance/:addr, /query. Server: cdp-nova/nova-api-server/index.cjs
+- x402 server: LIVE on Base Mainnet (2026-04-02) at https://nova-api-live.loca.lt via localtunnel. Port 3001. $0.10 USDC/query via EIP-3009. Endpoints: / (manifest), /health, /balance/:addr, /query. Server: cdp-nova/nova-api-server/index.cjs. Tunnel URL in nova-api-server/tunnel_url.txt (localtunnel expires — needs persistent hosting for production)
 - CDP Bazaar: real paid services available (Alpha Vantage, Twitter intel, Firecrawl) — all on Base Sepolia testnet
 - ACP onchain_query: live on Virtuals Protocol, $0.01/query
 

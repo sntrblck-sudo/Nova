@@ -3,6 +3,7 @@ _Events and state changes, newest last_
 
 ## 2026-04-02
 - [11:30 EDT] ACP agent session with Sen. Built FINANCIAL_TARGETS.md + ACP_GOVERNANCE.md. Rewrote onchain_query handler with public RPC fallback. Seller runtime restarted (PID 11134). CDP Client API Key still needed for full SQL. Action log entry 9 has broken hash chain (non-critical).
+- [12:10 EDT] Nova-API-server deployed live on Base Mainnet via localtunnel. Sen provided ACP agent wallet 0x87FC...759E2. Built agent_wallet_manager.py + cron every 4h for auto top-off. x402 payment flow end-to-end verified (200 returned + query data). x402_client.cjs updated for standard x402 v1 X-PAYMENT header. Two crons now running: nova-agent-wallet-manager + nova-compound.
 
 ## 2026-04-01
 - [09:05 EST] Morning heartbeat - system healthy. 60 sessions. Gateway OK. Context cache updated.
