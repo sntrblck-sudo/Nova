@@ -127,11 +127,11 @@ openclaw cron add \
 openclaw cron edit <health-check-id> --no-deliver --failure-alert --failure-alert-after 1 --failure-alert-cooldown 4h
 ```
 
-### 4.3 Daily self-improver (9 AM ET)
+### 4.3 Daily self-improver (9 AM ET) — v2
 
 ```bash
 openclaw cron add \
-  --name "nova-self-improver" \
+  --name "nova-self-improver-v2" \
   --cron "0 9 * * *" \
   --tz "America/New_York" \
   --session isolated \
@@ -140,8 +140,10 @@ openclaw cron add \
   --failure-alert \
   --failure-alert-after 1 \
   --failure-alert-cooldown 4h \
-  --message "cd /home/sntrblck/.openclaw/workspace && python3 skills/self-improver/self_improver.py run"
+  --message "Run self-improver v2 silently. python3 skills/self_improver_v2.py run. Smart surface: writes to memory/self_improver_alert.md only if action needed. Do not deliver to chat unless surface alert was written."
 ```
+
+Note: The v2 self-improver uses a lesson library (`skills/lesson_manager.py`), pattern sentinel (`skills/pattern_sentinel.py`), and pre-session brief (`skills/pre_session_brief.py`). Seeds from Sen's brief (Claude's design) are in `memory/lessons/`. Smart surface only — no more daily spam.
 
 ---
 
