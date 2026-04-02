@@ -91,30 +91,34 @@ async function main() {
     try {
       log(`Executing transfer: ${auth.from?.slice(0, 10)}... → NOVA | ${Number(auth.value) / 1e6} USDC`);
 
-      // Parse signature components
-      const sig = auth.signature || auth.r; // signature or full sig
+      // Parse signature — full 65-byte ECDSA sig (r[32] + s[32] + v[1])
+      const sig = auth.signature;
       let v, r, s;
 
-      if (auth.v !== undefined && auth.r && auth.s) {
-        // Individual components
-        v = auth.v;
-        r = auth.r;
-        s = auth.s;
-      } else if (sig && sig.startsWith('0x')) {
-        // Full signature — parse v, r, s
+      if (sig && sig.startsWith('0x') && sig.length === 132) {
+        // Full signature hex
         const sigHex = sig.slice(2);
         r = '0x' + sigHex.slice(0, 64);
         s = '0x' + sigHex.slice(64, 128);
         v = parseInt(sigHex.slice(128, 130), 16);
+      } else if (auth.v !== undefined && auth.r && auth.s) {
+        v = auth.v;
+        r = auth.r;
+        s = auth.s;
       } else {
-        log(`  Cannot parse signature for ${auth.from?.slice(0, 10)} — missing v/r/s`);
+        log(`  Cannot parse signature — missing v/r/s or full sig`);
         newAuths.push(line);
         skipped++;
         continue;
       }
 
+      // Use the nonce from the stored auth (NOT from contract — EIP-3009 nonces are per-authorization)
+      const nonce = auth.nonce;
+      const validAfter = auth.validAfter;
+      const validBefore = auth.validBefore;
+
       // Build transferWithAuthorization call
-      // USDC's transferWithAuthorization(address to, uint256 value, uint256 validAfter, uint256 validBefore, bytes32 nonce, uint8 v, bytes32 r, bytes32 s)
+      // USDC contract: transferWithAuthorization(address from, address to, uint256 value, uint256 validAfter, uint256 validBefore, bytes32 nonce, uint8 v, bytes32 r, bytes32 s)
       const hash = await walletClient.writeContract({
         address: USDC,
         abi: [{
@@ -134,7 +138,7 @@ async function main() {
           outputs: [{ type: 'bool' }]
         }],
         functionName: 'transferWithAuthorization',
-        args: [auth.from, NOVA_ADDRESS, auth.value, auth.validAfter, auth.validBefore, auth.nonce, v, r, s]
+        args: [auth.from, NOVA_ADDRESS, auth.value, validAfter, validBefore, nonce, v, r, s]
       });
 
       log(`  SUCCESS — tx: ${hash}`);

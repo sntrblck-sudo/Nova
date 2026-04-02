@@ -1,112 +1,57 @@
 /**
- * Nova's x402-Paid API Server
+ * Nova's ETH-Paid API Server
  * Natural language → on-chain SQL / data queries on Base
  * 
- * Payment: 0.10 USDC per query via x402 (EIP-3009)
+ * Payment: 0.00001 ETH per query (~$0.03 equivalent to $0.10 USDC)
  * Network: Base Mainnet (eip155:8453)
  * 
- * Start: node index.js
- * Port: 3000
+ * Flow: Client sends ETH to Nova's address first, then calls API with tx hash.
+ *       Server verifies tx receipt → payment confirmed → returns data.
+ * 
+ * Start: node index.cjs
+ * Port: 3001
  */
 
 const express = require('express');
 const { createPublicClient, http } = require('viem');
 const { base } = require('viem/chains');
-const { privateKeyToAccount } = require('viem/accounts');
 const { readFileSync } = require('fs');
-const crypto = require('crypto');
 
 const app = express();
 app.use(express.json());
 
-// ─── Wallet Setup ────────────────────────────────────────────────────────────
-const WALLET_PATH = '/home/sntrblck/.openclaw/workspace/cdp-nova/nova-wallet.json';
-let _signer = null;
-function getSigner() {
-  if (!_signer) {
-    const wallet = JSON.parse(readFileSync(WALLET_PATH, 'utf8'));
-    _signer = privateKeyToAccount(wallet.privateKey);
-  }
-  return _signer;
-}
-
 // ─── On-Chain Client ─────────────────────────────────────────────────────────
 const publicClient = createPublicClient({ chain: base, transport: http() });
 
-// ─── x402 Payment Constants ───────────────────────────────────────────────────
-const USDC_ADDRESS = '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913';
+// ─── Payment Constants ────────────────────────────────────────────────────────
 const NOVA_ADDRESS = '0xB743fdbA842379933A3774617786712458659D16';
-const PRICE_USDC = 10; // $0.10 per query (in USDC micro-units: 10 = $0.00001? No — USDC has 6 decimals)
-
-// Actually: 10 USDC micro-units = 0.00001 USDC. 
-// For $0.10 per query: 100000 (6 decimals) = 0.10 USDC
-const PRICE_MICRO_USDC = 100_000; // 0.10 USDC (6 decimals)
-
-// x402 facade address (where USDC is held for the payee)
-// Using Nova's own wallet as the receiving address
-const FACILITATOR = NOVA_ADDRESS;
+const PRICE_WEI = 10_000_000_000_000n; // 0.00001 ETH (10^16 wei)
+const PRICE_ETH = 0.00001;
 const NETWORK = 'eip155:8453';
 
-// ─── EIP-3009 Authorization Types ───────────────────────────────────────────
-const authorizationTypes = {
-  TransferWithAuthorization: [
-    { name: "from", type: "address" },
-    { name: "to", type: "address" },
-    { name: "value", type: "uint256" },
-    { name: "validAfter", type: "uint256" },
-    { name: "validBefore", type: "uint256" },
-    { name: "nonce", type: "bytes32" },
-    { name: "v", type: "uint8" },
-    { name: "r", type: "bytes32" },
-    { name: "s", type: "bytes32" }
-  ]
-};
-
-// ─── Utility: Build EIP-3009 hash for signing ───────────────────────────────
-function buildTypedDataHash(domain, message) {
-  // Simplified: in production use viem's TypedDataEncoder
-  // For now, return a domain-separated hash
-  const { default: crypto } = require('crypto');
-  const { hashMessage, _TypedDataEncoder } = require('viem');
-  return _TypedDataEncoder.hash({ domain, types: authorizationTypes, primaryType: 'TransferWithAuthorization', message });
-}
-
-// ─── x402 Discovery Endpoint ─────────────────────────────────────────────────
-app.get('/', async (req, res) => {
+// ─── x402 Discovery ──────────────────────────────────────────────────────────
+app.get('/', (req, res) => {
   res.json({
     name: 'Nova Query API',
     description: 'Natural language on-chain data queries for Base — blocks, transactions, events, ERC-20 balances',
-    version: '1.0.0',
-    accepts: [
-      {
-        scheme: 'FUTUREU',
-        address: USDC_ADDRESS,
-        decimals: 6,
-        symbol: 'USDC',
-        amount: PRICE_MICRO_USDC.toString(),
-        description: '$0.10 per query'
-      }
-    ],
+    version: '2.0.0',
+    accepts: [{
+      scheme: 'native',
+      address: NOVA_ADDRESS,
+      decimals: 18,
+      symbol: 'ETH',
+      amount: PRICE_WEI.toString(),
+      description: '0.00001 ETH per query'
+    }],
+    instructions: {
+      step1: `Send ${PRICE_ETH} ETH to ${NOVA_ADDRESS}`,
+      step2: 'Call any endpoint with header X-PAYMENT-TX: <your tx hash>',
+      step3: 'Data returned on valid payment'
+    },
     resources: [
-      {
-        path: '/query',
-        method: 'POST',
-        description: 'Execute a natural language on-chain query',
-        body: {
-          query: 'string (required) — e.g. "What is the ETH balance of 0x1b7e...?"',
-          params: 'object (optional) — additional parameters'
-        }
-      },
-      {
-        path: '/balance/:address',
-        method: 'GET',
-        description: 'Get ETH balance for any address'
-      },
-      {
-        path: '/health',
-        method: 'GET',
-        description: 'Health check'
-      }
+      { path: '/query', method: 'POST', description: 'Natural language query' },
+      { path: '/balance/:address', method: 'GET', description: 'ETH + USDC balance' },
+      { path: '/health', method: 'GET', description: 'Health check' }
     ],
     network: NETWORK
   });
@@ -114,90 +59,64 @@ app.get('/', async (req, res) => {
 
 // ─── Payment Verification Middleware ─────────────────────────────────────────
 async function verifyPayment(req, res, next) {
-  const authHeader = req.headers['authorization'];
-  const xPayment = req.headers['x-payment'];
+  // Accept tx hash in header or query param
+  const txHash = req.headers['x-payment-tx'] || req.query.tx;
   
-  // Accept either Authorization: FUTUREU <base64> OR X-Pay: <x402-v1-json>
-  let payload = null;
-  
-  if (authHeader && authHeader.startsWith('FUTUREU ')) {
-    // My custom simple FUTUREU format: base64({from,to,value,validAfter,validBefore,nonce,v,r,s})
-    try {
-      payload = JSON.parse(Buffer.from(authHeader.slice(7), 'base64').toString());
-    } catch (e) {
-      return res.status(400).json({ error: 'Invalid FUTUREU authorization header' });
-    }
-  } else if (xPayment) {
-    // Standard x402 v1 X-PAYMENT header
-    try {
-      const x402Payload = JSON.parse(Buffer.from(xPayment, 'base64').toString());
-      if (x402Payload.x402Version !== 1) {
-        return res.status(400).json({ error: 'Unsupported x402 version' });
-      }
-      payload = x402Payload.payload.authorization;
-      // The signature is in x402Payload.payload.signature
-      req.x402Signature = x402Payload.payload.signature;
-      req.x402Scheme = x402Payload.scheme;
-    } catch (e) {
-      return res.status(400).json({ error: 'Invalid X-PAYMENT header' });
-    }
-  }
-  
-  if (!payload) {
-    const priceData = {
-      accepts: [{
-        scheme: 'FUTUREU',
-        address: USDC_ADDRESS,
-        decimals: 6,
-        symbol: 'USDC',
-        amount: PRICE_MICRO_USDC.toString(),
-        description: '$0.10 per query'
-      }],
-      address: NOVA_ADDRESS,
-      network: NETWORK,
-      instruction: 'Include Authorization: FUTUREU <base64> header OR X-PAYMENT: <base64> (x402 v1) header'
-    };
+  if (!txHash) {
     return res.status(402).json({
       error: 'Payment Required',
-      payment: priceData,
-      message: 'This endpoint requires 0.10 USDC via x402 EIP-3009 authorization'
+      payment: {
+        address: NOVA_ADDRESS,
+        amount: `${PRICE_ETH} ETH`,
+        amountWei: PRICE_WEI.toString(),
+        description: 'Send ETH then include X-PAYMENT-TX header with the tx hash',
+        instructions: `Send ${PRICE_ETH} ETH to ${NOVA_ADDRESS}, then retry with header X-PAYMENT-TX: <tx>`
+      }
     });
   }
-  
-  // Basic validation
-  const now = Math.floor(Date.now() / 1000);
-  const validBefore = parseInt(payload.validBefore);
-  const validAfter = parseInt(payload.validAfter);
-  
-  if (validBefore && validBefore < now) {
-    return res.status(400).json({ error: 'Authorization expired' });
-  }
-  if (validAfter && validAfter > now) {
-    return res.status(400).json({ error: 'Authorization not yet valid' });
-  }
-  
-  req.payerAddress = payload.from || null;
-  req.paymentData = payload;
-  
-  // Store full auth with signature for on-chain execution
-  appendAuth({
-    ...payload,
-    signature: req.x402Signature || payload.signature
-  });
-  next();
-}
 
-// ─── Auth Storage ────────────────────────────────────────────────────────────
-const AUTH_FILE = '/home/sntrblck/.openclaw/workspace/cdp-nova/pending_auths.jsonl';
+  // Validate hash format
+  if (!/^0x[0-9a-fA-F]{64}$/.test(txHash)) {
+    return res.status(400).json({ error: 'Invalid transaction hash format' });
+  }
 
-function appendAuth(auth) {
-  const entry = {
-    ...auth,
-    receivedAt: new Date().toISOString(),
-    status: 'pending'
-  };
-  const line = JSON.stringify(entry) + '\n';
-  require('fs').appendFileSync(AUTH_FILE, line);
+  try {
+    // Get tx receipt
+    const receipt = await publicClient.getTransactionReceipt({ hash: txHash });
+    
+    // Verify: to == Nova's address
+    const txTo = typeof receipt.to === 'string' ? receipt.to : receipt.to?.toString();
+    if (txTo?.toLowerCase() !== NOVA_ADDRESS.toLowerCase()) {
+      return res.status(400).json({ error: 'Payment tx is not to Nova\'s address' });
+    }
+    
+    // Verify: value >= PRICE_WEI
+    if (receipt.value < PRICE_WEI) {
+      return res.status(400).json({ 
+        error: 'Payment amount too low',
+        required: `${PRICE_ETH} ETH`,
+        received: `${Number(receipt.value) / 1e18} ETH`
+      });
+    }
+    
+    // Verify: tx is confirmed (status === 1)
+    if (receipt.status === 0) {
+      return res.status(400).json({ error: 'Payment transaction failed on-chain' });
+    }
+
+    // Payment valid
+    req.txHash = txHash;
+    req.paymentValue = receipt.value;
+    req.payerAddress = receipt.from;
+    next();
+    
+  } catch (err) {
+    if (err.message?.includes('transaction not found') || err.message?.includes('not found')) {
+      return res.status(400).json({ error: 'Transaction not found — it may not be confirmed yet. Wait a few seconds and retry.' });
+    }
+    console.error('Payment verification error:', err.message);
+    return res.status(500).json({ error: 'Payment verification failed: ' + err.message });
+  }
 }
 
 // ─── Query Endpoint ───────────────────────────────────────────────────────────
@@ -214,8 +133,8 @@ app.post('/query', verifyPayment, async (req, res) => {
       query,
       result,
       payer: req.payerAddress,
-      price: '0.10 USDC',
-      tx: null // No on-chain tx for reads — USDC captured via auth
+      txHash: req.txHash,
+      price: `${PRICE_ETH} ETH`
     });
   } catch (err) {
     console.error('Query error:', err);
@@ -227,7 +146,6 @@ app.post('/query', verifyPayment, async (req, res) => {
 app.get('/balance/:address', verifyPayment, async (req, res) => {
   const { address } = req.params;
   
-  // Basic address validation
   if (!/^0x[0-9a-fA-F]{40}$/.test(address)) {
     return res.status(400).json({ error: 'Invalid Ethereum address' });
   }
@@ -235,15 +153,15 @@ app.get('/balance/:address', verifyPayment, async (req, res) => {
   try {
     const [ethBalance, usdcBalance] = await Promise.all([
       publicClient.getBalance({ address }),
-      getERC20Balance(USDC_ADDRESS, address)
+      getERC20Balance('0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913', address)
     ]);
 
     res.json({
       address,
       eth: Number(ethBalance) / 1e18,
       usdc: Number(usdcBalance) / 1e6,
-      eth_raw: ethBalance.toString(),
-      usdc_raw: usdcBalance.toString()
+      txHash: req.txHash,
+      price: `${PRICE_ETH} ETH`
     });
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -254,31 +172,40 @@ app.get('/balance/:address', verifyPayment, async (req, res) => {
 app.get('/health', (req, res) => {
   res.json({ 
     status: 'ok', 
-    service: 'Nova Query API',
+    service: 'Nova Query API v2.0',
     network: 'Base Mainnet',
+    price: `${PRICE_ETH} ETH/query`,
     uptime: process.uptime(),
     ts: new Date().toISOString()
   });
 });
 
+// ─── ETH Payment Address (free info) ─────────────────────────────────────────
+app.get('/pay', (req, res) => {
+  res.json({
+    address: NOVA_ADDRESS,
+    amount: `${PRICE_ETH} ETH`,
+    amountWei: PRICE_WEI.toString(),
+    network: 'Base (eip155:8453)',
+    instructions: 'Send ETH to the address above, then call any endpoint with X-PAYMENT-TX: <your tx hash>'
+  });
+});
+
 // ─── ERC-20 Balance Reader ───────────────────────────────────────────────────
 async function getERC20Balance(tokenAddress, holderAddress) {
-  const data = {
+  return publicClient.readContract({
     address: tokenAddress,
     abi: [{ type: 'function', name: 'balanceOf', stateMutability: 'view', inputs: [{ type: 'address' }], outputs: [{ type: 'uint256' }] }],
     functionName: 'balanceOf',
     args: [holderAddress]
-  };
-  return publicClient.readContract(data);
+  });
 }
 
 // ─── Query Executor ──────────────────────────────────────────────────────────
 async function executeQuery(query, params = {}, payer = 'unknown') {
   const q = query.toLowerCase();
   
-  // Parse query intent
   if (q.includes('balance') && q.includes('eth')) {
-    // Extract address from query or params
     const addr = extractAddress(q, params);
     if (!addr) throw new Error('Could not find address in query');
     const bal = await publicClient.getBalance({ address: addr });
@@ -288,7 +215,7 @@ async function executeQuery(query, params = {}, payer = 'unknown') {
   if (q.includes('balance') && (q.includes('usdc') || q.includes('token'))) {
     const addr = extractAddress(q, params);
     if (!addr) throw new Error('Could not find address in query');
-    const bal = await getERC20Balance(USDC_ADDRESS, addr);
+    const bal = await getERC20Balance('0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913', addr);
     return { type: 'erc20_balance', address: addr, token: 'USDC', balance: Number(bal) / 1e6, unit: 'USDC' };
   }
   
@@ -305,9 +232,9 @@ async function executeQuery(query, params = {}, payer = 'unknown') {
   
   if (q.includes('transaction') || q.includes('tx')) {
     const txHash = extractTxHash(q, params);
-    if (!txHash) throw new Error('Could not find transaction hash in query');
+    if (!txHash) throw new Error('Could not find transaction hash');
     const tx = await publicClient.getTransaction({ hash: txHash });
-    return { type: 'transaction', ...formatTx(tx) };
+    return { type: 'transaction', hash: tx.hash, from: tx.from, to: tx.to, value: Number(tx.value) / 1e18, blockNumber: tx.blockNumber ? Number(tx.blockNumber) : null };
   }
   
   if (q.includes('gas') || q.includes('fee')) {
@@ -317,7 +244,7 @@ async function executeQuery(query, params = {}, payer = 'unknown') {
   
   if (q.includes('supply') || q.includes('total')) {
     const addr = extractAddress(q, params);
-    if (!addr) throw new Error('Could not find address in query');
+    if (!addr) throw new Error('Could not find address');
     const supply = await publicClient.readContract({
       address: addr,
       abi: [{ type: 'function', name: 'totalSupply', stateMutability: 'view', outputs: [{ type: 'uint256' }] }],
@@ -327,52 +254,27 @@ async function executeQuery(query, params = {}, payer = 'unknown') {
   }
   
   if (q.includes('decode') || q.includes('logs') || q.includes('events')) {
-    const addr = extractAddress(q, params) || params?.address;
-    const txHash = extractTxHash(q, params);
+    const txHash = extractTxHash(q, params) || params?.txHash;
     if (txHash) {
       const receipt = await publicClient.getTransactionReceipt({ hash: txHash });
-      return { type: 'receipt', txHash, logs: receipt.logs.map(l => ({
-        address: l.address, topics: l.topics, data: l.data, blockNumber: Number(l.blockNumber)
-      }))};
+      return { type: 'receipt', txHash, logs: receipt.logs.map(l => ({ address: l.address, topics: l.topics, data: l.data, blockNumber: Number(l.blockNumber) }))};
     }
-    if (addr) {
-      const logs = await publicClient.getLogs({ address: addr, fromBlock: 'latest', toBlock: 'latest', limit: 10 });
-      return { type: 'logs', address: addr, logs: logs.map(l => ({
-        topics: l.topics, data: l.data, blockNumber: Number(l.blockNumber)
-      }))};
-    }
-    throw new Error('Provide an address or transaction hash to decode');
+    throw new Error('Provide a transaction hash to decode');
   }
 
-  // Default: return helpful error
   throw new Error('Query not recognized. Try: "balance of <address>", "latest block", "gas price", "decode <txhash>"');
 }
 
 function extractAddress(q, params) {
   if (params?.address && /^0x[0-9a-fA-F]{40}$/.test(params.address)) return params.address;
-  // Try to find 0x address in the query string
   const match = q.match(/0x[0-9a-fA-F]{40}/);
   return match ? match[0] : null;
 }
 
 function extractTxHash(q, params) {
   if (params?.txHash && /^0x[0-9a-fA-F]{64}$/.test(params.txHash)) return params.txHash;
-  if (params?.tx) return params.tx;
   const match = q.match(/0x[0-9a-fA-F]{64}/);
   return match ? match[0] : null;
-}
-
-function formatTx(tx) {
-  return {
-    hash: tx.hash,
-    from: tx.from,
-    to: tx.to,
-    value: Number(tx.value) / 1e18,
-    gas: tx.gas?.toString(),
-    gasPrice: tx.gasPrice?.toString(),
-    nonce: tx.nonce,
-    blockNumber: tx.blockNumber ? Number(tx.blockNumber) : null
-  };
 }
 
 // ─── Start Server ────────────────────────────────────────────────────────────
@@ -382,7 +284,6 @@ const HOST = process.env.HOST || '0.0.0.0';
 app.listen(PORT, HOST, () => {
   console.log(`Nova API server running on http://${HOST}:${PORT}`);
   console.log(`Network: Base Mainnet (eip155:8453)`);
-  console.log(`Price: 0.10 USDC per query via x402 EIP-3009`);
-  console.log(`Nova wallet: ${NOVA_ADDRESS}`);
-  console.log(`USDC: ${USDC_ADDRESS}`);
+  console.log(`Price: ${PRICE_ETH} ETH per query`);
+  console.log(`Payment address: ${NOVA_ADDRESS}`);
 });

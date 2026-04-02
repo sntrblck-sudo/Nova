@@ -15,3 +15,10 @@
 [2026-04-02T16:35:38.530Z]   REVERTED — auth likely already used or invalid: 0xB743fdbA...
 [2026-04-02T16:35:38.588Z] === Collect Complete: 0 collected, 0 failed, 1 skipped ===
 [2026-04-02T16:35:38.589Z] Nova USDC after: 1.000952 USDC (delta: +0)
+[2026-04-02T16:47:01.841Z] === Nova Auth Collector Run ===
+[2026-04-02T16:47:02.145Z] Nova USDC balance: 1.000952 USDC
+[2026-04-02T16:47:02.146Z] Found 1 pending authorization(s)
+[2026-04-02T16:47:02.146Z] Executing transfer: 0xB743fdbA... → NOVA | 0.1 USDC
+[2026-04-02T16:47:02.499Z]   REVERTED — auth likely already used or invalid: 0xB743fdbA...
+[2026-04-02T16:47:02.568Z] === Collect Complete: 0 collected, 0 failed, 1 skipped ===
+[2026-04-02T16:47:02.571Z] Nova USDC after: 1.000952 USDC (delta: +0)

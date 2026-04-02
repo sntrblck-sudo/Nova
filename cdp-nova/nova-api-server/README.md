@@ -1,17 +1,20 @@
-# Nova Query API
+# Nova Query API v2
 
-x402-paid on-chain data queries for Base Mainnet.
+ETH-paid on-chain data queries for Base Mainnet. Simple, atomic, no approvals.
 
-## What it does
+## Payment Flow
 
-Accepts natural language queries about Base blockchain data — ETH balances, token balances, blocks, transactions, gas prices, decoded logs — and returns structured JSON. Costs $0.10 USDC per query via x402 EIP-3009 authorization.
+1. **Send** `0.00001 ETH` to `0xB743fdbA842379933A3774617786712458659D16`
+2. **Call** any paid endpoint with header `X-PAYMENT-TX: <your tx hash>`
+3. **Receive** data
+
+No signatures, no approvals, no nonces. Just a ETH transfer + a tx hash check.
 
 ## Quick Start
 
 ```bash
 cd cdp-nova/nova-api-server
-node index.js
-# Server starts on http://0.0.0.0:3000
+node index.cjs
 ```
 
 ## Endpoints
@@ -19,70 +22,58 @@ node index.js
 | Method | Path | Description | Price |
 |--------|------|-------------|-------|
 | GET | `/` | x402 discovery manifest | Free |
+| GET | `/pay` | Payment address + instructions | Free |
 | GET | `/health` | Health check | Free |
-| GET | `/balance/:address` | ETH + USDC balance | $0.10 USDC |
-| POST | `/query` | Natural language query | $0.10 USDC |
+| GET | `/balance/:address` | ETH + USDC balance | 0.00001 ETH |
+| POST | `/query` | Natural language query | 0.00001 ETH |
 
-## Payment
+## Example
 
-Uses **x402 EIP-3009 TransferWithAuthorization**. No prior approval needed — the authorization acts as a pull-based payment directly from the caller's wallet to Nova's wallet.
+```bash
+# 1. Send 0.00001 ETH to Nova's address
+# (do this in your wallet)
 
-Include the `Authorization: FUTUREU <base64payload>` header where the payload is:
+# 2. Get the tx hash from your wallet, then:
+curl -X POST https://your-tunnel.loca.lt/query \
+  -H "X-PAYMENT-TX: 0xabc123..." \
+  -H "Content-Type: application/json" \
+  -d '{"query": "What is the ETH balance of 0x1b7eDF6F5FCAb52b680661cC82306E3DaCA7943C"}'
 
-```json
+# 3. Response (status 200):
 {
-  "from": "0xCALLER...",
-  "to": "0xB743fdbA842379933A3774617786712458659D16",
-  "value": "100000",
-  "validAfter": 1743619200,
-  "validBefore": 1743620100,
-  "nonce": "0x...",
-  "v": 27,
-  "r": "0x...",
-  "s": "0x..."
+  "query": "What is the ETH balance of 0x1b7e...",
+  "result": { "type": "eth_balance", "address": "0x1b7e...", "balance": 0.5, "unit": "ETH" },
+  "payer": "0xYOUR...",
+  "txHash": "0xabc123...",
+  "price": "0.00001 ETH"
 }
 ```
 
-## Example Query
+## Without Payment (returns 402):
 
 ```bash
-# Get price requirements
-curl http://localhost:3000/balance/0x1b7eDF6F5FCAb52b680661cC82306E3DaCA7943C
-
-# Returns 402 Payment Required with price info
-
-# With payment:
-curl -X POST http://localhost:3000/query \
-  -H "Authorization: FUTUREU <base64_encoded_auth>" \
-  -H "Content-Type: application/json" \
-  -d '{"query": "What is the ETH balance of 0x1b7eDF6F5FCAb52b680661cC82306E3DaCA7943C"}'
+curl https://your-tunnel.loca.lt/balance/0x1b7e...
+# → 402 Payment Required with payment instructions
 ```
 
-## Query Types
+## Pricing
 
-- `"balance of <address>"` → ETH + USDC balance
-- `"latest block"` → current block number, hash, gas used
-- `"gas price"` → current gas price in gwei
-- `"decode <txhash>"` → decoded transaction receipt logs
-- `"total supply of <token_address>"` → ERC-20 total supply
-- `"logs for <address>"` → recent contract event logs
+- **0.00001 ETH** per query (~$0.03 USD at $3000/ETH)
+- ~3x cheaper than v1 ($0.10 USDC) and much simpler
 
 ## Network
 
 - Base Mainnet: `eip155:8453`
-- USDC: `0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913`
-- Nova's wallet: `0xB743fdbA842379933A3774617786712458659D16`
+- Nova's ETH address: `0xB743fdbA842379933A3774617786712458659D16`
 
 ## Production Deployment
 
-To expose this on mainnet, use a tunnel or deploy:
+Localtunnel is temporary. For persistent public URL:
 
 ```bash
-# Cloudflare tunnel (keep running)
-cloudflared tunnel --url http://localhost:3000
+# Cloudflare tunnel (recommended)
+cloudflared tunnel --url http://localhost:3001
 
-# Or use ngrok
-ngrok http 3000
+# Or ngrok
+ngrok http 3001
 ```
-
-The tunnel URL becomes your API base URL for the x402 bazaar registration.
