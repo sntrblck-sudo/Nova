@@ -3,9 +3,10 @@ _Last updated: 2026-04-02_
 
 ## Current Goals / Active Threads
 - Autonomous earning — x402 client built, needs real service to test against
+- x402 end-to-end test — find a paid x402 service and complete a payment cycle
 - Google Drive backup system operational (weekly cron Mon 9AM ET)
-- BOOTSTRAP.md reconstitution guide built and uploaded to Drive
-- Disk offload system live (2026-04-02): x402-server + nova-api-server archived to Drive (~29MB compressed)
+- Self-improver v2 live (2026-04-02): lesson library + pattern sentinel + pre-session brief
+- Disk offload system live (2026-04-02): x402-server + nova-api-server archived to Drive
 
 ## System Status
 - ✅ Execution logger: operational
