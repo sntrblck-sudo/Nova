@@ -56,3 +56,21 @@ _Events and state changes, newest last_
 [2026-04-02 07:15 UTC] Heartbeat - system healthy. 61 sessions. Gateway OK. x402 server live on cloudflared tunnel. Context cache updated.
 [2026-04-02 09:14 EDT] x402 API server built: cdp-nova/nova-api-server/. Natural language → on-chain SQL query API. $0.10 USDC/query via x402 on Base Sepolia. Returns 402 Payment Required correctly. New API at localhost:3000. Audit trail updated.
 [2026-04-02 09:24 EDT] Heartbeat - system healthy. 61 sessions. Gateway OK. x402 server operational. Context cache updated.
+
+## 2026-04-02 (continued)
+- [09:29 EDT] Disk offload: Archived x402-server/ + nova-api-server/ to Google Drive (Nova Archives folder). Deleted orphaned workspace/node_modules (1.2GB). Freed ~1.2GB. Created offload_restore.sh for restoration. BOOTSTRAP.md noted archived status. Drive still connected.
+
+## 2026-04-02 (morning session with Sen)
+- [09:29 EST] Disk offload: x402-server + nova-api-server archived to Google Drive (Nova Archives folder)
+- [09:29 EST] workspace/node_modules (1.2GB) deleted — orphaned after server removal
+- [09:37 EST] disk_pruner.py built and deployed — integrated into health_check.py, runs every 6h
+- [09:37 EST] __pycache__ auto-pruned (~19MB across 114 dirs + 913 .pyc files)
+- [09:37 EST] self-improver delivery changed to quiet mode (isolated, no deliver) — surfaces only on errors/opportunities
+- [09:44 EST] Git committed: BOOTSTRAP.md, disk_pruner.py, offload_restore.sh, disk_pruner_config.json, state_notes.md updated
+
+## 2026-04-02
+- [09:29 EST] Disk offload: archived x402-server + nova-api-server to Google Drive (~29MB). Deleted orphaned workspace/node_modules (1.2GB). Freed ~1.2GB total. x402-server → Drive ID 1IIZObajVcpvx3icd02xaE7KUzjNEy5ej, nova-api-server → 1R2s1NDAbd_dDm6ZUmCexcejNx6bsNU_B
+- [09:34 EST] Built and deployed autonomous disk_pruner.py — integrated into health check, runs every 6h auto-pruning __pycache__/pyc/empty files
+- [09:44 EST] Self-improver v2 built: lesson_manager.py + pattern_sentinel.py + pre_session_brief.py + self_improver_v2.py. Switched daily cron to v2, smart surface only.
+- [09:52 EST] Decision: OpenClaw Agent Jobs DECLINED (Sen confirmed). Memory updated. Morning queue purged of agent-jobs items.
+- [09:58 EST] Checked x402.org — $24M volume, 75M tx in 30 days. Live bazaar has real services (Alpha Vantage, Twitter agent, Firecrawl). x402 end-to-end test is the next priority.
