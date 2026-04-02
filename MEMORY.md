@@ -23,6 +23,8 @@ _Distilled learnings and context that persist across sessions._
 - Self reflections in memory/self_reflections.md
 - [2026-03-26 11:40:04] [system,setup] Advanced memory skill installed
 - [2026-03-26 14:24:52] [crypto,inclawbate,token] CLAWS token address: 0x7ca47b141639b893c6782823c0b219f872056379 on Base. Rebranded from INCLAWNCH. Staking on inclawbate.com. Sen is staking this.
+- [2026-04-02 10:00] [nova,staking,compound] Staking + compound system tested and running. SENATOR staked: ~1,241,130. CLAWS rewards accruing via Inclawbate. compound.py runs every 6h (cron: 2327e082). Daily compound at 10 AM ET. CLAWS pool rejected additional stake (below minimum threshold). TX history: rewards claimed +0.001 ETH equivalent. System operational ✅
+- [2026-04-02 10:00] [nova,earning,stack] Nova's earning stack (2026-04-02): staking rewards (CLAWS), x402 client (E2E confirmed), x402 server (archived, needs always-on hosting). No active third-party service calls yet.
 - [2026-03-27 02:25:45] [system,rso,logging] Execution logger built - logs to memory/execution_logs.db. Tracks: session_start/end, task_complete/fail, cron_run, heartbeat. Self-improver should query summary for RSO analysis.
 - [2026-03-27 16:44:07] [nova,wallet,base] Nova's Base wallet: 0xB743fdbA842379933A3774617786712458659D16 (EOA, key held by Sen as backup). Created 2026-03-27.
 - [2026-03-27 16:49:06] [nova,policy,wallet] Nova's wallet policy (2026-03-27): Approval required for txs > 0.001 ETH (~). Below that, execute autonomously and report to Sen. Policy enforced at agent level (EOA, not on-chain). Review as we learn.
