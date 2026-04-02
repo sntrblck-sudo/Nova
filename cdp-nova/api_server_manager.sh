@@ -34,9 +34,9 @@ restart_server() {
   fuser -k $PORT/tcp 2>/dev/null || true
   sleep 1
   
-  # Start API server
+  # Start x402 server v3
   cd "$API_DIR"
-  node nova-api-server/index.cjs >> "$API_DIR/server.log" 2>&1 &
+  node nova-api-server/x402_server.cjs >> "$API_DIR/server.log" 2>&1 &
   sleep 2
   
   # Start localtunnel with fresh random subdomain
