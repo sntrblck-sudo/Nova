@@ -297,8 +297,9 @@ async function main() {
         console.log(`║ ${w.label.padEnd(56)} ║`);
         for (const h of w.holdings) {
           if (h.balance_raw && h.balance_raw !== '0') {
-            const usd = toUSD(h.balance_raw, h.asset, summary.prices);
-            const usdStr = usd > 0 ? `$${usd.toFixed(2)}` : '(no price)';
+            const token = TOKENS[h.asset] || {};
+            const usd = token.unpriced ? null : toUSD(h.balance_raw, h.asset, summary.prices);
+            const usdStr = token.unpriced ? '(unpriced)' : usd > 0 ? `$${usd.toFixed(2)}` : '-';
             console.log(`║   ${h.asset.padEnd(8)} ${h.balance.padEnd(18)} ${usdStr.padEnd(20)} ║`);
           }
         }
@@ -309,6 +310,7 @@ async function main() {
       console.log(`║ TOTAL PORTFOLIO: $${summary.totalUSD.toFixed(2).padStart(8)}                                              ║`);
       console.log('╠══════════════════════════════════════════════════════════════╣');
       console.log(`║ Prices: ETH $${summary.prices?.ETH?.toFixed(2).padEnd(8)} | USDC $${summary.prices?.USDC?.toFixed(4).padEnd(8)}                      ║`);
+      console.log(`║ CLAWS: 98,112 tokens (staking on Inclawbate) — no DEX price   ║`);
       console.log(`╚══════════════════════════════════════════════════════════════╝`);
       break;
     }
