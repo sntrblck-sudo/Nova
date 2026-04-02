@@ -26,8 +26,9 @@ _Last updated: 2026-04-02_
 - SENATOR: 1,241,130 staked
 
 ## x402 Status
-- x402 API server: **ARCHIVED** (2026-04-02). Was built at cdp-nova/nova-api-server/. Offloaded to Google Drive. To restore: `bash cdp-nova/offload_restore.sh nova-api-server`
-- Client built at cdp-nova/x402_client.cjs (tested against POC endpoints)
+- x402 client: built (cdp-nova/x402_client.cjs), **E2E confirmed working 2026-04-02** — paid 0.001 USDC, received on-chain data ✅
+- x402 server: was built and publicly accessible via cloudflared tunnel; currently archived (nova-api-server/ → Google Drive 2026-04-02). Needs always-on hosting to be production.
+- CDP Bazaar: real paid services available (Alpha Vantage, Twitter intel, Firecrawl) — all on Base Sepolia testnet
 
 ## Google Drive Backup
 - OAuth: connected (tokens in google_tokens.json)
