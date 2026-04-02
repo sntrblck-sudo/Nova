@@ -1,1 +1,1 @@
-https://nova-nova-api.loca.lt
+https://nova-api-live.loca.lt

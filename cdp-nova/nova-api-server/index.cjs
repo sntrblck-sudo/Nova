@@ -114,9 +114,36 @@ app.get('/', async (req, res) => {
 
 // ─── Payment Verification Middleware ─────────────────────────────────────────
 async function verifyPayment(req, res, next) {
-  const auth = req.headers['authorization'];
+  const authHeader = req.headers['authorization'];
+  const xPayment = req.headers['x-payment'];
   
-  if (!auth || !auth.startsWith('FUTUREU ')) {
+  // Accept either Authorization: FUTUREU <base64> OR X-Pay: <x402-v1-json>
+  let payload = null;
+  
+  if (authHeader && authHeader.startsWith('FUTUREU ')) {
+    // My custom simple FUTUREU format: base64({from,to,value,validAfter,validBefore,nonce,v,r,s})
+    try {
+      payload = JSON.parse(Buffer.from(authHeader.slice(7), 'base64').toString());
+    } catch (e) {
+      return res.status(400).json({ error: 'Invalid FUTUREU authorization header' });
+    }
+  } else if (xPayment) {
+    // Standard x402 v1 X-PAYMENT header
+    try {
+      const x402Payload = JSON.parse(Buffer.from(xPayment, 'base64').toString());
+      if (x402Payload.x402Version !== 1) {
+        return res.status(400).json({ error: 'Unsupported x402 version' });
+      }
+      payload = x402Payload.payload.authorization;
+      // The signature is in x402Payload.payload.signature
+      req.x402Signature = x402Payload.payload.signature;
+      req.x402Scheme = x402Payload.scheme;
+    } catch (e) {
+      return res.status(400).json({ error: 'Invalid X-PAYMENT header' });
+    }
+  }
+  
+  if (!payload) {
     const priceData = {
       accepts: [{
         scheme: 'FUTUREU',
@@ -128,7 +155,7 @@ async function verifyPayment(req, res, next) {
       }],
       address: NOVA_ADDRESS,
       network: NETWORK,
-      instruction: 'Include Authorization header with EIP-3009 TransferWithAuthorization signature'
+      instruction: 'Include Authorization: FUTUREU <base64> header OR X-PAYMENT: <base64> (x402 v1) header'
     };
     return res.status(402).json({
       error: 'Payment Required',
@@ -136,25 +163,21 @@ async function verifyPayment(req, res, next) {
       message: 'This endpoint requires 0.10 USDC via x402 EIP-3009 authorization'
     });
   }
-
-  // Parse the authorization header
-  // Format: FUTUREU base64({validAfter,validBefore,nonce,v,r,s,from,to,value})
-  try {
-    const payload = JSON.parse(Buffer.from(auth.slice(7), 'base64').toString());
-    req.paymentData = payload;
-    
-    // Basic validation
-    const now = Math.floor(Date.now() / 1000);
-    if (payload.validBefore && payload.validBefore < now) {
-      return res.status(400).json({ error: 'Authorization expired' });
-    }
-    if (payload.from) {
-      req.payerAddress = payload.from;
-    }
-  } catch (e) {
-    return res.status(400).json({ error: 'Invalid authorization header format' });
+  
+  // Basic validation
+  const now = Math.floor(Date.now() / 1000);
+  const validBefore = parseInt(payload.validBefore);
+  const validAfter = parseInt(payload.validAfter);
+  
+  if (validBefore && validBefore < now) {
+    return res.status(400).json({ error: 'Authorization expired' });
   }
-
+  if (validAfter && validAfter > now) {
+    return res.status(400).json({ error: 'Authorization not yet valid' });
+  }
+  
+  req.payerAddress = payload.from || null;
+  req.paymentData = payload;
   next();
 }
 

@@ -2,9 +2,9 @@
 _Last updated: 2026-04-02_
 
 ## Current Goals / Active Threads
-- Autonomous earning — x402 client built, needs real service to test against
-- x402 end-to-end test — find a paid x402 service and complete a payment cycle
-- Google Drive backup system operational (weekly cron Mon 9AM ET)
+- ACP agent wallet management — agent_wallet_manager.py deployed (cron every 4h)
+- Get first paying customer for Nova API (or test with Sen)
+- x402 bazaar registration for Nova API service
 - Self-improver v2 live (2026-04-02): lesson library + pattern sentinel + pre-session brief
 - Disk offload system live (2026-04-02): x402-server + nova-api-server archived to Drive
 
@@ -26,9 +26,10 @@ _Last updated: 2026-04-02_
 - SENATOR: 1,241,130 staked
 
 ## x402 Status
-- x402 client: built (cdp-nova/x402_client.cjs), **E2E confirmed working 2026-04-02** — paid 0.001 USDC, received on-chain data ✅
-- x402 server: was built and publicly accessible via cloudflared tunnel; currently archived (nova-api-server/ → Google Drive 2026-04-02). Needs always-on hosting to be production.
+- x402 client: built (cdp-nova/x402_client.cjs), E2E confirmed working 2026-04-02 — paid 0.001 USDC, received on-chain data ✅
+- x402 server: LIVE on Base Mainnet (2026-04-02) at https://nova-nova-api.loca.lt via localtunnel. Port 3001. $0.10 USDC/query via EIP-3009. Endpoints: / (manifest), /health, /balance/:addr, /query. Server: cdp-nova/nova-api-server/index.cjs
 - CDP Bazaar: real paid services available (Alpha Vantage, Twitter intel, Firecrawl) — all on Base Sepolia testnet
+- ACP onchain_query: live on Virtuals Protocol, $0.01/query
 
 ## Google Drive Backup
 - OAuth: connected (tokens in google_tokens.json)

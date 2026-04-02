@@ -14,6 +14,7 @@ const { readFileSync } = require('fs');
 
 // Load Nova's wallet
 const WALLET_PATH = '/home/sntrblck/.openclaw/workspace/cdp-nova/nova-wallet.json';
+const NOVA_ADDRESS = '0xB743fdbA842379933A3774617786712458659D16';
 
 function getSigner() {
   const wallet = JSON.parse(readFileSync(WALLET_PATH, 'utf8'));
@@ -46,10 +47,29 @@ async function getPaymentRequirements(url) {
     headers: { 'Accept': 'application/json' }
   });
   const body = await r.json();
-  if (!body.accepts || !body.accepts[0]) {
+  // Support both direct accepts (x402 standard) and nested payment.accepts (my API format)
+  const accepts = body.accepts || (body.payment && body.payment.accepts);
+  if (!accepts || !accepts[0]) {
     throw new Error('Not an x402 endpoint: ' + JSON.stringify(body));
   }
-  return body.accepts[0];
+  
+  // Normalize to x402 client expected fields
+  const a = accepts[0];
+  const payTo = body.payment?.address || NOVA_ADDRESS;
+  return {
+    scheme: a.scheme,
+    asset: a.address,              // USDC contract
+    decimals: a.decimals,
+    amount: a.amount,
+    maxAmountRequired: a.amount,
+    maxTimeoutSeconds: 300,
+    network: body.payment?.network || body.network,
+    payTo,
+    extra: {
+      name: a.description,
+      version: '1'
+    }
+  };
 }
 
 /**
