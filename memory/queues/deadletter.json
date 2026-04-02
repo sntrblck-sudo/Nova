@@ -1,0 +1,18 @@
+[
+  {
+    "id": "dl_20260329_083421",
+    "task_type": "send_tx",
+    "task_data": {
+      "recipient": "0xABC",
+      "value": 100
+    },
+    "failure_reason": "network_timeout",
+    "retry_count": 3,
+    "max_retries": 3,
+    "added_at": "2026-03-29T08:34:21.851931",
+    "status": "resolved",
+    "last_attempt": "2026-03-29T08:34:21.851945",
+    "resolution": "abandoned",
+    "resolved_at": "2026-03-29T08:41:38.956066"
+  }
+]

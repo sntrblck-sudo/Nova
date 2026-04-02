@@ -1,0 +1,17 @@
+{
+  "checkpoint_id": "cp_20260329_083559_send_tx",
+  "operation_type": "send_tx",
+  "phase": "starting",
+  "next_step": "validate contract",
+  "context": {
+    "recipient": "0xABC",
+    "value": 100
+  },
+  "metadata": {},
+  "created_at": "2026-03-29T08:35:59.455457",
+  "updated_at": "2026-03-29T08:35:59.455969",
+  "status": "archived",
+  "retry_count": 1,
+  "archived_reason": "success",
+  "archived_at": "2026-03-29T08:35:59.456236"
+}

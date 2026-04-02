@@ -1,0 +1,9 @@
+{
+  "name": "nova-email-system",
+  "version": "1.0.0",
+  "description": "Nova's email system via Resend",
+  "main": "nova-email.js",
+  "dependencies": {
+    "resend": "^4.0.0"
+  }
+}

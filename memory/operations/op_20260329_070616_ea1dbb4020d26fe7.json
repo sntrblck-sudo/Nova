@@ -1,0 +1,18 @@
+{
+  "operation_id": "op_20260329_070616_ea1dbb4020d26fe7",
+  "idempotency_key": "ea1dbb4020d26fe7",
+  "dfid": "df_001",
+  "step_id": "step_1",
+  "operation_type": "send_tx",
+  "params": {
+    "recipient": "0xABC",
+    "value": 100
+  },
+  "intent": "Send to ABC",
+  "status": "pending",
+  "created_at": "2026-03-29T07:06:16.764332",
+  "attempts": 0,
+  "last_attempt": null,
+  "result": null,
+  "error": null
+}

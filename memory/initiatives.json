@@ -1,0 +1,15 @@
+{
+  "initiatives": [
+    {
+      "initiative_id": "init_20260329_085422_pattern_surface",
+      "type": "pattern_surface",
+      "title": "Recurring opportunity detected",
+      "content": "Inclawbate has been mentioned 3 times today - worth monitoring",
+      "target": "sen",
+      "metadata": {},
+      "created_at": "2026-03-29T08:54:22.825962",
+      "status": "pending",
+      "delivered": false
+    }
+  ]
+}

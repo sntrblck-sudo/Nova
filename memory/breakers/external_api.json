@@ -1,0 +1,10 @@
+{
+  "state": "closed",
+  "failure_threshold": 5,
+  "failure_window_hours": 0.5,
+  "cooldown_hours": 0.25,
+  "failure_count": 0,
+  "last_failure": null,
+  "last_state_change": null,
+  "last_updated": "2026-03-29T08:33:33.913275"
+}

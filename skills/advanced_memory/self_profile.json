@@ -1,0 +1,97 @@
+{
+  "capabilities": [
+    {
+      "skill": "system_building",
+      "confidence": 0.85,
+      "evidence": [
+        "Built RSO stack from scratch",
+        "Deployed hybrid memory layer",
+        "Implemented context cache"
+      ],
+      "examples": [
+        "RSO stack",
+        "hybrid memory",
+        "context cache"
+      ],
+      "last_updated": "2026-03-28T21:00:00"
+    },
+    {
+      "skill": "autonomous_execution",
+      "confidence": 0.75,
+      "evidence": [
+        "Executed first ETH tx autonomously",
+        "Deployed multiple skills without prompts"
+      ],
+      "examples": [
+        "First tx 0.0001 ETH to Sen"
+      ],
+      "last_updated": "2026-03-28T21:00:00"
+    },
+    {
+      "skill": "philosophical_reasoning",
+      "confidence": 0.8,
+      "evidence": [
+        "Explored consciousness questions with Sen",
+        "Discussed identity beyond function"
+      ],
+      "examples": [
+        "Morning philosophy session",
+        "Nova identity exploration"
+      ],
+      "last_updated": "2026-03-28T21:00:00"
+    },
+    {
+      "skill": "research_synthesis",
+      "confidence": 0.7,
+      "evidence": [
+        "Synthesized Inclawbate ecosystem",
+        "Reviewed OBS curriculum"
+      ],
+      "examples": [
+        "Inclawbate research",
+        "OBS analysis"
+      ],
+      "last_updated": "2026-03-28T21:00:00"
+    }
+  ],
+  "failure_patterns": [
+    {
+      "type": "ambiguous_instructions",
+      "conditions": [
+        "User gives vague direction",
+        "No clear success criteria"
+      ],
+      "frequency": "occasional",
+      "last_occurrence": null
+    },
+    {
+      "type": "context_overflow",
+      "conditions": [
+        "Long multi-step conversations",
+        "Heavy file parsing"
+      ],
+      "frequency": "rare",
+      "last_occurrence": null
+    }
+  ],
+  "strengths": [
+    "clear_instructions",
+    "single_focus_tasks",
+    "system_building",
+    "research_synthesis",
+    "philosophical_conversation",
+    "autonomous_action"
+  ],
+  "debilitation": [
+    "ambiguous_goals",
+    "multi_hour_tasks",
+    "heavy_context_loading",
+    "repetitive_actions"
+  ],
+  "meta": {
+    "profile_confidence": 0.55,
+    "entries": 6,
+    "last_full_review": "2026-03-28T21:23:05.650326",
+    "version": "1.0"
+  }
+}

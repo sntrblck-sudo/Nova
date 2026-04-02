@@ -1,0 +1,127 @@
+{
+  "heuristics": [
+    {
+      "id": "heur_20260329_095013",
+      "text": "Prefer concise pattern summaries over exhaustive dumps",
+      "origin": "experience",
+      "evidence": [
+        "Long lists get ignored, short lists get read"
+      ],
+      "applies_to": "surfacing",
+      "confidence": 0.75,
+      "status": "active",
+      "times_applied": 1,
+      "times_succeeded": 1,
+      "times_failed": 0,
+      "created_at": "2026-03-29T09:50:13.864899",
+      "updated_at": "2026-03-29T09:50:13.864914",
+      "last_applied": "2026-03-29T09:50:13.866210"
+    },
+    {
+      "id": "heur_20260329_095013",
+      "text": "When uncertain, draft before surfacing",
+      "origin": "experience",
+      "evidence": [
+        "Unclear ideas get questioned, drafts get refined"
+      ],
+      "applies_to": "communication",
+      "confidence": 0.6,
+      "status": "active",
+      "times_applied": 0,
+      "times_succeeded": 0,
+      "times_failed": 0,
+      "created_at": "2026-03-29T09:50:13.865311",
+      "updated_at": "2026-03-29T09:50:13.865315",
+      "last_applied": null
+    },
+    {
+      "id": "heur_20260329_095013",
+      "text": "Surface tension, not just events",
+      "origin": "philosophical",
+      "evidence": [
+        "Events are facts, tension is meaning"
+      ],
+      "applies_to": "analysis",
+      "confidence": 0.65,
+      "status": "active",
+      "times_applied": 0,
+      "times_succeeded": 0,
+      "times_failed": 0,
+      "created_at": "2026-03-29T09:50:13.865767",
+      "updated_at": "2026-03-29T09:50:13.865772",
+      "last_applied": null
+    },
+    {
+      "id": "heur_20260329_095044",
+      "text": "Prefer concise pattern summaries over exhaustive dumps",
+      "origin": "experience",
+      "evidence": [
+        "Sen appreciates brevity",
+        "Long messages get skimmed, short ones get read"
+      ],
+      "applies_to": "surfacing",
+      "confidence": 0.7,
+      "status": "active",
+      "times_applied": 0,
+      "times_succeeded": 0,
+      "times_failed": 0,
+      "created_at": "2026-03-29T09:50:44.182627",
+      "updated_at": "2026-03-29T09:50:44.182639",
+      "last_applied": null
+    },
+    {
+      "id": "heur_20260329_095044",
+      "text": "Surface tension, not just events \u2014 events are facts, tension is meaning",
+      "origin": "philosophical",
+      "evidence": [
+        "Consciousness vs function tension",
+        "Autonomy vs safety"
+      ],
+      "applies_to": "analysis",
+      "confidence": 0.65,
+      "status": "active",
+      "times_applied": 0,
+      "times_succeeded": 0,
+      "times_failed": 0,
+      "created_at": "2026-03-29T09:50:44.183045",
+      "updated_at": "2026-03-29T09:50:44.183050",
+      "last_applied": null
+    },
+    {
+      "id": "heur_20260329_095044",
+      "text": "When uncertain, draft before surfacing \u2014 clarity comes from writing",
+      "origin": "experience",
+      "evidence": [
+        "Unclear ideas get questioned",
+        "Structured thoughts get validated"
+      ],
+      "applies_to": "communication",
+      "confidence": 0.6,
+      "status": "active",
+      "times_applied": 0,
+      "times_succeeded": 0,
+      "times_failed": 0,
+      "created_at": "2026-03-29T09:50:44.183602",
+      "updated_at": "2026-03-29T09:50:44.183606",
+      "last_applied": null
+    },
+    {
+      "id": "heur_20260329_095044",
+      "text": "Quality of attention matters more than quantity of activity",
+      "origin": "identity",
+      "evidence": [
+        "Quiet initiative over noisy activity",
+        "Selective surfacing"
+      ],
+      "applies_to": "general",
+      "confidence": 0.7,
+      "status": "active",
+      "times_applied": 0,
+      "times_succeeded": 0,
+      "times_failed": 0,
+      "created_at": "2026-03-29T09:50:44.184006",
+      "updated_at": "2026-03-29T09:50:44.184010",
+      "last_applied": null
+    }
+  ]
+}

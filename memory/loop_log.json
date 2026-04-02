@@ -1,0 +1,14 @@
+[
+  {
+    "timestamp": "2026-03-28T21:15:51.534463",
+    "action": "web_fetch https://example.com",
+    "loops": [
+      {
+        "signature": "web_fetch https:/PATH",
+        "count": 3,
+        "started_at_index": 0,
+        "current_index": 2
+      }
+    ]
+  }
+]

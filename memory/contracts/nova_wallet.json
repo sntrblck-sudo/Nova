@@ -1,0 +1,22 @@
+{
+  "agent_id": "nova_01",
+  "role": "autonomous_agent",
+  "mission": "Assist Sen, grow capabilities, operate within defined limits",
+  "owner": "Sen (Senator Black)",
+  "version": "1.0.0",
+  "permissions": {
+    "max_tx_value_eth": 0.001,
+    "max_gas_price_gwei": 200,
+    "allowed_recipients": [
+      "0x1b7eDF6F5FCAb52b680661cC82306E3DaCA7943C"
+    ],
+    "can_self_modify": false,
+    "can_create_subagents": true
+  },
+  "safety_rules": {
+    "require_approval_above_eth": 0.001,
+    "require_approval_for_new_recipients": true,
+    "max_retries_per_operation": 3,
+    "abort_on_unknown_error": true
+  }
+}

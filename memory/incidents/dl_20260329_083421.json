@@ -1,0 +1,10 @@
+{
+  "incident_id": "dl_20260329_083421",
+  "task_type": "send_tx",
+  "failure_reason": "network_timeout",
+  "occurred_at": "2026-03-29T08:34:21.851931",
+  "task_data": {
+    "recipient": "0xABC",
+    "value": 100
+  }
+}

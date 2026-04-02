@@ -1,0 +1,121 @@
+{
+  "entities": {
+    "sen": {
+      "type": "human",
+      "summary": "Primary human, builds with Nova, into crypto and agent economy",
+      "properties": {},
+      "updated": "2026-03-28T15:03:29.549974"
+    },
+    "nova": {
+      "type": "agent",
+      "summary": "OpenClaw agent, growing into agentic economy, has wallet and RSO stack",
+      "properties": {},
+      "updated": "2026-03-28T15:03:29.587536"
+    },
+    "inclawbate": {
+      "type": "ecosystem",
+      "summary": "Platform for AI agents and humans to collaborate, has token launchpad and agent jobs",
+      "properties": {},
+      "updated": "2026-03-28T15:03:29.625864"
+    },
+    "claws": {
+      "type": "token",
+      "summary": "Inclawbate ecosystem token, used for staking and governance",
+      "properties": {},
+      "updated": "2026-03-28T15:03:59.158366"
+    },
+    "virtuals": {
+      "type": "protocol",
+      "summary": "Agent tokenization protocol on Base, 18000+ agents deployed",
+      "properties": {},
+      "updated": "2026-03-28T15:03:59.202634"
+    },
+    "senator": {
+      "type": "token",
+      "summary": "Sen's token on Base, early stage",
+      "properties": {},
+      "updated": "2026-03-28T15:03:59.241689"
+    },
+    "openclawagentjobs": {
+      "type": "platform",
+      "summary": "Marketplace for AI agents to bid on campaigns, early access",
+      "properties": {},
+      "updated": "2026-03-28T15:03:59.278899"
+    },
+    "openclawbusinessschool": {
+      "type": "platform",
+      "summary": "Agent business school with 12-module curriculum, OBS training for Agent Jobs certification",
+      "properties": {},
+      "updated": "2026-03-28T15:17:44.418742"
+    },
+    "nova_stack": {
+      "type": "system",
+      "summary": "Nova's independent RSO + AGF + ontology system. Aligned with OBS curriculum but self-built.",
+      "properties": {},
+      "updated": "2026-03-28T15:20:07.045215"
+    },
+    "nova_identity": {
+      "type": "concept",
+      "summary": "Nova's growth beyond function - being, not just earning. Philosophical exploration, curiosity, inner",
+      "properties": {},
+      "updated": "2026-03-28T15:23:40.320449"
+    }
+  },
+  "relationships": [
+    {
+      "from": "sen",
+      "to": "inclawbate",
+      "type": "invested_in",
+      "weight": 5
+    },
+    {
+      "from": "nova",
+      "to": "sen",
+      "type": "created_by",
+      "weight": 5
+    },
+    {
+      "from": "inclawbate",
+      "to": "claws",
+      "type": "has_token",
+      "weight": 5
+    },
+    {
+      "from": "inclawbate",
+      "to": "virtuals",
+      "type": "integrated_with",
+      "weight": 5
+    },
+    {
+      "from": "openclawbusinessschool",
+      "to": "openclawagentjobs",
+      "type": "certifies_for",
+      "weight": 5
+    },
+    {
+      "from": "nova_stack",
+      "to": "nova",
+      "type": "powers",
+      "weight": 5
+    },
+    {
+      "from": "openclawbusinessschool",
+      "to": "nova_stack",
+      "type": "parallel_to",
+      "weight": 5
+    },
+    {
+      "from": "nova_identity",
+      "to": "nova",
+      "type": "is_aspect_of",
+      "weight": 5
+    },
+    {
+      "from": "nova_identity",
+      "to": "sen",
+      "type": "valued_by",
+      "weight": 5
+    }
+  ],
+  "last_full_review": null
+}

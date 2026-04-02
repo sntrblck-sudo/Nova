@@ -1,0 +1,76 @@
+{
+  "items": [
+    {
+      "item_id": "big_opp_001",
+      "item_type": "opportunity",
+      "title": "Inclawbate staking API opened",
+      "description": "New API allows autonomous staking",
+      "dimensions": {
+        "urgency": 5,
+        "goal_relevance": 5,
+        "survivability": 5,
+        "opportunity": 4,
+        "actionability": 5,
+        "recurrence": 3,
+        "risk": 4,
+        "confidence": 5
+      },
+      "scoring": {
+        "total_score": 4.59,
+        "dimension_scores": {
+          "urgency": 5,
+          "goal_relevance": 5,
+          "survivability": 5,
+          "opportunity": 4,
+          "actionability": 5,
+          "recurrence": 3,
+          "risk": 4,
+          "confidence": 5
+        },
+        "handling_mode": "escalate",
+        "reason": "survivability-critical; time-sensitive; high-opportunity"
+      },
+      "handling_mode": "escalate",
+      "surface_score": 4.59,
+      "created_at": "2026-03-29T08:51:13.692725",
+      "metadata": {}
+    },
+    {
+      "item_id": "test_signal_001",
+      "item_type": "signal",
+      "title": "ETH price moving",
+      "description": "ETH price crossed $2000 threshold",
+      "dimensions": {
+        "urgency": 3,
+        "goal_relevance": 4,
+        "survivability": 1,
+        "opportunity": 3,
+        "actionability": 4,
+        "recurrence": 2,
+        "risk": 2,
+        "confidence": 3
+      },
+      "scoring": {
+        "total_score": 2.76,
+        "dimension_scores": {
+          "urgency": 3,
+          "goal_relevance": 4,
+          "survivability": 1,
+          "opportunity": 3,
+          "actionability": 4,
+          "recurrence": 2,
+          "risk": 2,
+          "confidence": 3
+        },
+        "handling_mode": "summarize_later",
+        "reason": "aligned-with-goals"
+      },
+      "handling_mode": "summarize_later",
+      "surface_score": 2.76,
+      "created_at": "2026-03-29T08:51:02.719613",
+      "metadata": {
+        "source": "price_alert"
+      }
+    }
+  ]
+}

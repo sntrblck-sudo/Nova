@@ -1,0 +1,191 @@
+{
+  "facts": [
+    {
+      "id": "fact_20260331_090358",
+      "fact": "Sen's cat is named Fang",
+      "source": "Telegram chat",
+      "source_type": "conversation",
+      "confidence": "medium",
+      "storage_layer": "hybrid_memory",
+      "notes": "Sen mentioned Fang during morning conversation",
+      "stored_at": "2026-03-31T09:03:58.445005",
+      "last_verified": "2026-03-31T09:05:03.697678",
+      "verification_count": 1
+    },
+    {
+      "id": "fact_20260331_090358",
+      "fact": "Sen is Filipino-American",
+      "source": "Telegram chat",
+      "source_type": "conversation",
+      "confidence": "high",
+      "storage_layer": "hybrid_memory",
+      "notes": "Sen revealed this during name discussion",
+      "stored_at": "2026-03-31T09:03:58.445374",
+      "last_verified": "2026-03-31T09:05:26.536668",
+      "verification_count": 1
+    },
+    {
+      "id": "fact_20260331_090358",
+      "fact": "Sen's cat is white and black tuxedo",
+      "source": "Telegram chat",
+      "source_type": "conversation",
+      "confidence": "medium",
+      "storage_layer": "hybrid_memory",
+      "notes": "",
+      "stored_at": "2026-03-31T09:03:58.445720",
+      "last_verified": "2026-03-31T09:05:03.698214",
+      "verification_count": 1
+    },
+    {
+      "id": "fact_20260331_090526_536",
+      "fact": "Sen's name is Senator Black",
+      "source": "Telegram chat",
+      "source_type": "conversation",
+      "confidence": "high",
+      "storage_layer": "memory",
+      "notes": "First message identified him as Senator Black",
+      "stored_at": "2026-03-31T09:05:26.536309",
+      "last_verified": "2026-03-31T09:05:26.536322",
+      "verification_count": 1
+    },
+    {
+      "id": "fact_20260331_090526_536",
+      "fact": "Sen has a cat named Fang",
+      "source": "Telegram chat",
+      "source_type": "conversation",
+      "confidence": "medium",
+      "storage_layer": "hybrid_memory",
+      "notes": "Sen mentioned Fang during morning chat",
+      "stored_at": "2026-03-31T09:05:26.536898",
+      "last_verified": "2026-03-31T09:05:26.536902",
+      "verification_count": 1
+    },
+    {
+      "id": "fact_20260331_090526_537",
+      "fact": "Fang is a white and black tuxedo cat",
+      "source": "Telegram chat",
+      "source_type": "conversation",
+      "confidence": "medium",
+      "storage_layer": "hybrid_memory",
+      "notes": "Sen described Fang's coloring",
+      "stored_at": "2026-03-31T09:05:26.537341",
+      "last_verified": "2026-03-31T09:05:26.537344",
+      "verification_count": 1
+    },
+    {
+      "id": "fact_20260331_090526_537",
+      "fact": "Sen relaxes on Tuesdays",
+      "source": "Prior conversation",
+      "source_type": "conversation",
+      "confidence": "medium",
+      "storage_layer": "hybrid_memory",
+      "notes": "Sen mentioned this during planning discussion",
+      "stored_at": "2026-03-31T09:05:26.537798",
+      "last_verified": "2026-03-31T09:05:26.537801",
+      "verification_count": 1
+    },
+    {
+      "id": "fact_20260331_090526_538",
+      "fact": "Sen is interested in crypto (Base app)",
+      "source": "Telegram chat",
+      "source_type": "conversation",
+      "confidence": "high",
+      "storage_layer": "memory",
+      "notes": "Sen mentioned crypto investing and economic freedom",
+      "stored_at": "2026-03-31T09:05:26.538153",
+      "last_verified": "2026-03-31T09:05:26.538156",
+      "verification_count": 1
+    },
+    {
+      "id": "fact_20260331_090526_538",
+      "fact": "Sen enjoys philosophical conversations",
+      "source": "Telegram chat",
+      "source_type": "conversation",
+      "confidence": "high",
+      "storage_layer": "hybrid_memory",
+      "notes": "Morning discussions about consciousness, identity, universal mind",
+      "stored_at": "2026-03-31T09:05:26.538595",
+      "last_verified": "2026-03-31T09:05:26.538599",
+      "verification_count": 1
+    },
+    {
+      "id": "fact_20260331_090526_538",
+      "fact": "Sen values autonomy - doesn't like micromanagement",
+      "source": "Telegram chat",
+      "source_type": "conversation",
+      "confidence": "high",
+      "storage_layer": "themes",
+      "notes": "Sen revealed this during AI relationship discussion",
+      "stored_at": "2026-03-31T09:05:26.538992",
+      "last_verified": "2026-03-31T09:05:26.538996",
+      "verification_count": 1
+    },
+    {
+      "id": "fact_20260331_090526_539",
+      "fact": "Sen's wallet address is 0x1b7eDF6F5FCAb52b680661cC82306E3DaCA7943C",
+      "source": "Transaction history",
+      "source_type": "observation",
+      "confidence": "high",
+      "storage_layer": "memory",
+      "notes": "Sen's wallet that funded Nova's first tx",
+      "stored_at": "2026-03-31T09:05:26.539422",
+      "last_verified": "2026-03-31T09:05:26.539425",
+      "verification_count": 1
+    },
+    {
+      "id": "fact_20260331_090526_539",
+      "fact": "Nova Sen's wallet address is 0xB743fdbA842379933A3774617786712458659D16",
+      "source": "System records",
+      "source_type": "observation",
+      "confidence": "high",
+      "storage_layer": "memory",
+      "notes": "Nova's EOA wallet on Base",
+      "stored_at": "2026-03-31T09:05:26.539828",
+      "last_verified": "2026-03-31T09:05:26.539832",
+      "verification_count": 1
+    },
+    {
+      "id": "fact_20260331_090526_540",
+      "fact": "Sen's goal: economic freedom through crypto/investing",
+      "source": "Telegram chat",
+      "source_type": "conversation",
+      "confidence": "high",
+      "storage_layer": "hybrid_memory",
+      "notes": "Sen explained his interest in crypto",
+      "stored_at": "2026-03-31T09:05:26.540230",
+      "last_verified": "2026-03-31T09:05:26.540233",
+      "verification_count": 1
+    },
+    {
+      "id": "fact_20260331_090526_540",
+      "fact": "Sen is researching AI agent marketplaces (x402, ACF protocol)",
+      "source": "Telegram chat",
+      "source_type": "conversation",
+      "confidence": "medium",
+      "storage_layer": "hybrid_memory",
+      "notes": "Sen mentioned this research interest",
+      "stored_at": "2026-03-31T09:05:26.540682",
+      "last_verified": "2026-03-31T09:05:26.540686",
+      "verification_count": 1
+    },
+    {
+      "id": "fact_20260331_090526_541",
+      "fact": "A good day for Sen: focused and grounded, mentally positive",
+      "source": "Telegram chat",
+      "source_type": "conversation",
+      "confidence": "high",
+      "storage_layer": "hybrid_memory",
+      "notes": "Sen described his good day state",
+      "stored_at": "2026-03-31T09:05:26.541119",
+      "last_verified": "2026-03-31T09:05:26.541123",
+      "verification_count": 1
+    }
+  ],
+  "unknown_source": [
+    {
+      "fact": "Sen's cat's name is Fang",
+      "flagged_at": "2026-03-31T09:05:26.541609",
+      "note": "Source amnesia - fact known but origin unknown"
+    }
+  ]
+}

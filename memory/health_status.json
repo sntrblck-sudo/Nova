@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-04-02T06:05:34.412867",
+  "openclaw": {
+    "status": "ok",
+    "issues": []
+  },
+  "files": {
+    "missing": []
+  },
+  "execution_log": {
+    "has_failures": false
+  },
+  "wallet": {
+    "status": "ok",
+    "balance": 0.001771825454807841
+  },
+  "staking": {
+    "status": "ok",
+    "senator_staked": "1241130924834955520.00",
+    "claws_pending": "1855.87218327",
+    "claws_balance": "95788.87822252"
+  },
+  "overall": "ok",
+  "last_issue_type": null,
+  "last_severity": "ok"
+}

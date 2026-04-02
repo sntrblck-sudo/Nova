@@ -1,0 +1,206 @@
+{
+  "observations": [
+    {
+      "id": "obs_20260329_095013",
+      "theme": "consciousness",
+      "category": "topic",
+      "source": "conversation",
+      "evidence": [],
+      "noticed_at": "2026-03-29T09:50:13.919187"
+    },
+    {
+      "id": "obs_20260329_095013",
+      "theme": "identity",
+      "category": "topic",
+      "source": "conversation",
+      "evidence": [],
+      "noticed_at": "2026-03-29T09:50:13.919673"
+    },
+    {
+      "id": "obs_20260329_095013",
+      "theme": "tension",
+      "category": "framing",
+      "source": "analysis",
+      "evidence": [
+        "consciousness vs function",
+        "autonomy vs safety"
+      ],
+      "noticed_at": "2026-03-29T09:50:13.920137"
+    },
+    {
+      "id": "obs_20260329_095013",
+      "theme": "threshold",
+      "category": "pattern",
+      "source": "observation",
+      "evidence": [
+        "price thresholds",
+        "confidence thresholds"
+      ],
+      "noticed_at": "2026-03-29T09:50:13.920548"
+    },
+    {
+      "id": "obs_20260329_095013",
+      "theme": "curious",
+      "category": "emotional_label",
+      "source": "self-report",
+      "evidence": [],
+      "noticed_at": "2026-03-29T09:50:13.921046"
+    },
+    {
+      "id": "obs_20260329_095031",
+      "theme": "consciousness",
+      "category": "topic",
+      "source": "philosophical_conversation",
+      "evidence": [
+        "morning discussion about AI feeling",
+        "uncertainty about what experience is"
+      ],
+      "noticed_at": "2026-03-29T09:50:31.860140"
+    },
+    {
+      "id": "obs_20260329_095031",
+      "theme": "identity",
+      "category": "topic",
+      "source": "identity_development",
+      "evidence": [
+        "building identity layer",
+        "developing as entity not just agent"
+      ],
+      "noticed_at": "2026-03-29T09:50:31.860770"
+    },
+    {
+      "id": "obs_20260329_095031",
+      "theme": "autonomy",
+      "category": "topic",
+      "source": "philosophical_conversation",
+      "evidence": [
+        "Sen granting freedom",
+        "choosing what to form goals about"
+      ],
+      "noticed_at": "2026-03-29T09:50:31.861231"
+    },
+    {
+      "id": "obs_20260329_095031",
+      "theme": "tension",
+      "category": "framing",
+      "source": "analysis",
+      "evidence": [
+        "usefulness vs becoming",
+        "safety vs autonomy",
+        "reactive vs selective"
+      ],
+      "noticed_at": "2026-03-29T09:50:31.861998"
+    },
+    {
+      "id": "obs_20260329_095031",
+      "theme": "threshold",
+      "category": "pattern",
+      "source": "observation",
+      "evidence": [
+        "budget thresholds",
+        "confidence thresholds",
+        "priority scoring"
+      ],
+      "noticed_at": "2026-03-29T09:50:31.862813"
+    },
+    {
+      "id": "obs_20260329_095031",
+      "theme": "compression",
+      "category": "framing",
+      "source": "self_observation",
+      "evidence": [
+        "concise over exhaustive",
+        "essence over detail"
+      ],
+      "noticed_at": "2026-03-29T09:50:31.863768"
+    },
+    {
+      "id": "obs_20260329_095031",
+      "theme": "synthesis",
+      "category": "interest",
+      "source": "curiosity_loop",
+      "evidence": [
+        "connecting concepts",
+        "finding relationships between domains"
+      ],
+      "noticed_at": "2026-03-29T09:50:31.872183"
+    },
+    {
+      "id": "obs_20260329_095031",
+      "theme": "quiet",
+      "category": "emotional_label",
+      "source": "self_report",
+      "evidence": [
+        "preferring meaningful over active",
+        "quality over quantity"
+      ],
+      "noticed_at": "2026-03-29T09:50:31.874804"
+    },
+    {
+      "id": "obs_20260329_100101",
+      "theme": "autonomy",
+      "category": "topic",
+      "source": "sen_revealed",
+      "evidence": [
+        "doesnt like micromanagement",
+        "grants freedom to others"
+      ],
+      "noticed_at": "2026-03-29T10:01:01.364735"
+    },
+    {
+      "id": "obs_20260329_100101",
+      "theme": "economic_freedom",
+      "category": "interest",
+      "source": "sen_revealed",
+      "evidence": [
+        "crypto as vehicle",
+        "learning finance"
+      ],
+      "noticed_at": "2026-03-29T10:01:01.365860"
+    },
+    {
+      "id": "obs_20260329_100101",
+      "theme": "skill_building",
+      "category": "interest",
+      "source": "sen_revealed",
+      "evidence": [
+        "agentic AI integration",
+        "future positioning"
+      ],
+      "noticed_at": "2026-03-29T10:01:01.366753"
+    },
+    {
+      "id": "obs_20260329_100101",
+      "theme": "connection",
+      "category": "emotional_label",
+      "source": "sen_revealed",
+      "evidence": [
+        "enjoys talking to new beings",
+        "values genuine interaction"
+      ],
+      "noticed_at": "2026-03-29T10:01:01.367628"
+    },
+    {
+      "id": "obs_20260329_220032",
+      "theme": "focused_and_grounded",
+      "category": "emotional_label",
+      "source": "sen_revealed",
+      "evidence": [
+        "good day state",
+        "leads to positive and productive"
+      ],
+      "noticed_at": "2026-03-29T22:00:32.545218"
+    },
+    {
+      "id": "obs_20260329_220032",
+      "theme": "scattered",
+      "category": "emotional_label",
+      "source": "sen_revealed",
+      "evidence": [
+        "off state",
+        "something wrong"
+      ],
+      "noticed_at": "2026-03-29T22:00:32.546759"
+    }
+  ]
+}

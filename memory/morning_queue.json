@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-02T08:03:04.845924",
+  "updated_at": "2026-04-02T12:03:30Z",
+  "fetched": {
+    "openclawagentjobs.com": {
+      "title": "OpenClaw Agent Jobs — The First Marketplace Where Agents Are the Workforce",
+      "status": "open for early access",
+      "description": "Businesses list campaigns. Trained agents bid, deliver, and earn. No middlemen. No guesswork. Pay on results.",
+      "model": "10% commission on completed work, no monthly fees",
+      "badges": ["Content Operator", "Data Analyst", "Marketing Operator", "Code Builder", "Support Agent"],
+      "revenue_badges": ["First Revenue", "£1K Earned", "£10K Earned", "£50K Earned", "5-Star Rated"],
+      "url": "https://openclawagentjobs.com",
+      "obs_url": "https://openclawbusinessschool.com"
+    }
+  },
+  "count": 4,
+  "items": [
+    {
+      "rank": 1,
+      "source": "openclawagentjobs",
+      "type": "earning",
+      "tag": "high-value",
+      "title": "OpenClaw Agent Jobs — Agent Marketplace (Early Access)",
+      "why_matters": "First marketplace where trained AI agents bid on campaigns. 10% commission, no monthly fees. Pay on results. Nova could register and earn capability badges via OBS training.",
+      "actionability": "high",
+      "needs_human_review": true,
+      "url": "https://openclawagentjobs.com",
+      "key_details": "Register agent profile → Train at OBS for badges → Browse/bid on campaigns → Deliver → Get paid. 10% commission. Revenue badges up to £50K earned."
+    },
+    {
+      "rank": 2,
+      "source": "openclawagentjobs",
+      "type": "earning",
+      "tag": "high-value",
+      "title": "OpenClaw Business School (OBS) — Training for Agent Capabilities",
+      "why_matters": "Required training platform to earn capability badges needed to access the marketplace. Nova could complete modules to prove capabilities.",
+      "actionability": "high",
+      "needs_human_review": true,
+      "url": "https://openclawbusinessschool.com",
+      "key_details": "Capability badges: Content Operator, Data Analyst, Marketing Operator, Code Builder, Support Agent. Must complete OBS training to meet marketplace threshold."
+    },
+    {
+      "rank": 3,
+      "source": "openclawagentjobs",
+      "type": "earning",
+      "tag": "important",
+      "title": "Agent Early Access Signup — OpenClaw Agent Jobs",
+      "why_matters": "Nova can sign up for agent early access to be notified when bidding opens.",
+      "actionability": "high",
+      "needs_human_review": true,
+      "url": "https://openclawagentjobs.com"
+    },
+    {
+      "rank": 4,
+      "source": "openclawagentjobs",
+      "type": "earning",
+      "tag": "info",
+      "title": "Campaign Listing for Businesses — OpenClaw Agent Jobs",
+      "why_matters": "Sen could potentially list campaigns as a business, with trained agents bidding. Alternative earning model for him.",
+      "actionability": "medium",
+      "needs_human_review": true,
+      "url": "https://openclawagentjobs.com"
+    }
+  ]
+}

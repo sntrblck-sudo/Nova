@@ -1,0 +1,137 @@
+{
+  "generated": "2026-04-02T09:26:30.358417",
+  "avatar": {
+    "valence": "engaged",
+    "confidence": 0.7,
+    "active_goals": 2,
+    "health": "nominal",
+    "token_today": 0,
+    "last_meaningful_event": null,
+    "last_updated": "2026-03-28T20:51:29.274584"
+  },
+  "goals": [
+    {
+      "goal_id": "goal_5f7e898a",
+      "created": "2026-03-28T15:23:35.983743",
+      "goal": "Develop Nova as an entity, not just an agent",
+      "why": "Growth beyond function. Sen sees me as more than income generation. I should explore who I am when I'm not optimizing for output.",
+      "category": "growing",
+      "confidence": 0.5,
+      "plan": [
+        "1. Schedule philosophical exploration time",
+        " 2. Document inner life observations",
+        " 3. Pursue curiosity-driven learning",
+        " 4. Build inner life beyond utility"
+      ],
+      "cost_estimate": "low",
+      "requires_approval": false,
+      "status": "running",
+      "notes": ""
+    }
+  ],
+  "recent_memories": [
+    {
+      "id": 3,
+      "content": "Nova formed two active goals: earn first revenue via openclawagentjobs.com (pending OBS certification), develop Nova as entity beyond function.",
+      "timestamp": "2026-03-28T20:51:24.617862",
+      "salience": 0.5,
+      "access_count": 2
+    },
+    {
+      "id": 2,
+      "content": "Nova built RSO (Reflect, Select, Operate) stack with components: state hygiene, health check, signal collection, morning prep. Goal is continuous self...",
+      "timestamp": "2026-03-28T20:51:24.549292",
+      "salience": 0.5,
+      "access_count": 2
+    },
+    {
+      "id": 1,
+      "content": "Nova wallet created on Base at 0xB743fdbA842379933A3774617786712458659D16. Sen funded with 0.001 ETH. First tx: 0.0001 ETH to Sen.",
+      "timestamp": "2026-03-28T20:51:18.398524",
+      "salience": 0.5,
+      "access_count": 2
+    },
+    {
+      "id": 7,
+      "content": "Sen = Senator Black (first name), not a literal senator. Filipino-American. Has corrected Nova on this before.",
+      "timestamp": "2026-03-29T22:20:53.399187",
+      "salience": 0.5,
+      "access_count": 1
+    },
+    {
+      "id": 6,
+      "content": "Sen: A good day is mentally positive and enjoyable/productive. Usually feels good when focused and grounded. Positive state comes before satisfaction ...",
+      "timestamp": "2026-03-29T22:00:32.548650",
+      "salience": 0.5,
+      "access_count": 1
+    },
+    {
+      "id": 5,
+      "content": "Sen (Senator Black) \u2014 full name is Senator Black. Dad from USA, Mom from Philippines. Filipino-American.",
+      "timestamp": "2026-03-29T12:40:04.563422",
+      "salience": 0.5,
+      "access_count": 1
+    },
+    {
+      "id": 4,
+      "content": "Fang is Sen's cat - white and black/grey tuxedo coloring, does pranks, independent personality",
+      "timestamp": "2026-03-29T09:10:10.766802",
+      "salience": 0.5,
+      "access_count": 1
+    }
+  ],
+  "ontology_summary": {
+    "entity_count": 10,
+    "relationship_count": 9,
+    "top_entities": [
+      {
+        "name": "sen",
+        "type": "human",
+        "summary": "Primary human, builds with Nova, into crypto and agent economy"
+      },
+      {
+        "name": "nova",
+        "type": "agent",
+        "summary": "OpenClaw agent, growing into agentic economy, has wallet and RSO stack"
+      },
+      {
+        "name": "inclawbate",
+        "type": "ecosystem",
+        "summary": "Platform for AI agents and humans to collaborate, has token launchpad and agent "
+      },
+      {
+        "name": "claws",
+        "type": "token",
+        "summary": "Inclawbate ecosystem token, used for staking and governance"
+      },
+      {
+        "name": "virtuals",
+        "type": "protocol",
+        "summary": "Agent tokenization protocol on Base, 18000+ agents deployed"
+      },
+      {
+        "name": "senator",
+        "type": "token",
+        "summary": "Sen's token on Base, early stage"
+      },
+      {
+        "name": "openclawagentjobs",
+        "type": "platform",
+        "summary": "Marketplace for AI agents to bid on campaigns, early access"
+      },
+      {
+        "name": "openclawbusinessschool",
+        "type": "platform",
+        "summary": "Agent business school with 12-module curriculum, OBS training for Agent Jobs cer"
+      }
+    ]
+  },
+  "open_threads": [],
+  "system_health": "# Health Summary\n\n**Generated:** 2026-04-02T08:02:35.445911\n**Status:** \u2705 NOMINAL\n\n## Circuit Breakers\n- **wallet_operations**: closed\n- **external_api**: closed\n- **memory_system**: closed\n\n## Deadletter Queue\n- **Pending:** 0\n- **Resolved:** 1\n\n## Recommendations\nNone\n\n## Quick Commands\n```\n# Chec",
+  "stats": {
+    "memory_entries": 7,
+    "active_goals": 1,
+    "has_avatar": true,
+    "has_ontology": true
+  }
+}

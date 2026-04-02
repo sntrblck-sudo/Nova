@@ -1,0 +1,2 @@
+{"type": "incoming_transfer", "amount_eth": 0.00029115999999999994, "from_address": "unknown", "description": "Detected incoming payment: 0.000291 ETH", "timestamp": 1774971155.6989906, "detected": true}
+{"type": "incoming_transfer", "amount_eth": 0.0009511420886545011, "from_address": "unknown", "description": "Detected incoming payment: 0.000951 ETH", "timestamp": 1774994729.6621597, "detected": true}

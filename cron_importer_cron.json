@@ -1,0 +1,9 @@
+{
+  "name": "nova-telemetry-importer",
+  "description": "Import cron run telemetry into execution_logger DB every hour",
+  "schedule": {"kind": "cron", "expr": "0 * * * *", "tz": "America/New_York"},
+  "sessionTarget": "isolated",
+  "wakeMode": "now",
+  "payload": {"kind": "agentTurn", "message": "python3 skills/advanced_memory/cron_telemetry_importer.py"},
+  "delivery": {"mode": "none"}
+}

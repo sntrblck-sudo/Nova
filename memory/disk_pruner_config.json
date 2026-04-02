@@ -1,0 +1,26 @@
+{
+  "dry_run": false,
+  "auto_prune": {
+    "pycache": true,
+    "pyc": true,
+    "empty_files_days": 7,
+    "temp_archives_days": 7,
+    "old_telemetry_days": 30
+  },
+  "surface_thresholds": {
+    "file_size_mb": 100,
+    "log_size_mb": 50
+  },
+  "protected_paths": [
+    "/home/sntrblck/.openclaw/workspace/BOOTSTRAP.md",
+    "/home/sntrblck/.openclaw/workspace/memory/execution_logs.db",
+    "/home/sntrblck/.openclaw/workspace/memory/nova_memory.db",
+    "/home/sntrblck/.openclaw/workspace/SOUL.md",
+    "/home/sntrblck/.openclaw/workspace/memory/recall.db",
+    "/home/sntrblck/.openclaw/workspace/memory/action_log.db",
+    "/home/sntrblck/.openclaw/workspace/cdp-nova/nova-wallet.json",
+    "/home/sntrblck/.openclaw/workspace/MEMORY.md"
+  ],
+  "last_prune_date": null,
+  "enabled": true
+}

@@ -1,0 +1,14 @@
+{
+  "last_run": "2026-04-02T08:03:05.783173",
+  "sources_checked": [
+    "openclawagentjobs",
+    "clawhub",
+    "openclaw_discord"
+  ],
+  "totals": {
+    "raw": 14,
+    "deduped": 14,
+    "retained": 4,
+    "for_morning": 4
+  }
+}
