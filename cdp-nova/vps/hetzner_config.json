@@ -1,0 +1,7 @@
+{
+  "api_token": "EicWTX8b8fuZTgJaylV7kSvuRktHah2ztRWJBLbAkA44ls2CuBTZB5N43z91NyuS",
+  "ssh_key_path": "/home/sntrblck/.openclaw/workspace/cdp-nova/vps/nova_private_key",
+  "server_name": "nova-vps",
+  "location": "nbg1",
+  "server_type": "cax11"
+}
