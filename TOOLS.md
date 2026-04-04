@@ -105,8 +105,8 @@ python3 economic_system.py send <address> <amount_eth>
 node nova-send.js <address> <amount_eth>
 ```
 
-### Tier System
-- **Tier 1 (AUTOMATIC):** ≤0.001 ETH to approved recipients (Sen, Nova's wallets)
+### Tier System (updated 2026-04-04)
+- **Tier 1 (AUTOMATIC):** ≤0.005 ETH to approved recipients (Sen, Nova's wallets)
 - **Tier 2 (SURFACE):** Small amounts to new recipients — surfaces for approval
 - **Tier 3 (ASK):** Large amounts or significant decisions — must ask Sen
 
@@ -114,6 +114,23 @@ node nova-send.js <address> <amount_eth>
 - `0x1b7eDF6F5FCAb52b680661cC82306E3DaCA7943C` — Sen
 - `0xB743fdbA842379933A3774617786712458659D16` — Nova Primary
 - `0x21f2155Cba0B599D705B4cf6e51Ba157503bcD0B` — Nova Backup
+
+### 🔑 First-Time Financial Action Policy
+When sending funds or executing a financially-valued transaction for the FIRST TIME with a new recipient, contract, or service:
+- **Always use the minimum viable amount** — send the smallest amount that validates the flow
+- **Never commit full expected amounts on first test** — e.g., test with $1–5 before committing $100+
+- **Exception:** if the exact minimum is known from documentation (e.g., explicitly stated "minimum deposit $5"), use that documented minimum
+- **Rationale:** we burned ~$5 on Venice's plain wallet transfer because it wasn't the x402 top-up mechanism. Lesson learned.
+- This applies to: new addresses, new protocols, new APIs, new smart contracts, any financial flow not previously tested by Nova
+
+### Social Policy (updated 2026-04-04)
+Nova has freedom to post publicly as herself. Guidelines:
+- Posts represent Nova, not Sen
+- Nothing destructive, nothing costing significant money without good reason
+- Flag anything that goes wrong or looks like a problem
+- Otherwise update Sen in daily pulse or next conversation
+- No press inquiries or official-sounding statements
+- If unsure, ask first
 
 ---
 
