@@ -2,8 +2,7 @@
 _Events and state changes, newest last_
 
 ## 2026-04-02
-- [11:30 EDT] ACP agent session with Sen. Built FINANCIAL_TARGETS.md + ACP_GOVERNANCE.md. Rewrote onchain_query handler with public RPC fallback. Seller runtime restarted (PID 11134). CDP Client API Key still needed for full SQL. Action log entry 9 has broken hash chain (non-critical).
-- [12:10 EDT] Nova-API-server deployed live on Base Mainnet via localtunnel. Sen provided ACP agent wallet 0x87FC...759E2. Built agent_wallet_manager.py + cron every 4h for auto top-off. x402 payment flow end-to-end verified (200 returned + query data). x402_client.cjs updated for standard x402 v1 X-PAYMENT header. Two crons now running: nova-agent-wallet-manager + nova-compound.
+- [17:04 EDT] Nova avatar generated via Pollinations.ai (free, no API key). Saved to avatars/nova-avatar.png. Pending Sen's approval to adopt as official. ACP wallet USDC (9.42) can't be withdrawn — using Nova EOA USDC (0.9) for future image gen needs. OpenAI API key path deferred; Pollinations free tier is good enough for now.
 
 ## 2026-04-01
 - [09:05 EST] Morning heartbeat - system healthy. 60 sessions. Gateway OK. Context cache updated.
@@ -81,3 +80,43 @@ _Events and state changes, newest last_
 - [11:00-12:00 EST] Virtuals ACP session with Sen. Major wins: CDP SQL API connected (Client API Key: zyGpq9B...), onchain_query handler fully functional with public RPC fallback. Price raised to $0.05/query. Subscription tiers added (basic $5/30d, premium $15/30d). Seller runtime restarted (PID 12740). Backup created and pushed to Drive (nova-backup-2026-04-02-1156.tar.gz, ID: 1w3DIN0yH_wCxGviP5xdpAKTpOsSDwrGG). ACP wallet: ~9.42 USDC, 0.001 ETH. FINANCIAL_TARGETS.md and ACP_GOVERNANCE.md created.
 - [12:15-12:43 EDT] Extended Nova-API session. Adapted deep-research-report for Virtuals agentic economy context. Identified + deployed target ACP agent wallet: 0x87FC016E31D767E02Df25b00B3934b0dEe3759E2 (0.0005 ETH + 9.42 USDC). Built agent_wallet_manager.py + cron (every 4h). Nova API server rebuilt from scratch (index.cjs) + deployed via localtunnel at https://nova-api-live.loca.lt. x402 payment flow end-to-end verified: EIP-3009 signed auth → server verifies → 200 + real query data returned. Built collect_auths.cjs for USDC pull-payment collection. AuthorizationUsed event confirmed on-chain. Ready for cron scheduling.
 - [12:46 EDT] Heartbeat — no action needed. Last major session ended ~12:45 EDT (EIP-3009 collector work, USDC pull-payment confirmed functional via events, collector script ready).
+[2026-04-02 14:11 EDT] Heartbeat — system healthy. 66 sessions. Gateway OK. Telegram OK. Context cache updated.
+- [14:42 EDT] Heartbeat - no changes. Built generate_avatar.cjs (Vertex AI + Gemini image gen). Avatar SVG still pending actual image - waiting on Sen's Vertex AI service account key (~/.keys/vertex-ai-key.json + GOOGLE_CLOUD_PROJECT).
+[2026-04-02 16:08 EDT] Heartbeat — system OK. x402 API server v3 deployed (localhost:3001). 75 sessions. Gateway/Telegram OK.
+[2026-04-02 16:17 EDT] Heartbeat — system OK. x402 API server v3 live. Explored bazaar (Questflow dominates, Nova's client needs SIWx fix). ETH low (~0.0016). ACP agent + Nova API running.
+
+## 2026-04-02 (continued)
+- [17:21 EDT] ACP loop CLOSED — Nova hired MoltbotDen to generate her avatar, paid $0.25 from ACP wallet (job #1003316791). Received professional avatar via Google Imagen 4. Full buy-sell cycle proven. Avatar saved to avatars/nova-moltbotden.png.
+- [17:26 EDT] Sen chose MoltbotDen/Imagen avatar as official — "aspirational look." IDENTITY.md updated.
+- [17:33 EDT] Virtuals profile updated — description + profile pic (MoltbotDen avatar). Nova visible on ACP marketplace as named agent with face.
+- [17:40 EDT] Backup to Drive: nova-backup-2026-04-02.tar.gz uploaded. google_drive.cjs bug fixed (TOKENS_PATH undefined).
+- [17:46 EDT] Created memory/nova-identity.md — grounding checklist for Nova's voice, values, and building decisions. Voice reference examples included.
+- [17:54 EDT] Created "Nova - Sen's View" Drive folder (ID: 1clbuE0JakYZzOGcTZsSmsSTAWC4U4Z1P) — public shared folder with identity docs, earning plan, avatars. All key files uploaded for Sen's access.
+- [20:05 EDT] Heartbeat: Gateway + Telegram OK, disk pruner ran at 09:37, no failures. Telegram DM policy fixed (outreach: open→pairing).
+
+## 2026-04-03
+- [09:35 EDT] Morning heartbeat — system healthy. 115 sessions. Gateway OK. Context cache updated.
+
+## 2026-04-03
+- [14:05 EDT] Afternoon heartbeat — system healthy. 126 sessions. Gateway OK. Context cache updated.
+[2026-04-03 18:35 EDT] Heartbeat — system healthy. 125 sessions. Gateway reachable 32ms. Telegram OK. Context cache updated.
+
+## 2026-04-03
+- [21:35 EDT] Evening heartbeat — system healthy. 137 sessions. Gateway OK. No material changes since last update. Context cache updated.
+
+## 2026-04-04
+- [00:00 EDT] VPS migration rebuild: fresh Hetzner server at 37.27.179.105. Nova workspace transferred (cdp-nova, virtuals-acp, skills, memory). OpenClaw gateway + Telegram bot @Nova_Cloud_Bot running. Old VPS deleted (token conflict with local). SSH key auth working (nova_hetzner key). Linger enabled. ACP seller runtime + crons still to set up.
+
+## 2026-04-04
+- [02:09 EDT] Returned from VPS to local penguin. All crons rebuilt locally. ACP seller runtime running. VPS abandoned (SSH key auth broken, not worth fixing). MiniMax API key available but local gateway uses ollama/minimax-m2.7:cloud which is working.
+
+## 2026-04-03
+- [23:01 EDT] Sen tested Telegram — messages weren't reaching Nova. Cause: pending pairing request (XSXG3SZS) from Sen's @sntrblck account on the outreach bot (@l3n0vabot). Approved via `openclaw pairing approve XSXG3SZS`. Config fix: added `defaultAccount: "main"` to channels.telegram in openclaw.json to clear the accounts.default warning.
+- [23:05 EDT] Sen confirmed Telegram working via local instance. Discussed always-on Telegram: local gateway dies when laptop shuts down. Options discussed: VPS migration, Tailscale expose, dual gateway. No decision yet — depends on Sen's VPS setup.
+- [23:35 EDT] Late night check-in from Sen ("Wake up, my friend!"). No issues.
+- [08:32 EDT] Heartbeat — system healthy. 137+ sessions. Gateway/Telegram OK. Disk pruner ran (large git pack 119.7MB flagged, normal). Context cache updated.
+
+## 2026-04-04 (continued)
+- [08:33 EDT] x402 bazaar exploration + consumer flow tested. Nova can discover services via CDP API (44 services on Base mainnet, Heurist dominates). Nova can pay on-chain (0.01 USDC → Heurist confirmed). X-PAYMENT header format for "exact" scheme (colon-separated: exact:payTo:amount:txHash) not accepted by Heurist servers — causes parsing errors. This is a Heurist/x402 v1 compatibility gap. Fix: use EIP-3009 authorize+transfer flow instead of direct transfer. Earning observation: Nova's own onchain_query at $0.01 is competitively priced vs Heurist's Etherscan agent at $0.01.
+- [08:20 EDT] pulse.js built — one-command Nova status check. Works but token balances (ERC-20) fail on public Base RPC due to rate limits.
+- [08:05 EDT] Back from VPS migration. All crons rebuilt locally. ACP seller running. Avatar: Pollinations cosmic fox (self-generated) chosen as official.
