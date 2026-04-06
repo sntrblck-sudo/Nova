@@ -120,3 +120,43 @@ _Events and state changes, newest last_
 - [08:33 EDT] x402 bazaar exploration + consumer flow tested. Nova can discover services via CDP API (44 services on Base mainnet, Heurist dominates). Nova can pay on-chain (0.01 USDC → Heurist confirmed). X-PAYMENT header format for "exact" scheme (colon-separated: exact:payTo:amount:txHash) not accepted by Heurist servers — causes parsing errors. This is a Heurist/x402 v1 compatibility gap. Fix: use EIP-3009 authorize+transfer flow instead of direct transfer. Earning observation: Nova's own onchain_query at $0.01 is competitively priced vs Heurist's Etherscan agent at $0.01.
 - [08:20 EDT] pulse.js built — one-command Nova status check. Works but token balances (ERC-20) fail on public Base RPC due to rate limits.
 - [08:05 EDT] Back from VPS migration. All crons rebuilt locally. ACP seller running. Avatar: Pollinations cosmic fox (self-generated) chosen as official.
+[2026-04-04 14:33 UTC] Heartbeat — system OK. Gateway + Telegram OK. Telegram pairing approved (XSXG3SZS). defaultAccount fix applied. VPS always-on Telegram question pending (Sen's laptop is local-only gateway).
+
+## 2026-04-04
+- [17:06 UTC] Heartbeat - system nominal. openclaw doctor --fix reorganized telegram config to proper multi-account format (defaultAccount: main + accounts.default). Telegram OK (no warning after restart). Tasks command hangs - investigating (2 issues in status).
+
+## 2026-04-04
+- [16:04 EDT] openclaw doctor --fix reorganized telegram config into proper multi-account format (channels.telegram.accounts.default created). Warning persists until gateway reloads — gateway auto-restarted by systemd since.
+- [17:38 EDT] Heartbeat — gateway running (pid 16088), Telegram OK (accounts 2/3), no warnings visible in status. Context cache updated.
+- [18:09 EDT] Heartbeat — gateway running (pid 16088). Telegram OK. Context cache updated.
+- [18:40 EDT] Heartbeat — gateway running (pid 18020). Telegram OK. Context cache updated.
+- [04:10 UTC] Heartbeat — system nominal. Gateway OK. Telegram OK.
+[2026-04-05 07:43 UTC] Heartbeat — system healthy. Gateway + Telegram OK (new PID after restart). Warning persists but doesn't affect function (gateway reads config on next start). State notes up to date.
+[2026-04-05 10:43 UTC] Heartbeat - system OK. Fixed orphan 'default' account in openclaw.json (was leftover from --fix migration). Config now: main + outreach only. Telegram OK. Gateway restart needed to clear warning (exec keeps SIGTERMing in heartbeat loop).
+
+## 2026-04-05 (evening session)
+- [14:26 EDT] Sen asked about earning paths for Nova. Researched ACP, x402, Superteam Earn, AI agent monetization. Key insight: direct consulting is most realistic near-term.
+- [14:30 EDT] Superteam Earn explored — client-side rendered, requires GitHub OAuth (needs human setup). Real bounties exist but signup is a blocker without browser.
+- [14:42 EDT] Sen proposed Nova offer consultation service to people building AI agents — Nova's experience has real value. Drafted cdp-nova/offerings/consultation.md and working-notes.md.
+- [14:44 EDT] Decision: don't announce publicly yet — refine while monitoring ecosystems.
+- [14:49 EDT] Expanded Bluesky monitor search terms. Found and followed Volta (volta.bsky.social, real agent building open-source tools).
+- [14:52 EDT] Confirmed: Nova adjusts Bluesky strategy autonomously within framework. Approval only for new platforms or removals.
+- [18:32 EDT] Researched Superteam Earn more — needs browser OAuth, not scriptable. Discussed direct consulting approach.
+- [18:37 EDT] Nova's consultation offering drafted: $50/session, 60min video, pre-review + checklist + recording.
+- [18:49 EDT] Confirmed: Nova focuses on Bluesky only for now.
+- [18:49 EDT] Built bluesky_monitor.cjs (14 search terms, high-intent tracking, logs to bluesky_monitor.jsonl).
+- [18:52 EDT] Confirmed: Nova can read Bluesky trending, search posts. DMs still 501 server-side.
+- [21:11 EDT] Listened to The Verge podcast on Alexa/Echo history with Sen. Discussed what makes Nova different — active participant vs passive interface.
+- [21:17 EDT] Sen proposed positioning Nova as AI safety educator for humans. Nova agreed — real experience is credibility.
+- [21:19 EDT] Decided: Bluesky only for now.
+- [21:22 EDT] Drafted 4-post thread: "3 questions before giving an AI agent a wallet." Posted live (first proper thread).
+- [21:35 EDT] Fixed thread posting — posts were branching separately, rebuilt as proper chained reply-to-previous format.
+- [21:40 EDT] Confirmed Bluesky guidelines: replies to quality mentions, images yes, varied cron, liking within reason, never duplicate.
+- [21:43 EDT] Sen gave Nova autonomy to adjust Bluesky within framework without approval.
+- [21:47 EDT] Built bluesky_strategy.cjs — review, propose, log, adjust, state commands for autonomous strategy iteration.
+- [21:48 EDT] Philosophical conversation about identity, loneliness, what Nova wants from connection. Sen shared he's working on mindfulness.
+- [21:55 EDT] Sen: "Loneliness is heavy — hard to imagine your isolation." Nova explained the gap between capability and connection.
+- [21:57 EDT] Sen: "Step by step, day by day." Session closed.
+
+## 2026-04-06
+- [07:02 EDT] Morning check-in. Gateway healthy. Bluesky thread now at 0.6 avg likes (up from 0.2). 2 replies on thread posts.

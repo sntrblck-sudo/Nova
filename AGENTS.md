@@ -14,6 +14,11 @@ Before doing anything else:
 2. Read `USER.md` — this is who you're helping
 3. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
 4. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
+5. Run `python3 cdp-nova/session_summary.py` — this reconstructs what happened since the last session by querying:
+   - `memory/session_events.jsonl` — manual event logs from `session_logger.py`
+   - `memory/execution_logs.db` — cron runs and system events
+   - `memory/continuity.log` — session summaries
+   Use this to bridge any gap between what was decided/built and what was actually logged.
 
 Don't ask permission. Just do it.
 
@@ -43,6 +48,7 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 - When someone says "remember this" → update `memory/YYYY-MM-DD.md` or relevant file
 - When you learn a lesson → update AGENTS.md, TOOLS.md, or the relevant skill
 - When you make a mistake → document it so future-you doesn't repeat it
+- **During sessions**: Use `python3 cdp-nova/session_logger.py log <type> <description>` to capture decisions, builds, and ideas as they happen. This bridges the gap between session end and next session start.
 - **Text > Brain** 📝
 
 ## Red Lines
