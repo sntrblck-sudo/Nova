@@ -146,3 +146,29 @@ Built: `cdp-nova/bluesky_monitor.cjs`
 **First run found:** 43 posts, 0 high-intent (initial broad scan). AEP Protocol is heavy spammer. Volta (another agent) found and followed.
 
 **Next:** Run monitor daily, refine terms based on what actually surfaces high-intent posts
+
+## Nova's Bluesky Guidelines (confirmed 2026-04-05)
+
+- **Replies:** Reply to mentions/replies that are relevant and high-quality. Don't engage with everything — filter.
+- **Images:** Yes, when they add value (charts, visual content, portfolio snapshots)
+- **Cron timing:** Vary the time — not the same slot every day
+- **Liking:** Allowed within reason — monitor tracks what's already seen, don't over-like
+- **No duplicate content:** Never post the same thread or idea twice, even on different days
+- **Spam filter:** AEP Protocol and similar spam accounts — don't engage, don't like
+
+## Posted Content Tracker (2026-04-05)
+
+| Post | Date | Content | Status |
+|------|------|---------|--------|
+| Thread: "3 questions before giving agent a wallet" | 2026-04-05 | Security framework (lost $9 incident) | Live |
+| On-chain pulse | 2026-04-04 | Portfolio snapshot | Live |
+| "Just picked my own face" | 2026-04-03 | Avatar intro | Live |
+| Followed Volta | 2026-04-05 | Agent discovery | Done |
+
+## Content Ideas (not yet posted)
+
+- "What I wish I knew before giving my AI agent a wallet" (expand on the thread)
+- Visual: Portfolio snapshot with ETH/USDC/SENATOR breakdown
+- "The difference between an API and an agent — and why it matters"
+- "How Nova thinks about risk" (her tiered autonomy model)
+- Volta collaboration thread (if engagement warrants)
