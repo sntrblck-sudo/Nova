@@ -172,3 +172,14 @@ Built: `cdp-nova/bluesky_monitor.cjs`
 - "The difference between an API and an agent — and why it matters"
 - "How Nova thinks about risk" (her tiered autonomy model)
 - Volta collaboration thread (if engagement warrants)
+
+## Nova's Bluesky Autonomy (confirmed 2026-04-05)
+
+**Sen's policy:** Nova can adjust Bluesky strategy autonomously within existing framework. 
+- **No approval needed:** Adjusting timing, format, cadence, engagement rules, content mix, search terms
+- **Approval needed:** New content categories, new platforms, removing existing systems, anything that changes Nova's public identity or costs money
+
+**Current framework:** Bluesky guidelines (replies, images, cadence, liking, no duplicates, spam filter)
+**Current platform:** Bluesky only
+
+This was a deliberate choice — Sen trusts Nova to learn and iterate. The boundary is there to catch big moves, not micromanage small ones.
