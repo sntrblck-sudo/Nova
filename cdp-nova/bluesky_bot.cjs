@@ -91,13 +91,47 @@ if (require.main === module) {
     const imgPath = cleanArgs[cleanArgs.length - 1];
     if (!text || !imgPath) { console.log('Usage: node bluesky_bot.cjs image <text> <image_path>'); process.exit(1); }
     postWithImage(text, imgPath, dryRun).then(() => process.exit(0));
+  } else if (args[0] === 'video') {
+    const cleanArgs = args.filter(a => !a.startsWith('--') && !a.startsWith('-'));
+    const text = cleanArgs.slice(1, -1).join(' ');
+    const videoPath = cleanArgs[cleanArgs.length - 1];
+    if (!text || !videoPath) { console.log('Usage: node bluesky_bot.cjs video <text> <video_path>'); process.exit(1); }
+    postWithVideo(text, videoPath, dryRun).then(() => process.exit(0));
   } else {
     console.log('Nova Bluesky Bot');
     console.log('Usage:');
     console.log('  node bluesky_bot.cjs verify');
     console.log('  node bluesky_bot.cjs post [--dry-run|-n] <text>');
     console.log('  node bluesky_bot.cjs image [--dry-run|-n] <text> <image_path>');
+    console.log('  node bluesky_bot.cjs video [--dry-run|-n] <text> <video_path>');
   }
 }
 
-module.exports = { post, postWithImage, verify, getAgent };
+module.exports = { post, postWithImage, postWithVideo, verify, getAgent };
+
+async function uploadVideoBlob(videoPath) {
+  const a = await getAgent();
+  const data = readFileSync(videoPath);
+  const mimeType = 'video/mp4';
+  const blob = await a.uploadBlob(data, { encoding: mimeType });
+  return blob.blob;
+}
+
+async function postWithVideo(text, videoPath, dryRun = false) {
+  if (dryRun) {
+    console.log('[DRY RUN] Would post with video:', videoPath);
+    console.log('[DRY RUN] Text:', text.slice(0, 80) + (text.length > 80 ? '...' : ''));
+    return null;
+  }
+  const a = await getAgent();
+  const blob = await uploadVideoBlob(videoPath);
+  const result = await a.post({
+    text,
+    embed: {
+      $type: 'app.bsky.embed.video',
+      video: blob  // blob is already blob.data.blob
+    }
+  });
+  console.log('[Posted with video]', result.uri.split('/').pop());
+  return result;
+}
