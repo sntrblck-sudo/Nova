@@ -1,0 +1,7 @@
+{
+  "description": "Nova's backup wallet 2 - PKCS#8 PEM (ECDSA secp256k1)",
+  "address": "0x569b2e61E2eD67EBB130658e6691076b9771607a",
+  "pem": "MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQg2WkUBk/FsH+QnWzCGoRPjJY63LP0qokIIn0iwKk4Ti2hRANCAAQvmLbZYn/av3lVJcjYNCJ/Rx+Y++lnE+robkn5dgQmKwqq0Si82iNuimOg+0s5dNKykCK1qPc0MPd+oQbKpjzb",
+  "source": "cdp_wallet_secret---926efe4a-0a13-4798-9849-ee8c53be5ae6.txt (inbound media)",
+  "balance": "0 ETH (unused)"
+}
