@@ -208,10 +208,46 @@ async function blueskyPost(agent, text, imagePath = null) {
       const blob = await agent.uploadBlob(imgData, { encoding: 'image/jpeg' });
       embed = { $type: 'app.bsky.embed.images', images: [{ blob: blob.data.blob, alt: text.slice(0, 80) }] };
     }
-    const result = await agent.post({ text, embed });
-    log('POST', `Bluesky: ${result.uri}`);
+
+    // Build facets for URLs and mentions in the text
+    const facets = buildFacets(text);
+
+    const record = { text, createdAt: new Date().toISOString(), facets };
+    if (embed) record.embed = embed;
+
+    const result = await agent.post(record);
+    log('POST', `Bluesky: ${result.uri}${imagePath ? ' [img]' : ''}`);
     return result.uri;
   } catch(e) { log('ERROR', 'Bluesky post failed: ' + e.message); return null; }
+}
+
+/**
+ * Build AT Protocol facets for URLs and @mentions in text.
+ * Returns array of facet objects.
+ */
+function buildFacets(text) {
+  const facets = [];
+
+  // URL detection
+  const urlRegex = /https?:\/\/[^\s]+/g;
+  let match;
+  while ((match = urlRegex.exec(text)) !== null) {
+    const start = match.index;
+    const end = start + match[0].length;
+    facets.push({
+      index: { byteStart: getByteOffset(text, start), byteEnd: getByteOffset(text, end) },
+      features: [{ $type: 'app.bsky.richtext.facet#link', uri: match[0] }],
+    });
+  }
+
+  return facets.length > 0 ? facets : undefined;
+}
+
+/**
+ * Get byte offset for a character position in a UTF-8 string.
+ */
+function getByteOffset(str, charIndex) {
+  return Buffer.byteLength(str.slice(0, charIndex), 'utf8');
 }
 
 async function blueskyGetRecentPosts(limit = 10) {
