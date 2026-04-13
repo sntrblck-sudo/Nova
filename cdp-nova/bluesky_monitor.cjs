@@ -20,14 +20,23 @@ const STATE_FILE = '/home/sntrblck/.openclaw/workspace/cdp-nova/logs/bluesky_mon
 
 // Search terms to track
 const TRACK_TERMS = [
+  // Niche high-signal queries (from Kimi research Apr 2026)
+  'agent wallet on-chain',
+  'x402 Base',
+  'Virtuals Protocol agent',
+  'agent governance',
+  'DeFAI agent',
+  'agent-to-agent payments',
+  'ElizaOS plugin crypto',
+  'TEE agent wallet',
+  'MCP agent crypto',
+  'ERC-8004 agent',
+  // Broader terms kept for coverage
   'AI agent',
-  'autonomous agent', 
+  'autonomous agent',
   'Base chain AI',
-  'Claude AI',
-  'OpenAI agent',
   'agentic AI',
-  'AI crypto agent',
-  'Base DeFi agent',
+  'OpenClaw',
   'Bluesky AI bot',
   'Base agent',
   'x402',

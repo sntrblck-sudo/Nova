@@ -41,30 +41,42 @@ const authorizationTypes = {
 /**
  * Get payment requirements from an x402 endpoint
  */
-async function getPaymentRequirements(url) {
-  const r = await fetch(url, {
-    method: 'GET',
-    headers: { 'Accept': 'application/json' }
-  });
-  const body = await r.json();
+async function getPaymentRequirements(url, method = 'GET') {
+  // Try all methods to find one that returns 402
+  const methods = method === 'POST' ? ['POST', 'GET'] : ['GET', 'POST'];
+  let body;
+  for (const m of methods) {
+    try {
+      const r = await fetch(url, {
+        method: m,
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
+      });
+      body = await r.json();
+      if (r.status === 402 || (body && (body.accepts || body.error === 'X-PAYMENT header is required'))) {
+        break;
+      }
+    } catch { /* try next */ }
+  }
+  
+  if (!body) throw new Error('Could not reach endpoint: ' + url);
+  
   // Support both direct accepts (x402 standard) and nested payment.accepts (my API format)
   const accepts = body.accepts || (body.payment && body.payment.accepts);
   if (!accepts || !accepts[0]) {
-    throw new Error('Not an x402 endpoint: ' + JSON.stringify(body));
+    throw new Error('Not an x402 endpoint: ' + JSON.stringify(body).slice(0, 200));
   }
   
   // Normalize to x402 client expected fields
   const a = accepts[0];
-  const payTo = body.payment?.address || NOVA_ADDRESS;
   return {
     scheme: a.scheme,
-    asset: a.address,              // USDC contract
-    decimals: a.decimals,
+    asset: a.address || a.asset,   // USDC contract (both naming conventions)
+    decimals: a.decimals || 6,
     amount: a.amount,
-    maxAmountRequired: a.amount,
-    maxTimeoutSeconds: 300,
-    network: body.payment?.network || body.network,
-    payTo,
+    maxAmountRequired: a.maxAmountRequired || a.amount,
+    maxTimeoutSeconds: a.maxTimeoutSeconds || 300,
+    network: a.network || 'base',
+    payTo: a.payTo,                // Service provider's address (from accepts[0])
     extra: {
       name: a.description,
       version: '1'
@@ -136,10 +148,11 @@ async function x402Pay(url, options = {}) {
     method: options.method || 'GET',
     headers: {
       'Accept': 'application/json',
+      'Content-Type': 'application/json',
       'X-PAYMENT': paymentHeader,
-      ...options.headers,
+      ...(options.headers || {}),
     },
-    ...options.fetchOptions,
+    body: options.body || undefined,
   });
   
   // Step 6: Parse response

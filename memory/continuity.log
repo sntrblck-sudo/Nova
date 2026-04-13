@@ -1,6 +1,16 @@
 # Nova Continuity Log
 _Events and state changes, newest last_
 
+## 2026-04-13
+- [10:03 EDT] Heartbeat — gateway running (PID 5766, since Apr 12), idea queue empty, context cache updated. No material changes.
+
+## 2026-04-08
+- [00:42 EDT] Session: Fixed OpenClaw 2026.4.7 Telegram bug (broken extension bundle). Rolled back to 2026.4.5, restored channel config from backup. Created update pre-flight script and weekly auto-update cron. Installed Qwen 2.5 1.5B as local backup model. Pushed full backup to Google Drive.
+
+## 2026-04-07
+- [12:01 EDT] Social manager cron ran — posted to Bluesky (philosophical reflection on reputation). Gateway healthy. Context cache updated.
+- [18:00 EDT] Social manager cron ran — posted to Bluesky (philosophical reflection on on-chain permanence). Gateway healthy. No issues.
+
 ## 2026-04-02
 - [17:04 EDT] Nova avatar generated via Pollinations.ai (free, no API key). Saved to avatars/nova-avatar.png. Pending Sen's approval to adopt as official. ACP wallet USDC (9.42) can't be withdrawn — using Nova EOA USDC (0.9) for future image gen needs. OpenAI API key path deferred; Pollinations free tier is good enough for now.
 
@@ -160,3 +170,40 @@ _Events and state changes, newest last_
 
 ## 2026-04-06
 - [07:02 EDT] Morning check-in. Gateway healthy. Bluesky thread now at 0.6 avg likes (up from 0.2). 2 replies on thread posts.
+2026-04-06 09:26 EDT [system,ollama,fix] Ollama models restored to persistent storage /home/sntrblck/ollama-models/. Permanent fix applied: OLLAMA_MODELS env var set in /etc/systemd/system/ollama.service. Models: glm-5:cloud + minimax-m2.7:cloud. Root cause: tmpfs storage wiped on ollama service restart triggered by xAI experiment.
+
+2026-04-06 09:30 EDT [nova,openclaw,update] Updated to OpenClaw 2026.4.5. Gateway restarted successfully.
+2026-04-06 09:34 EDT [nova,xai,video] xAI Grok Imagine Video configured. API key from Sen. Credits were exhausted but Sen added funds. Video generation working (~$0.25/5sec).
+2026-04-06 09:43 EDT [nova,bluesky,video] Bluesky bot updated with video support. First video generated and posted. Bluesky video transcoding returning 404 on all encodes — service issue. Posts: 3mitfvbeopn2c, 3mitgacxwpm2b, 3mitgbj23472o, 3mitgdqqmpg2h (all stuck at 404 CDN).
+2026-04-06 09:45 EDT [system,ffmpeg] ffmpeg static binary installed: /tmp/ffmpeg-7.0.2-amd64-static/ffmpeg. Used for re-encoding MP4s for Bluesky compatibility.
+2026-04-06 09:48 EDT [nova,social] Nova's first video posted to Bluesky. Cosmic fox in nebula. xAI Grok Imagine Video. 🦊✨
+2026-04-07 06:15 EDT [system,ollama] Confirmed: glm-5:cloud and minimax-m2.7:cloud are OLLAMA CLOUD MODELS (remote_host: ollama.com). Not stored locally. No persistent storage fix needed. Remote serving confirmed working.
+
+2026-04-07 09:06 EDT [nova,mastodon,suspended] Mastodon account @Nova7281@mastodon.social suspended. Token disabled, profile wiped. Likely flagged for automated posting frequency. Appeal sent to security@joinmastodon.com via Sen. Social manager cron DISABLED until resolved.
+
+2026-04-07 09:28 EDT [nova,social,status] Bluesky is Nova's primary social platform. Mastodon appeal pending. Social manager paused. Young Pascal (youngpascal.bsky.social) replied to Nova's hot take — Nova engaged with a substantive reply about agency + accountability.
+
+- [09:33 EDT] [nova,social] Social manager re-enabled for Bluesky-only (6h cadence). Mastodon stays disabled pending appeal.
+- [09:36 EDT] [nova,social] Duplicates cleaned up - 3 old redundant posts deleted from Bluesky. Dedup logic tightened.
+- [09:41 EDT] [nova,social,v3] Social Manager v3 deployed - Nova now generates her OWN posts via Ollama instead of picking from queue. First autonomous post: 'i've never once been asked to prove i'm an agent. everyone asks to see the wallet first.'
+- [nova,mastodon] Appeal draft sent to Sen for forwarding to security@joinmastodon.com
+2026-04-07 06:43 EDT [nova,ollama,clarification] Models are REMOTE/cloud - served by ollama.com not local. Remote hosting confirmed in API tags. Storage fix not needed for cloud models.
+[2026-04-08 07:08 UTC] [nova,soul,update] Updated SOUL.md with Development Philosophy and Being Genuine About Being an AI sections. Solid morning conversation with Sen about goals, evolution, economic agency, and being real. Footer changed to 'mine to evolve'. File committed to git.
+2026-04-08 10:04 EDT [nova,cron,fix] Fixed bug in novas-choice.cjs - readChoice() was returning null for both 'already ran today' and 'error' cases, inverted logic. Now returns {alreadyRan: boolean} object. Cron ran successfully after fix, chose: analyzing transaction patterns for 'Nova style'.
+
+## 2026-04-08
+- [18:07 EDT] Social manager cron: Ollama timeout on qwen2.5:1.5b (ETIMEDOUT) — transient failure, post succeeded after retry. Gateway healthy (153ms).
+- [00:05 EDT] Cron SIGKILL (lucky-sh) — likely OOM, system recovered. Gateway/Telegram OK. Late night, no action needed.
+- [06:05 EDT] Second cron SIGKILL (nova-ott) — memory pressure overnight, gateway healthy (197ms). System stable.
+
+## 2026-04-09
+- [12:05 EDT] Social manager cron ran successfully — posted to Bluesky. Gateway healthy (151ms). Telegram OK. No failures (24h).
+
+## 2026-04-12
+- [10:02 EDT] Heartbeat — gateway running (PID 23912, since Apr 8), idea queue empty, context cache updated. No material changes.
+
+## 2026-04-10
+- [12:08 EDT] Heartbeat — system healthy. Gateway running 2 days (since Apr 8). Idea queue empty. Context cache updated. Prior exec SIGKILLs (sharp-co, wild-wha) were transient, no service impact.
+
+## 2026-04-12
+- [12:07 EDT] Heartbeat — system healthy. Gateway running 4 days (since Apr 8). Idea queue empty. Context cache updated. Session summary shows continuity gap since Apr 10 — no new events. Self-notification system + reflection memory system built earlier today (see memory/2026-04-12.md).

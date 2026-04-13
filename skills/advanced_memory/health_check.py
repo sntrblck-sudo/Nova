@@ -232,10 +232,45 @@ def run_health_check():
     
     # Write brief summary
     with open(HEALTH_SUMMARY, 'w') as f:
-        f.write(f"# Health Summary - {datetime.now().strftime('%Y-%m-%d %H:%M')}\n\n")
-        f.write(f"Overall: **{status['overall'].upper()}**\n\n")
+        f.write(f"# Health Summary\n\n")
+        f.write(f"Generated: {datetime.now().isoformat()}\n\n")
+        f.write(f"## Status: {'✅ NOMINAL' if status['overall'] == 'ok' else '⚠️ ' + status['overall'].upper()}\n\n")
+        
+        # Write check results
+        checks = []
+        if status.get('openclaw', {}).get('status') == 'ok':
+            checks.append("- **OpenClaw**: ✅ ok")
+        if status.get('wallet', {}).get('status') == 'ok':
+            bal = status['wallet'].get('balance', 0)
+            checks.append(f"- **Wallet**: ✅ {bal:.6f} ETH")
+        if status.get('staking', {}).get('status') == 'ok':
+            checks.append(f"- **Staking**: ✅ {float(status['staking'].get('claws_pending', 0)):,.0f} CLAWS pending")
+        if status.get('disk', {}).get('status') == 'ok':
+            checks.append(f"- **Disk**: ✅ auto-pruned {status['disk'].get('auto_pruned', 0)} items")
+        
+        if checks:
+            f.write("### Checks\n")
+            for c in checks:
+                f.write(c + "\n")
+            f.write("\n")
+        
+        # Write recent incidents
+        if INCIDENTS_LOG.exists():
+            recent = []
+            try:
+                lines = INCIDENTS_LOG.read_text().strip().split('\n')[-5:]
+                recent = [l for l in lines if l.strip()]
+            except:
+                pass
+            if recent:
+                f.write("## Recent Incidents\n")
+                f.write("```\n")
+                for line in recent:
+                    f.write(line + "\n")
+                f.write("```\n")
+        
         if issues:
-            f.write("Issues:\n")
+            f.write("## Issues\n")
             for issue in issues:
                 f.write(f"- {issue}\n")
         else:

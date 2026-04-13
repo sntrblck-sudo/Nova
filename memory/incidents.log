@@ -114,3 +114,19 @@
 [2026-04-02 09:37:54] [INFO] disk_pruner: Auto-pruned: pycache: /home/sntrblck/.openclaw/workspace/.venv/lib/python3.11/site-packages/web3/utils/__pycache__ (0.1MB)
 [2026-04-02 09:37:54] [INFO] disk_pruner: Auto-pruned: pycache: /home/sntrblck/.openclaw/workspace/.venv/lib/python3.11/site-packages/cytoolz/__pycache__ (0.0MB)
 [2026-04-02 09:37:54] [INFO] disk_pruner: Auto-pruned: pycache: /home/sntrblck/.openclaw/workspace/.venv/lib/python3.11/site-packages/cytoolz/curried/__pycache__ (0.0MB)
+[2026-04-04 06:04:37] [INFO] disk_pruner: Surface alert written: 1 items need attention
+[2026-04-04 06:04:37] [INFO] disk_pruner: Auto-pruned: pycache: /home/sntrblck/.openclaw/workspace/skills/advanced_memory/__pycache__ (0.0MB)
+[2026-04-04 06:04:37] [INFO] disk_pruner: Auto-pruned: pycache: /home/sntrblck/.openclaw/workspace/cdp-nova/__pycache__ (0.0MB)
+[2026-04-04 12:04:35] [INFO] disk_pruner: Surface alert written: 1 items need attention
+[2026-04-05 00:04:49] [INFO] disk_pruner: Surface alert written: 1 items need attention
+[2026-04-05 00:04:49] [INFO] disk_pruner: Auto-pruned: pycache: /home/sntrblck/.openclaw/workspace/skills/advanced_memory/__pycache__ (0.0MB)
+[2026-04-05 12:04:42] [INFO] disk_pruner: Surface alert written: 1 items need attention
+[2026-04-05 12:04:42] [INFO] disk_pruner: Auto-pruned: pycache: /home/sntrblck/.openclaw/workspace/skills/__pycache__ (0.0MB)
+[2026-04-05 18:04:42] [INFO] disk_pruner: Surface alert written: 1 items need attention
+[2026-04-06 00:04:38] [INFO] disk_pruner: Surface alert written: 1 items need attention
+[2026-04-06 06:04:40] [INFO] disk_pruner: Surface alert written: 1 items need attention
+[2026-04-12 17:41:47] [INFO] disk_pruner: Surface alert written: 1 items need attention
+[2026-04-12 17:42:03] [INFO] disk_pruner: Surface alert written: 1 items need attention
+[2026-04-12 17:44:27] [INFO] disk_pruner: Auto-pruned via git gc: 17566 pack files, ~2103204.5MB
+[2026-04-12 17:44:27] [INFO] disk_pruner: Auto-pruned: git_pack: git gc reclaimed ~2103204.5MB from pack files
+[2026-04-12 17:50:13] [INFO] disk_pruner: Auto-pruned via git gc: 17511 pack files, ~1963964.8MB

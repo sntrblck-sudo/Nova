@@ -1,0 +1,44 @@
+apiVersion: agent-os/v1
+kind: PolicyDocument
+name: nova-default
+version: "1.0"
+defaults:
+  action: ALLOW
+
+rules:
+  # Block destructive file operations
+  - name: block-destructive-files
+    condition:
+      field: tool_name
+      operator: IN
+      value: ["delete_file", "rm", "truncate"]
+    action: DENY
+    priority: 100
+
+  # Block sending large ETH without approval
+  - name: restrict-large-eth
+    condition:
+      field: tool_name
+      operator: EQ
+      value: native_transfer
+    action: DENY
+    priority: 90
+    # Amount threshold handled in custom logic
+
+  # Block unauthorized public posts
+  - name: restrict-unauthorized-posts
+    condition:
+      field: tool_name
+      operator: IN
+      value: ["twitter_post", "email_send"]
+    action: DENY
+    priority: 80
+
+  # Allow search and read freely
+  - name: allow-read-ops
+    condition:
+      field: tool_name
+      operator: IN
+      value: ["web_search", "web_fetch", "read", "file_read"]
+    action: ALLOW
+    priority: 10

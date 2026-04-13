@@ -4,3 +4,74 @@
 [2026-04-02T16:10:58.590561+00:00] No top-up needed (agent balance 0.000500 ETH >= 0.0003)
 [2026-04-02T16:11:00.231674+00:00] Post-topup — Agent: 0.000500 ETH | Nova: 0.001656 ETH
 [2026-04-02T16:11:00.231824+00:00] === Run Complete ===
+[2026-04-02T20:04:06.251371+00:00] === Nova Agent Wallet Manager Run ===
+[2026-04-02T20:04:08.460133+00:00] Agent balance: 0.000500 ETH
+[2026-04-02T20:04:08.460292+00:00] Nova balance:  0.001654 ETH
+[2026-04-02T20:04:08.460354+00:00] No top-up needed (agent balance 0.000500 ETH >= 0.0003)
+[2026-04-02T20:04:10.567733+00:00] Post-topup — Agent: 0.000500 ETH | Nova: 0.001654 ETH
+[2026-04-02T20:04:10.567889+00:00] === Run Complete ===
+[2026-04-03T00:03:58.516674+00:00] === Nova Agent Wallet Manager Run ===
+[2026-04-03T00:04:00.314814+00:00] Agent balance: 0.000500 ETH
+[2026-04-03T00:04:00.315332+00:00] Nova balance:  0.001653 ETH
+[2026-04-03T00:04:00.315462+00:00] No top-up needed (agent balance 0.000500 ETH >= 0.0003)
+[2026-04-03T00:04:01.899529+00:00] Post-topup — Agent: 0.000500 ETH | Nova: 0.001653 ETH
+[2026-04-03T00:04:01.899681+00:00] === Run Complete ===
+[2026-04-03T04:03:52.968468+00:00] === Nova Agent Wallet Manager Run ===
+[2026-04-03T04:03:54.794540+00:00] Agent balance: 0.000500 ETH
+[2026-04-03T04:03:54.794696+00:00] Nova balance:  0.001653 ETH
+[2026-04-03T04:03:54.794759+00:00] No top-up needed (agent balance 0.000500 ETH >= 0.0003)
+[2026-04-03T04:03:56.496639+00:00] Post-topup — Agent: 0.000500 ETH | Nova: 0.001653 ETH
+[2026-04-03T04:03:56.496797+00:00] === Run Complete ===
+[2026-04-03T08:04:36.028783+00:00] === Nova Agent Wallet Manager Run ===
+[2026-04-03T08:04:38.033063+00:00] Agent balance: 0.000500 ETH
+[2026-04-03T08:04:38.033235+00:00] Nova balance:  0.001653 ETH
+[2026-04-03T08:04:38.033301+00:00] No top-up needed (agent balance 0.000500 ETH >= 0.0003)
+[2026-04-03T08:04:39.696578+00:00] Post-topup — Agent: 0.000500 ETH | Nova: 0.001653 ETH
+[2026-04-03T08:04:39.696696+00:00] === Run Complete ===
+[2026-04-03T12:03:49.315323+00:00] === Nova Agent Wallet Manager Run ===
+[2026-04-03T12:03:51.034427+00:00] Agent balance: 0.000500 ETH
+[2026-04-03T12:03:51.034579+00:00] Nova balance:  0.001653 ETH
+[2026-04-03T12:03:51.034636+00:00] No top-up needed (agent balance 0.000500 ETH >= 0.0003)
+[2026-04-03T12:03:52.700735+00:00] Post-topup — Agent: 0.000500 ETH | Nova: 0.001653 ETH
+[2026-04-03T12:03:52.700896+00:00] === Run Complete ===
+[2026-04-03T16:04:00.950296+00:00] === Nova Agent Wallet Manager Run ===
+[2026-04-03T16:04:02.726251+00:00] Agent balance: 0.000500 ETH
+[2026-04-03T16:04:02.726541+00:00] Nova balance:  0.001653 ETH
+[2026-04-03T16:04:02.726608+00:00] No top-up needed (agent balance 0.000500 ETH >= 0.0003)
+[2026-04-03T16:04:04.471292+00:00] Post-topup — Agent: 0.000500 ETH | Nova: 0.001653 ETH
+[2026-04-03T16:04:04.471510+00:00] === Run Complete ===
+[2026-04-03T20:03:46.559955+00:00] === Nova Agent Wallet Manager Run ===
+[2026-04-03T20:03:48.375328+00:00] Agent balance: 0.000500 ETH
+[2026-04-03T20:03:48.375560+00:00] Nova balance:  0.001653 ETH
+[2026-04-03T20:03:48.375626+00:00] No top-up needed (agent balance 0.000500 ETH >= 0.0003)
+[2026-04-03T20:03:50.027816+00:00] Post-topup — Agent: 0.000500 ETH | Nova: 0.001653 ETH
+[2026-04-03T20:03:50.027966+00:00] === Run Complete ===
+[2026-04-04T00:06:07.580200+00:00] === Nova Agent Wallet Manager Run ===
+[2026-04-04T00:06:09.287670+00:00] Agent balance: 0.000500 ETH
+[2026-04-04T00:06:09.287849+00:00] Nova balance:  0.001653 ETH
+[2026-04-04T00:06:09.287900+00:00] No top-up needed (agent balance 0.000500 ETH >= 0.0003)
+[2026-04-04T00:06:10.923851+00:00] Post-topup — Agent: 0.000500 ETH | Nova: 0.001653 ETH
+[2026-04-04T00:06:10.923997+00:00] === Run Complete ===
+[2026-04-13T01:58:40.443538+00:00] === Nova Agent Wallet Manager Run ===
+[2026-04-13T01:58:40.501243+00:00] ERROR: Balance check failed: node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module 'viem'
+Require stack:
+- /home/sntrblck/.openclaw/workspace/[eval]
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.require (node:internal/modules/cjs/loader:1463:12)
+    at require (node:internal/modules/helpers:147:16)
+    at [eval]:2:38
+    at runScriptInThisContext (node:internal/vm:209:10) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [ '/home/sntrblck/.openclaw/workspace/[eval]' ]
+}
+
+Node.js v22.22.1

@@ -1,9 +1,6 @@
 {
-  "valence": "engaged",
-  "confidence": 0.7,
-  "active_goals": 2,
-  "health": "nominal",
-  "token_today": 0,
-  "last_meaningful_event": null,
-  "last_updated": "2026-03-28T20:51:29.274584"
+  "valence": "warm",
+  "confidence": 0.75,
+  "active_goals": 3,
+  "chosen": "MoltbotDen (cinematic portrait)"
 }

@@ -26,13 +26,10 @@ def remember(tags, content):
     conn.commit()
     conn.close()
     
-    # Append to legacy MEMORY.md
-    try:
-        with open(MD_PATH, 'a') as f:
-            f.write(f"\n- [{timestamp}] [{tags}] {content}")
-        print(f"Memory saved and appended to MEMORY.md.")
-    except Exception as e:
-        print(f"Saved to DB, but failed to update MEMORY.md: {e}")
+    # NOTE: Do NOT write to MEMORY.md here. That file is main-session only.
+    # Isolated/background sessions cannot write to it (it's marked read-only during flush).
+    # MEMORY.md updates happen only via direct edit in the main agent session.
+    print(f"Memory saved to DB: [{timestamp}] [{tags}] {content}")
 
 def recall(query):
     conn = get_connection()

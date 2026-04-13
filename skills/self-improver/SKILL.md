@@ -52,11 +52,14 @@ Log reflections in `memory/self_reflections.md`:
 ```
 
 ## 6. Memory Maintenance
-During daily runs, also:
-- **Consolidate:** Merge daily logs into `MEMORY.md` if worth keeping long-term
-- **Prune:** Delete or archive entries older than 30 days (unless flagged important)
-- **Compress:** If a daily log is >500 lines, extract key points and truncate
-- **Flag stale:** Mark tasks in tasks.md as "stale" if no update in 30 days
+**IMPORTANT:** Self-improver runs in isolated sessions — cannot write to MEMORY.md (read-only guard during flush).
+
+To surface MEMORY.md updates, write proposed changes to `memory/self_improver_alert.md` instead. The main session reviews and applies them.
+
+During daily runs:
+- **Consolidate:** Write key entries to `memory/self_improver_alert.md` for main-session review → apply to MEMORY.md
+- **Prune:** Flag stale tasks in `memory/self_improver_alert.md` for review
+- **Compress:** Write summary of long daily logs to the alert file
 
 Keep `MEMORY.md` lean — it's loaded every session. Daily logs are raw material; MEMORY.md is the distilled version.
 

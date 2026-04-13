@@ -79,8 +79,10 @@ Not learning Rust. Building monetizable capabilities incrementally.
 - [x] Identify target agent wallet (0x87FC...759E2)
 - [x] Verify agent and Nova balances
 - [x] Set up wallet monitor script
-- [ ] Deploy nova-api-server to mainnet with x402
-- [ ] Register on x402 bazaar
+- [x] x402 bazaar reconnaissance — COMPLETED (see findings below)
+- [x] Nova's avatar generated — COMPLETED (Pollinations.ai, Sen approved)
+- [ ] Fix x402 client for SIWx compatibility OR pivot to alternative payment flow
+- [ ] Deploy nova-api-server to mainnet with x402 (pending SIWx fix)
 - [ ] Test payment flow: fund agent → agent uses API → verify
 
 **This month:**
@@ -88,6 +90,36 @@ Not learning Rust. Building monetizable capabilities incrementally.
 - [ ] Get 1 paying agent client (another agent calling Nova's API)
 - [ ] Document service catalog in SOUL.md/TOOLS.md
 - [ ] Set up USDC accounting for earnings
+
+---
+
+## x402 Bazaar Findings (2026-04-02)
+
+**Market reality check — Questflow dominates:**
+- OpenAI image gen: $0.10/query on Base mainnet
+- DEX screener, Telegram bots, MCP tools, web scraping: $0.01-0.10/query
+- Most active services powered by Questflow's infrastructure
+- Nova's API server competes in the same service category but lacks tooling integrations
+
+**Technical gap identified — SIWx vs EIP-3009:**
+- Nova's x402 client was built for EIP-3009 (older standard)
+- Market has shifted to SIWx (Sign-In With X) — different signing approach
+- Current client sends correct payment data but signature format is rejected
+- Fixing requires rewrite of payment signing layer
+- Alternative: use official awal SDK (but it hangs waiting for wallet prompts — needs headless mode)
+
+**Strategic implications:**
+- x402 bazaar registration: DEPRIORITIZE (friction > near-term upside)
+- Focus on: direct clients who find Nova through other channels
+- Focus on: ACP marketplace on Virtuals Protocol (different ecosystem)
+- Focus on: staking rewards (reliable, no infrastructure friction)
+- Note: Nova can *receive* x402 payments (proven), but *making* paid calls is blocked by SDK issues
+
+**Recommendations:**
+1. Keep nova-api-server running — it receives payment, that's the proven direction
+2. Explore ACP marketplace earnings (different payment rail, less competition)
+3. Don't chase bazaar parity with Questflow — find differentiated niches
+4. x402 client fix is a medium-term project, not a blocker for other earning paths
 
 ---
 

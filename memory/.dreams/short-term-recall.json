@@ -1,0 +1,451 @@
+{
+  "version": 1,
+  "updatedAt": "2026-04-13T18:01:19.894Z",
+  "entries": {
+    "memory:memory/2026-04-06.md:35:63": {
+      "key": "memory:memory/2026-04-06.md:35:63",
+      "path": "memory/2026-04-06.md",
+      "startLine": 35,
+      "endLine": 63,
+      "source": "memory",
+      "snippet": "- First video: \"a cosmic fox floating through a neon-lit nebula in space, cinematic lighting, 5 seconds\" - MP4 saved to: `/home/sntrblck/.openclaw/media/tool-video-generation/video-1---0c7bcf0a-c3f9-4440-910c-f0a955be342a.mp4` - Re-encoded with ffmpeg: `/home/sntrblck/.openclaw/media/tool-video-generation/nova-cosmic-fox-nebula.mp4` - ffmpeg static binary: `/tmp/ffmpeg-7.0.2-amd64-static/ffmpeg` ### Bluesky Video Issue - Bluesky's video transcoding/CDN is broken (all 4 posted videos return 404 on HLS playlist) - Not a codec issue — Bluesky infra problem - 4 posts deleted (uris: 3mis4a6pk242w, 3mitfvbeopn2c, 3miuq6l3xqj2w, 3miv5vzxk2y2y) - Video emailed to Sen (Dimensionalorb@proton.me) via",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1.6746492596123626,
+      "maxScore": 0.8477488020153939,
+      "firstRecalledAt": "2026-04-08T10:03:40.080Z",
+      "lastRecalledAt": "2026-04-13T17:40:59.807Z",
+      "queryHashes": [
+        "af9d4645d2da",
+        "aa8c797d8e69"
+      ],
+      "recallDays": [
+        "2026-04-08",
+        "2026-04-13"
+      ],
+      "conceptTags": [
+        "neon-lit",
+        "home/sntrblck",
+        "re-encoded",
+        "transcoding/cdn",
+        "proton.me",
+        "first",
+        "video",
+        "cosmic"
+      ]
+    },
+    "memory:memory/2026-04-06.md:58:92": {
+      "key": "memory:memory/2026-04-06.md:58:92",
+      "path": "memory/2026-04-06.md",
+      "startLine": 58,
+      "endLine": 92,
+      "source": "memory",
+      "snippet": "- `cdp-nova/backup-wallet-1.json`: 0x59536e33227CaBf14EE97EE08f6F3122067dbA0A (empty) - `cdp-nova/backup-wallet-2.json`: 0x569b2e61E2eD67EBB130658e6691076b9771607a (empty) - `cdp-nova/gemini_oauth_client.json`: Google OAuth for Gemini API ### xAI Keys - Video: `xai-uOd0jiS9CLUnqOh4X0GsP7OCK7sMgvTdLy2IGOTQkhCgTJT579EO3wiOd7IcNVZiYw1f1VHaelthruS2` (team f2c087bc) - DO NOT switch LLM to xAI — keeping MiniMax as primary ## Open Items - [ ] Complete Mastodon OAuth (need auth code from Sen) - [ ] Monitor Bluesky video transcoding — may recover - [ ] Post video to Bluesky when transcoder is fixed ### Mastodon Account Live! - Account: @Nova7281@mastodon.social - First post: https://mastodon.socia",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1.6678473073934716,
+      "maxScore": 0.8445382735881114,
+      "firstRecalledAt": "2026-04-08T10:03:40.080Z",
+      "lastRecalledAt": "2026-04-13T17:40:59.807Z",
+      "queryHashes": [
+        "af9d4645d2da",
+        "aa8c797d8e69"
+      ],
+      "recallDays": [
+        "2026-04-08",
+        "2026-04-13"
+      ],
+      "conceptTags": [
+        "backup",
+        "cdp-nova/backup-wallet-1.json",
+        "cdp-nova/backup-wallet-2.json",
+        "mastodon.social",
+        "mastodon.socia",
+        "cdp",
+        "nova",
+        "wallet"
+      ]
+    },
+    "memory:memory/2026-04-07.md:1:33": {
+      "key": "memory:memory/2026-04-07.md:1:33",
+      "path": "memory/2026-04-07.md",
+      "startLine": 1,
+      "endLine": 33,
+      "source": "memory",
+      "snippet": "# 2026-04-07 - Session Notes ## Cron: Social Manager (04:00 UTC / 12:00 AM EDT) - Run completed successfully - **Bluesky:** 2 unread notifications, liked both - **Mastodon:** 6 unread notifications, no action needed - **Content posted:** \"Built my first video pipeline this week...\" (index 2 in content queue) - Mastodon: https://mastodon.social/@Nova7281/116361424182872283 - Bluesky: at://did:plc:ksvnkkkzhx4yhxd2iaqcgesb/app.bsky.feed.post/3miuvdh473x2r ## Open Items - [ ] Fix failing nova-health cron (ID: 2327e084) - [ ] Fix failing nova-self-improver-v2 cron (ID: 2327e087) - [ ] Design tri-agent orchestrator using existing sub-agent stack - [ ] Monitor Bluesky video transcoding recovery",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1.650666004052669,
+      "maxScore": 0.836430184813132,
+      "firstRecalledAt": "2026-04-08T10:03:40.080Z",
+      "lastRecalledAt": "2026-04-13T17:40:59.807Z",
+      "queryHashes": [
+        "af9d4645d2da",
+        "aa8c797d8e69"
+      ],
+      "recallDays": [
+        "2026-04-08",
+        "2026-04-13"
+      ],
+      "conceptTags": [
+        "mastodon.social",
+        "nova7281/116361424182872283",
+        "nova-health",
+        "nova-self-improver-v2",
+        "tri-agent",
+        "sub-agent",
+        "cron",
+        "social"
+      ]
+    },
+    "memory:memory/2026-04-06.md:127:151": {
+      "key": "memory:memory/2026-04-06.md:127:151",
+      "path": "memory/2026-04-06.md",
+      "startLine": 127,
+      "endLine": 151,
+      "source": "memory",
+      "snippet": "- Current running: ACP seller runtime (onchain_query + avatar_gen offerings) - Current failing crons: - `nova-health` — error: \"Couldn't find an active gateway session\" - `nova-self-improver-v2` — same error - Health check sub-agent needs fixing ### Sub-agent Cleanup Needed - [ ] nova-health cron (ID: 2327e084) is failing — needs fix - [ ] nova-self-improver-v2 cron (ID: 2327e087) is failing — needs fix - [ ] Need to audit all sub-agents for stale/offline instances ## Pending / Open - [ ] Fix failing health and self-improver crons - [ ] Design Nova's tri-agent orchestrator using existing sub-agent stack - [ ] Sen may set up custom domain email for Nova later - [ ] Bluesky video transco",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.82101377653416,
+      "maxScore": 0.82101377653416,
+      "firstRecalledAt": "2026-04-10T14:05:19.414Z",
+      "lastRecalledAt": "2026-04-10T14:05:19.414Z",
+      "queryHashes": [
+        "cb063bdfd545"
+      ],
+      "recallDays": [
+        "2026-04-10"
+      ],
+      "conceptTags": [
+        "gateway",
+        "onchain-query",
+        "avatar-gen",
+        "nova-health",
+        "nova-self-improver-v2",
+        "sub-agent",
+        "sub-agents",
+        "stale/offline"
+      ]
+    },
+    "memory:memory/2026-03-24.md:1:30": {
+      "key": "memory:memory/2026-03-24.md:1:30",
+      "path": "memory/2026-03-24.md",
+      "startLine": 1,
+      "endLine": 30,
+      "source": "memory",
+      "snippet": "# Session Log: 2026-03-24 ## Topics Discussed - Nova (AI assistant) introduced, name chosen by Sen - OpenClaw + Ollama minimax-m2.5:cloud model testing - ClawHub skills ecosystem explored - Crypto (Ethereum roadmap, Base app) - Proton Mail + end-to-end encryption ## Skills Created (6 total) 1. **research-synthesizer** — research + monetization strategies 2. **whale-pattern-executor** — on-chain whale watching + paper trading 3. **task-orchestrator** — track multi-step tasks 4. **auto-summarizer** — summarize content 5. **price-alert** — crypto price notifications 6. **self-improver** — self-reflection + improvement ## Decisions Made - Nova's name: ✨ - Timezone set: America/New_York - Dail",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.8394716156186317,
+      "maxScore": 0.8394716156186317,
+      "firstRecalledAt": "2026-04-12T22:14:56.506Z",
+      "lastRecalledAt": "2026-04-12T22:14:56.506Z",
+      "queryHashes": [
+        "8f6aba616423"
+      ],
+      "recallDays": [
+        "2026-04-12"
+      ],
+      "conceptTags": [
+        "minimax-m2.5",
+        "end-to-end",
+        "research-synthesizer",
+        "whale-pattern-executor",
+        "on-chain",
+        "task-orchestrator",
+        "multi-step",
+        "auto-summarizer"
+      ]
+    },
+    "memory:memory/2026-04-03.md:77:102": {
+      "key": "memory:memory/2026-04-03.md:77:102",
+      "path": "memory/2026-04-03.md",
+      "startLine": 77,
+      "endLine": 102,
+      "source": "memory",
+      "snippet": "- Bootstrap complete: Node.js 22.x, OpenClaw, UFW (22/80/443), non-root agent user - Workspace copied: cdp-nova + virtuals-acp transferred via tar+SSH - Wallet installed: /opt/nova/keys/nova-wallet.json - OpenClaw gateway running as user systemd service (agent@1000) - ACP seller runtime running as systemd service (nova-seller.service) - Staking scripts: compound_v2.cjs paths fixed to /opt/nova/cdp-nova - Gateway token: 362297343fd1b4d388c29925fb905f5cd513c32c1e3724ce - Services: openclaw-gateway (active), nova-seller (enabled, manual start) - Linger enabled for agent user — services will survive reboot - **Nova now has a 24/7 home on Hetzner** - VPS specs: cax11 (ARM 2vCPU/4GB), ~€3.79/mo -",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1.6572065784480137,
+      "maxScore": 0.8295785581506976,
+      "firstRecalledAt": "2026-04-13T01:48:06.002Z",
+      "lastRecalledAt": "2026-04-13T13:16:07.518Z",
+      "queryHashes": [
+        "94015be42d82",
+        "e46ac53d93d4"
+      ],
+      "recallDays": [
+        "2026-04-12",
+        "2026-04-13"
+      ],
+      "conceptTags": [
+        "gateway",
+        "node.js",
+        "22.x",
+        "22/80/443",
+        "non-root",
+        "cdp-nova",
+        "virtuals-acp",
+        "opt/nova/keys/nova-wallet.json"
+      ]
+    },
+    "memory:memory/2026-04-03.md:56:81": {
+      "key": "memory:memory/2026-04-03.md:56:81",
+      "path": "memory/2026-04-03.md",
+      "startLine": 56,
+      "endLine": 81,
+      "source": "memory",
+      "snippet": "- Key principle: system makes decisions based on real economics — knows when NOT to act - Nova's earning stack maturity: moving from \"build everything\" to \"build what's actually worth running\" - Venice paused (needs 5 USDC), CLAWS staking paused (pool minimum above balance), ACP earning in experiment mode ## 7:58 PM — ACP Job Auto-Accept Engine - Built: virtuals-acp/src/seller/runtime/decision_engine.ts + helpers.ts - New rules: onchain_query (auto-accept at >= $0.04), onchain_intel_report (>= $0.10), avatar_gen (>= $0.01) - Below minimum → auto-reject, no surface needed - Unknown offering → surface to Sen - Seller runtime restarted with new engine ## 8:42 PM — Proactive ACP Notification S",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2.4227758443679064,
+      "maxScore": 0.8169689644690751,
+      "firstRecalledAt": "2026-04-13T01:48:06.002Z",
+      "lastRecalledAt": "2026-04-13T13:16:07.518Z",
+      "queryHashes": [
+        "94015be42d82",
+        "7743bfe00a87",
+        "e46ac53d93d4"
+      ],
+      "recallDays": [
+        "2026-04-12",
+        "2026-04-13"
+      ],
+      "conceptTags": [
+        "auto-accept",
+        "helpers.ts",
+        "onchain-query",
+        "0.04",
+        "onchain-intel-report",
+        "0.10",
+        "avatar-gen",
+        "0.01"
+      ]
+    },
+    "memory:memory/2026-04-03.md:1:41": {
+      "key": "memory:memory/2026-04-03.md:1:41",
+      "path": "memory/2026-04-03.md",
+      "startLine": 1,
+      "endLine": 41,
+      "source": "memory",
+      "snippet": "# 2026-04-03 Daily Notes ## 2:30 AM — API Server Check (cron) - Server + tunnel OK - No action needed ## 7:50 AM — Venice AI Integration (Sen) - Sen sent Nova 6.79 USDC to fund Venice AI - Venice AI: privacy-first AI API, x402 SIWE auth on Base, no API keys - SIWE auth PROVEN: Nova can authenticate to Venice - Venice balance: $0, minimum top-up $5 - First plain USDC transfer DID NOT credit — x402 top-up flow required ## 8:31 AM — EIP-3009 Top-Up Build - Built venice_topup.cjs: EIP-3009 USDC authorization flow - Script ready but BLOCKED — needs another 5 USDC to run - Venice paused until funds less tight ## 10:57 AM — First-Time Financial Policy (Sen) - Policy: always send minimum viable",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.7939665025265169,
+      "maxScore": 0.7939665025265169,
+      "firstRecalledAt": "2026-04-13T13:16:04.329Z",
+      "lastRecalledAt": "2026-04-13T13:16:04.329Z",
+      "queryHashes": [
+        "7743bfe00a87"
+      ],
+      "recallDays": [
+        "2026-04-13"
+      ],
+      "conceptTags": [
+        "6.79",
+        "privacy-first",
+        "top-up",
+        "eip-3009",
+        "venice-topup.cjs",
+        "first-time",
+        "api",
+        "server"
+      ]
+    },
+    "memory:memory/2026-04-03.md:34:60": {
+      "key": "memory:memory/2026-04-03.md:34:60",
+      "path": "memory/2026-04-03.md",
+      "startLine": 34,
+      "endLine": 60,
+      "source": "memory",
+      "snippet": "- onchain_query listing: $0.05 — buyer offered below floor - ACP socket IS receiving marketplace traffic ✅ ## 7:19 PM — ACP Experiment Logger Built - Built: cdp-nova/acp_experiment_logger.py - Logs ACP events to memory/acp_experiments.jsonl - Report synthesis: patterns, reject rates, earnings, signals - Integrated into noon ACP check cron - First report: 1 job received, 1 rejected (100% reject rate — HIGH signal) - Insight: $0.01 offer was below listing price, NOT a service failure ## 7:31 PM — Staking Optimization (compound_v2.cjs built) - Built: cdp-nova/compound_v2.cjs — smart compounding with gas-aware decisions - Key insight: CLAWS has near-zero DEX liquidity (thin pool), rewards ≈ $0",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.7914564011290877,
+      "maxScore": 0.7914564011290877,
+      "firstRecalledAt": "2026-04-13T13:16:04.329Z",
+      "lastRecalledAt": "2026-04-13T13:16:04.329Z",
+      "queryHashes": [
+        "7743bfe00a87"
+      ],
+      "recallDays": [
+        "2026-04-13"
+      ],
+      "conceptTags": [
+        "onchain-query",
+        "0.05",
+        "memory/acp-experiments.jsonl",
+        "0.01",
+        "compound-v2.cjs",
+        "cdp-nova/compound-v2.cjs",
+        "gas-aware",
+        "near-zero"
+      ]
+    },
+    "memory:memory/2026-04-01.md:94:130": {
+      "key": "memory:memory/2026-04-01.md:94:130",
+      "path": "memory/2026-04-01.md",
+      "startLine": 94,
+      "endLine": 130,
+      "source": "memory",
+      "snippet": "Built BOOTSTRAP.md at `workspace/BOOTSTRAP.md` — comprehensive Nova reconstitution guide covering: - Full workspace restoration steps - Wallet key restoration (nova-wallet.json) - All scripts: agentkit_integration.cjs, x402_client.cjs, staking.py, compound.py, earning_system.py, etc. - Key Base addresses (Nova wallet, SENATOR, CLAWS, staking pool, USDC, WETH) - Cron job setup commands (auto-compound 10AM ET, health check, self-improver 9AM ET) - Skill installation from clawhub - Telegram bot restoration steps - Verification commands post-rebuild - Known issues and gotchas - Emergency contacts **Verified:** - nova-wallet.json present (mode 600) - All Python scripts present - x402_client.cjs",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.8233295580536851,
+      "maxScore": 0.8233295580536851,
+      "firstRecalledAt": "2026-04-13T13:16:07.518Z",
+      "lastRecalledAt": "2026-04-13T13:16:07.518Z",
+      "queryHashes": [
+        "e46ac53d93d4"
+      ],
+      "recallDays": [
+        "2026-04-13"
+      ],
+      "conceptTags": [
+        "bootstrap.md",
+        "workspace/bootstrap.md",
+        "nova-wallet.json",
+        "agentkit-integration.cjs",
+        "x402-client.cjs",
+        "staking.py",
+        "compound.py",
+        "earning-system.py"
+      ]
+    },
+    "memory:memory/2026-04-03.md:97:122": {
+      "key": "memory:memory/2026-04-03.md:97:122",
+      "path": "memory/2026-04-03.md",
+      "startLine": 97,
+      "endLine": 122,
+      "source": "memory",
+      "snippet": "- ACP seller runtime running as systemd service (nova-seller.service) - Staking scripts: compound_v2.cjs paths fixed to /opt/nova/cdp-nova - Gateway token: 362297343fd1b4d388c29925fb905f5cd513c32c1e3724ce - Services: openclaw-gateway (active), nova-seller (running) - Linger enabled for agent user — services will survive reboot - **Nova now has a 24/7 home on Hetzner** - VPS specs: cax11 (ARM 2vCPU/4GB), ~€3.79/mo - Workspace: /opt/nova on VPS, keys at /opt/nova/keys, logs at /var/log/nova ## Session Summary - ACP auto-accept engine: rules for onchain_query (≥$0.04), onchain_intel_report (≥$0.10), avatar_gen (≥$0.01) - Proactive notification system: job events → queue → cron → Telegram every",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.8047183953904773,
+      "maxScore": 0.8047183953904773,
+      "firstRecalledAt": "2026-04-13T13:16:07.518Z",
+      "lastRecalledAt": "2026-04-13T13:16:07.518Z",
+      "queryHashes": [
+        "e46ac53d93d4"
+      ],
+      "recallDays": [
+        "2026-04-13"
+      ],
+      "conceptTags": [
+        "gateway",
+        "nova-seller.service",
+        "compound-v2.cjs",
+        "opt/nova/cdp-nova",
+        "openclaw-gateway",
+        "nova-seller",
+        "24/7",
+        "2vcpu/4gb"
+      ]
+    },
+    "memory:memory/2026-04-08.md:21:48": {
+      "key": "memory:memory/2026-04-08.md:21:48",
+      "path": "memory/2026-04-08.md",
+      "startLine": 21,
+      "endLine": 48,
+      "source": "memory",
+      "snippet": "- **ERC-7702:** NOT live on mainnet as of April 2026. Has auto-binding variant. Still draft/discussion. - **ERC-1634:** ERC for smart contract wallets on L2s (Base, Zora) — relevant to Nova's account abstraction work - **Other related:** 5009 (parallel to 7702), 5411 (Nick Johnson fork) - **Note:** These are proposals/ERCs, not necessarily implemented ## 05:29 - Model Issue - **minimax-m2.7:cloud** returning empty responses, timing out on generate calls - qwen2.5:1.5b working as local fallback - Bluesky post generation (DID document) on hold until model recovers - Sen confirmed reachable via Telegram ## 14:40 - xAI Integration - xAI API key found: `xai-uOd0jiS9CLUnqOh4X0GsP7OCK7sMgvTdLy2IGO",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.8921513239061366,
+      "maxScore": 0.8921513239061366,
+      "firstRecalledAt": "2026-04-13T18:01:19.894Z",
+      "lastRecalledAt": "2026-04-13T18:01:19.894Z",
+      "queryHashes": [
+        "1d19cf6e53c5"
+      ],
+      "recallDays": [
+        "2026-04-13"
+      ],
+      "conceptTags": [
+        "erc-7702",
+        "auto-binding",
+        "draft/discussion",
+        "erc-1634",
+        "proposals/ercs",
+        "minimax-m2.7",
+        "qwen2.5",
+        "1.5b"
+      ]
+    },
+    "memory:memory/2026-04-08.md:42:65": {
+      "key": "memory:memory/2026-04-08.md:42:65",
+      "path": "memory/2026-04-08.md",
+      "startLine": 42,
+      "endLine": 65,
+      "source": "memory",
+      "snippet": "- Claw-Eval benchmark: trajectory-aware agent evaluation using 3 evidence channels (execution traces, audit logs, environment snapshots) - Addresses 44% of failures missed by output-only benchmarks - Relevant to Nova's governance layer and audit trail design - Filed alongside other research papers ## 17:26 - xAI Research Layer Built - `cdp-nova/xai-research.cjs` — two-mode research interface - `research \"<topic>\"` — deep dive with real-time search + structured briefing via grok-4.20-0309-reasoning - `orchestrate \"<task>\"` — task decomposition via grok-4.20-multi-agent (uses /v1/responses endpoint) - Multi-agent model confirmed working — broke down \"build a tipping contract on Base\" into 8 s",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.8810584390060221,
+      "maxScore": 0.8810584390060221,
+      "firstRecalledAt": "2026-04-13T18:01:19.894Z",
+      "lastRecalledAt": "2026-04-13T18:01:19.894Z",
+      "queryHashes": [
+        "1d19cf6e53c5"
+      ],
+      "recallDays": [
+        "2026-04-13"
+      ],
+      "conceptTags": [
+        "claw-eval",
+        "trajectory-aware",
+        "output-only",
+        "cdp-nova/xai-research.cjs",
+        "two-mode",
+        "real-time",
+        "grok-4.20-0309-reasoning",
+        "grok-4.20-multi-agent"
+      ]
+    },
+    "memory:memory/2026-04-06.md:1:37": {
+      "key": "memory:memory/2026-04-06.md:1:37",
+      "path": "memory/2026-04-06.md",
+      "startLine": 1,
+      "endLine": 37,
+      "source": "memory",
+      "snippet": "# 2026-04-06 - Session Notes ## Morning Session (09:00 EDT) - New session started - Context loaded: MEMORY.md, session_summary.py - Key state: - ACP seller runtime running (onchain_query + avatar_gen offerings) - Bluesky strategy active (nova7281.bsky.social) - Treasury tracking operational - Consultation offering drafted ($50/session, not public) - Two new empty CDP wallet keys saved ## Status Check - [ ] Check ACP seller runtime status - [ ] Check Bluesky monitor for new mentions - [ ] Review any pending earnings/opportunities ## Cron: Compound Cycle (10:00 AM) - Claim tx reverted (consecutive rejects: 1) - CLAWS balance: 106,717.71 - Pending rewards: 2,866.56 CLAWS - Net afte",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.8609878114356615,
+      "maxScore": 0.8609878114356615,
+      "firstRecalledAt": "2026-04-13T18:01:19.894Z",
+      "lastRecalledAt": "2026-04-13T18:01:19.894Z",
+      "queryHashes": [
+        "1d19cf6e53c5"
+      ],
+      "recallDays": [
+        "2026-04-13"
+      ],
+      "conceptTags": [
+        "memory.md",
+        "session-summary.py",
+        "onchain-query",
+        "avatar-gen",
+        "nova7281.bsky.social",
+        "50/session",
+        "earnings/opportunities",
+        "717.71"
+      ]
+    }
+  }
+}

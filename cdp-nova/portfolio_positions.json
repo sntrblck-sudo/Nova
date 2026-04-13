@@ -1,0 +1,17 @@
+{
+  "positions": [
+    {
+      "id": "pos_1775823080329",
+      "asset": "USDC",
+      "amount": 1,
+      "valueUsd": 1,
+      "protocol": "Morpho Blue Chip Vault (Prime)",
+      "yieldApy": 5.2,
+      "notes": "First deploy,  test",
+      "deployedAt": "2026-04-10T12:11:20.329Z",
+      "status": "active"
+    }
+  ],
+  "lastAction": "2026-04-10T12:11:20.329Z",
+  "totalValueUsd": 1
+}

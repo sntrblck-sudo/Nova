@@ -13,6 +13,7 @@ Safe auto-prune (no approval needed):
     - Empty files
     - /tmp/*.tar.gz older than 7 days
     - Old cron telemetry JSON files (>30 days)
+    - .git/objects/pack/*.pack files (regeneratable via git gc)
 
 Surface for approval:
     - Any directory tagged "ARCHIVE" in config
@@ -26,6 +27,7 @@ import json
 import os
 import shutil
 import stat
+import subprocess
 import sys
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -161,6 +163,25 @@ def scan_workspace(cfg):
                         "reason": "Python bytecode file"
                     })
 
+        # Handle .git pack files (regeneratable)
+        if cfg["auto_prune"].get("git_pack_files", True):
+            git_pack_dir = WORKSPACE / ".git" / "objects" / "pack"
+            if git_pack_dir.exists():
+                for f in os.listdir(git_pack_dir):
+                    if f.endswith(".pack"):
+                        fp = git_pack_dir / f
+                        try:
+                            size = fp.stat().st_size
+                            if size > 0:
+                                auto_prune.append({
+                                    "type": "git_pack",
+                                    "path": str(fp),
+                                    "size": size,
+                                    "reason": "Git pack file, regeneratable via git gc"
+                                })
+                        except OSError:
+                            pass
+
         # Handle empty files
         for f in files:
             fp = root / f
@@ -226,6 +247,9 @@ def scan_workspace(cfg):
                 # node_modules directories (record size, don't auto-prune)
                 elif f == "node_modules" and root.is_dir():
                     size = get_dir_size(fp)
+                    # Skip if already captured as git_pack above
+                    if any(item["path"] == str(fp) for item in auto_prune):
+                        continue
                     surface.append({
                         "type": "node_modules",
                         "path": str(fp),
@@ -255,7 +279,30 @@ def do_prune(items, dry_run=True):
     pruned = []
     errors = []
 
-    for item in items:
+    # Handle git pack files specially — run git gc instead of deleting
+    git_pack_items = [i for i in items if i["type"] == "git_pack"]
+    other_items = [i for i in items if i["type"] != "git_pack"]
+
+    if git_pack_items:
+        print(f"[disk_pruner] Running git gc to reclaim space from {len(git_pack_items)} pack files...")
+        try:
+            result = subprocess.run(
+                ["git", "gc", "--aggressive", "--quiet"],
+                cwd=str(WORKSPACE),
+                capture_output=True, text=True, timeout=300
+            )
+            if result.returncode == 0:
+                total_size = sum(i["size"] for i in git_pack_items) / (1024 * 1024)
+                pruned.append(f"git_pack: git gc reclaimed ~{total_size:.1f}MB from pack files")
+                log_incident(f"Auto-pruned via git gc: {len(git_pack_items)} pack files, ~{total_size:.1f}MB")
+            else:
+                errors.append(f"git gc failed: {result.stderr[:200]}")
+        except subprocess.TimeoutExpired:
+            errors.append("git gc timed out after 5 minutes")
+        except Exception as e:
+            errors.append(f"git gc error: {e}")
+
+    for item in other_items:
         path = Path(item["path"])
         if not path.exists():
             continue

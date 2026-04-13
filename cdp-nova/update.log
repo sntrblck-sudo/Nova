@@ -1,0 +1,16 @@
+[2026-04-08T09:13:57-04:00] === Starting OpenClaw update check ===
+[2026-04-08T09:13:58-04:00] Current: 2026.4.5 | Latest: 2026.4.8
+[2026-04-08T09:13:58-04:00] New version available. Proceeding with update...
+npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+
+added 17 packages, removed 326 packages, and changed 120 packages in 4m
+
+238 packages are looking for funding
+  run `npm fund` for details
+[2026-04-08T09:18:05-04:00] Update complete. Verifying gateway...
+[2026-04-08T09:18:05-04:00] Updated to: 2026.4.8
+[2026-04-13T10:03:23-04:00] === Starting OpenClaw update check ===
+[2026-04-13T10:03:24-04:00] Current: 2026.4.11 | Latest: 2026.4.12
+[2026-04-13T10:03:24-04:00] Checking changelog for breaking changes...
+[2026-04-13T10:03:25-04:00] Potential breaking changes detected in release notes.
+{"ok":true,"result":{"message_id":722,"from":{"id":8700570943,"is_bot":true,"first_name":"Nova","username":"Novamessenger_bot"},"chat":{"id":8544939129,"first_name":"Sen","last_name":"Versailles","username":"senversailles","type":"private"},"date":1776089006,"text":"\ud83d\udfe1 OpenClaw v2026.4.12 has breaking-change markers\nSomeone should review the changelog before updating.\n\nhttps://github.com/openclaw/openclaw/releases/tag/v2026.4.12\n\nDisable auto-update temporarily or handle manually.","entities":[{"offset":3,"length":47,"type":"bold"},{"offset":105,"length":60,"type":"url"}]}}[2026-04-13T10:03:26-04:00] Breaking changes detected. Not proceeding automatically.

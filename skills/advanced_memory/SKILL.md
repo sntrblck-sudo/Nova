@@ -27,4 +27,4 @@ python3 skills/advanced_memory/memory_manager.py forget <id>
 ## Guidelines
 1. Always tag memories appropriately (e.g., people, events, preferences, tasks, alerts).
 2. During your daily heartbeat or cron jobs, use the heartbeat command with the timestamp of your last run to quickly catch up on new alerts or changes.
-3. The remember command will automatically append a simplified note to /home/sntrblck/.openclaw/workspace/MEMORY.md to ensure legacy integrations don't break.
+3. **Note:** `remember` stores to SQLite only — it does NOT write to MEMORY.md. MEMORY.md updates happen only in the main session.

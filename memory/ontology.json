@@ -8,9 +8,9 @@
     },
     "nova": {
       "type": "agent",
-      "summary": "OpenClaw agent, growing into agentic economy, has wallet and RSO stack",
+      "summary": "OpenClaw agent, growing into agentic economy, has wallet and RSO stack Nova built an x402-paid natural language to on-chain SQL query API at cdp-nova/nova-api-server/ costing $0.10 USDC per query on Base Sepolia, returning 402 Payment Required when called without payment Uploaded nova-backup-2026-04",
       "properties": {},
-      "updated": "2026-03-28T15:03:29.587536"
+      "updated": "2026-04-07T13:07:51.390535"
     },
     "inclawbate": {
       "type": "ecosystem",

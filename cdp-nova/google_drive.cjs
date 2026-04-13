@@ -16,6 +16,9 @@ const http = require('http');
 const readline = require('readline');
 
 const CREDENTIALS_PATH = path.join(__dirname, 'google_credentials.json');
+// Nova Archives folder on Google Drive — central storage for Nova's assets
+const NOVA_ARCHIVES_FOLDER_ID = '1ujnhCTxhpkKeGoX5gxXeIVRNQpIyersG';
+
 const TOKENS_PATH = path.join(__dirname, 'google_tokens.json');
 
 const CLIENT_ID = '434440884156-42922vpnivr3v0eiba2q1rolaiseb15p.apps.googleusercontent.com';

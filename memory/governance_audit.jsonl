@@ -1,0 +1,4 @@
+{"timestamp": "2026-04-13T14:10:32.491917+00:00", "audit_id": "f043465712d97a89", "action_type": "allowed", "tool_name": "web_search", "context": {}, "reason": "", "tier": 1}
+{"timestamp": "2026-04-13T14:10:33.450250+00:00", "audit_id": "6aeb9f53076d2eef", "action_type": "denied", "tool_name": "delete_file", "context": {}, "reason": "deny", "tier": 0}
+{"timestamp": "2026-04-13T14:10:36.666596+00:00", "audit_id": "a791079f324a5591", "action_type": "allowed", "tool_name": "native_transfer", "context": {"category": "economic", "amount_eth": 0.001, "recipient": "0x1b7edf6f5fcab52b680661cc82306e3daca7943c"}, "reason": "", "tier": 1}
+{"timestamp": "2026-04-13T14:10:45.623518+00:00", "audit_id": "9749d24fd953b2f3", "action_type": "surface", "tool_name": "native_transfer", "context": {"category": "economic", "amount_eth": 0.01, "recipient": "0xdeadbeef"}, "reason": "", "tier": 2}

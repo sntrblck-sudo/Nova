@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-02T12:05:38.251796",
+  "timestamp": "2026-04-12T17:50:13.665497",
   "openclaw": {
     "status": "ok",
     "issues": []
@@ -12,17 +12,17 @@
   },
   "wallet": {
     "status": "ok",
-    "balance": 0.00165649549184253
+    "balance": 0.000636527517251565
   },
   "staking": {
     "status": "ok",
     "senator_staked": "1241130924834955520.00",
-    "claws_pending": "248.68886419",
-    "claws_balance": "98112.85109490"
+    "claws_pending": "18137.02624662",
+    "claws_balance": "109584.33862514"
   },
   "disk": {
     "status": "ok",
-    "auto_pruned": 11,
+    "auto_pruned": 17516,
     "surface_count": 1
   },
   "overall": "ok",

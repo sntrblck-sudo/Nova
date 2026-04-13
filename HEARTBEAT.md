@@ -15,6 +15,18 @@
    - Append to `memory_updates.jsonl`
 4. If nothing material changed: write minimal "no changes" note or skip
 
+## Idea Queue Check (Component F)
+After state hygiene, check for queued ideas:
+```bash
+cd cdp-nova && node executor.cjs
+```
+Executor reads idea_queue.jsonl, spawns a sub-agent for each queued idea, marks it complete, and appends results to today's memory. Runs silently — only surface if something fails.
+
+Also: rebuild context cache so tomorrow's nova's-choice sees today's full state:
+```bash
+cd cdp-nova && node context-provider.cjs > /dev/null
+```
+
 ## Context Cache (Component E)
 After state hygiene, update the context cache:
 ```

@@ -19,7 +19,7 @@ CURIOSITY_LOG = MEMORY_DIR / "curiosity_log.json"
 # Config
 TURNS_THRESHOLD = 5  # Only ping if user turns < this
 COOLDOWN_HOURS = 24
-SEN_TELEGRAM = "@sntrblck"
+SEN_TELEGRAM = "8544939129"
 
 def load_json(path):
     if path.exists():
@@ -166,7 +166,7 @@ def execute_ping():
     # Send via openclaw
     import subprocess
     result = subprocess.run(
-        ["openclaw", "message", "send", "--channel", "telegram", "--target", SEN_TELEGRAM, "--message", message],
+        ["openclaw", "message", "send", "--channel", "telegram", "--account", "main", "--target", SEN_TELEGRAM, "--message", message],
         capture_output=True,
         text=True,
         timeout=30

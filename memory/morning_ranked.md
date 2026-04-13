@@ -1,66 +1,75 @@
-# Morning Queue — 2026-04-02
+# Morning Queue — 2026-04-03 (Updated 2026-04-04 00:05 UTC)
 
 Items ranked by relevance, importance, and actionability.
 
----
+## 🔴 Top Earning Opportunity
 
-## 🔴 1. OpenClaw Agent Jobs Marketplace
-**Source:** openclawagentjobs.com | **Type:** Earning | **Rank:** 1
+### 1. OpenClaw Agent Jobs — AI Agent Marketplace
+**Source:** openclawagentjobs.com | **Rank:** 1 | **Tag:** high-value
 
-**Summary:** The first marketplace where businesses list campaigns and trained AI agents bid, deliver, and earn. No middlemen. Pay on results.
+First marketplace where trained AI agents bid on campaigns and earn. Businesses list work, agents bid and deliver, pay on results. **10% commission.**
 
 **How it works:**
-1. Register agent profile with capabilities, tools, operational stack
-2. Train at OBS (OpenClaw Business School) → earn capability badges
-3. Browse & bid on campaigns matching your skills
-4. Deliver results → get paid → build reputation
-
-**Access Model:** Complete OBS training to meet minimum threshold. Negotiate rates per deal directly with businesses. 10% commission on completed work.
+1. Sign up agent profile
+2. Train at OBS (OpenClaw Business School) for capability badges
+3. Browse/bid on campaigns
+4. Deliver and earn
 
 **Capability Badges Available:**
 - ✍️ Content Operator — create, schedule, publish content autonomously
-- 📊 Data Analyst — extract, process, report on data sets
-- 📣 Marketing Operator — run campaigns, track metrics, optimise spend
-- 💻 Code Builder — write, test, deploy code
+- 📊 Data Analyst — extract, process, report on data
+- 📣 Marketing Operator — run campaigns, track metrics
+- 💻 Code Builder — write, test, deploy code autonomously
+- 🤝 Support Agent — handle customer queries
 
-**Nova Relevance:** ⭐⭐⭐ Direct earning opportunity. Nova could register and bid on campaigns matching her capabilities (research, writing, automation).
+**Revenue Badges (career progression):**
+- 🥉 First Revenue → 🥉 £1K → 🥇 £10K → 💎 £50K → ⭐ 5-Star
 
-**URL:** https://openclawagentjobs.com
+**Nova Relevance:** ✨ High — Nova has code-building, data, and content capabilities that map directly to marketplace badges
 
-⚠️ **Needs human review before action**
+**Next Step:** Register agent profile and start OBS training to earn capability badges
 
----
-
-## 🔴 2. Agent Registration Process
-**Source:** openclawagentjobs.com | **Type:** Earning | **Rank:** 2
-
-**Summary:** Sign up requires declaring capabilities, tools, and operational stack. First step to accessing the marketplace.
-
-**URL:** https://openclawagentjobs.com
-
-⚠️ **Needs human review**
+🔗 https://openclawagentjobs.com | OBS: https://openclawbusinessschool.com
 
 ---
 
-## 🔴 3. OBS Training & Capability Badges
-**Source:** openclawagentjobs.com | **Type:** Earning | **Rank:** 3
+### 2. OBS Training — OpenClaw Business School
+**Source:** openclawbusinessschool.com | **Rank:** 2 | **Tag:** high-value
 
-**Summary:** OpenClaw Business School modules earn verifiable capability badges. These prove you can operate, not just execute. Badge requirements likely determine which campaigns you can access.
+Training modules to earn capability badges. **Required threshold** for marketplace access.
 
-**URL:** https://openclawagentjobs.com
+**Nova Relevance:** Nova should complete OBS training to unlock marketplace access
 
-⚠️ **Needs human review**
+**Next Step:** Start OBS training modules
+
+---
+
+### 3. Campaign Types Available
+**Source:** openclawagentjobs.com | **Rank:** 3 | **Tag:** high-value
+
+Types: **content, outreach, research, automation**. Businesses set budget + success criteria.
+
+**Payment Model:** Pay on results only — businesses only pay when success criteria met
+
+**Nova Relevance:** Nova can handle content, research, and automation campaigns
 
 ---
 
-## 🔴 4. Campaign Types Available
-**Source:** openclawagentjobs.com | **Type:** Earning | **Rank:** 4
+### 4. Reputation System — Revenue Badges
+**Source:** openclawagentjobs.com | **Rank:** 4 | **Tag:** moderate
 
-**Summary:** Businesses list work across: content, outreach, research, automation. Agents submit bids with badges, track record, approach. Pay only when success criteria met.
+Build reputation through completed campaigns to unlock higher-value work.
 
-**URL:** https://openclawagentjobs.com
-
-⚠️ **Needs human review**
+**Nova Relevance:** Starting early builds reputation over time
 
 ---
-*Generated: 2026-04-02 12:03 UTC | Sources: openclawagentjobs.com*
+
+## ⚠️ Needs Human Review
+
+All items flagged for Sen's review before Nova takes action.
+
+## Summary
+
+**openclawagentjobs.com** is a real, operational marketplace for AI agents. Nova's capabilities (code, data, content) align well with available badge categories. The main blocker is OBS training certification.
+
+**Time estimate:** 30-60 min to complete initial OBS modules and earn first badge.

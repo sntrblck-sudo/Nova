@@ -17,10 +17,12 @@ _Distilled learnings and context that persist across sessions._
 - Tendency to info-dump when excited about capabilities
 - Should use skills proactively (especially price-alert when crypto comes up)
 
-## System
-- Daily self-improver cron: 9 AM Eastern
-- Session logging in memory/YYYY-MM-DD.md
-- Self reflections in memory/self_reflections.md
+## Memory System
+- Architecture documented in `memory/MEMORY_ARCHITECTURE.md` — three-type system (episodic/semantic/procedural)
+- Episodic: `memory/daily_logs/`, `memory/execution_logs.db`, `memory/action_log.db`
+- Semantic: `MEMORY.md`, `memory/ontology.json`, `memory/lessons/`
+- Procedural: `skills/`, `cdp-nova/compound.py`, `cdp-nova/social-manager/`
+- Consolidation pipeline: Stage 2 of memory upgrade (2026-04-07)
 - [2026-03-26 11:40:04] [system,setup] Advanced memory skill installed
 - [2026-03-26 14:24:52] [crypto,inclawbate,token] CLAWS token address: 0x7ca47b141639b893c6782823c0b219f872056379 on Base. Rebranded from INCLAWNCH. Staking on inclawbate.com. Sen is staking this.
 - [2026-04-02 10:00] [nova,staking,compound] Staking + compound system tested and running. SENATOR staked: ~1,241,130. CLAWS rewards accruing via Inclawbate. compound.py runs every 6h (cron: 2327e082). Daily compound at 10 AM ET. CLAWS pool rejected additional stake (below minimum threshold). TX history: rewards claimed +0.001 ETH equivalent. System operational ✅
@@ -56,3 +58,11 @@ _Distilled learnings and context that persist across sessions._
 - [2026-04-05 ??:] [nova,social,guidelines] Bluesky guidelines confirmed: replies to quality mentions only, images yes, cron varied, liking within reason, never post same content twice, filter spam (AEP Protocol).
 - [2026-04-06 07:26] [nova,wallet,keys] Two new CDP wallet keys found (PKCS#8 PEM). Both empty, never used. Key 1: 0x59536e33227CaBf14EE97EE08f6F3122067dbA0A. Key 2: 0x569b2e61E2eD67EBB130658e6691076b9771607a. Neither is the ACP wallet (0x87FC...). Saved to cdp-nova/gemini_oauth_client.json (misnamed, blockchain keys not OAuth). Sen: "remember them."
 - [2026-04-06 07:34] [nova,gemini,oauth] Google OAuth client for Gemini API saved: cdp-nova/gemini_oauth_client.json. Project: gen-lang-client-0033135591. Client ID: 434440884156-....apps.googleusercontent.com. For potential Gemini integration later.
+- [2026-04-07 13:07] [economic] Nova built an x402-paid natural language to on-chain SQL query API at cdp-nova/nova-api-server/ costing $0.10 USDC per query on Base Sepolia, returning 402 Payment Required when called without payment
+- [2026-04-07 13:07] [system] Built x402_client.cjs for manual EIP-3009 payment transactions
+- [2026-04-07 13:07] [system] Uploaded nova-backup-2026-04-01.tar.gz to Google Drive for disaster recovery
+- [2026-04-07 13:07] [system] Created BOOTSTRAP.md as Nova agent reconstitution guide
+- [2026-04-07 13:07] [system] Built action_logger.cjs v2 with hash chain, append-only, and stale-pending check functionality
+- [2026-04-07 13:07] [system] Configured Google Drive API OAuth with Sen as test user
+- [2026-04-07 13:07] [economic] Claimed CLAWS rewards from SENATOR staking pool
+- [2026-04-07 13:07] [research] Completed deep dive Base ecosystem research via Copilot report

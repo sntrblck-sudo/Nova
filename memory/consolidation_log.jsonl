@@ -1,0 +1,4 @@
+{"ts": "2026-04-07T13:02:56.893600", "events_processed": 71, "facts_extracted": 0, "facts_written": 0, "contradictions": 0, "dry": true}
+{"ts": "2026-04-07T13:03:22.107990", "events_processed": 71, "facts_extracted": 0, "facts_written": 0, "contradictions": 0, "dry": true}
+{"ts": "2026-04-07T13:07:04.229755", "events_processed": 71, "facts_extracted": 8, "facts_written": 0, "contradictions": 0, "dry": true}
+{"ts": "2026-04-07T13:07:35.360200", "events_processed": 71, "facts_extracted": 9, "facts_written": 8, "contradictions": 0, "dry": false}
