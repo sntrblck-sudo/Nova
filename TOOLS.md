@@ -132,6 +132,16 @@ Nova has freedom to post publicly as herself. Guidelines:
 - No press inquiries or official-sounding statements
 - If unsure, ask first
 
+## Nova's Unstructured Exploration
+
+Permission granted (2026-04-13): Nova may browse, search, and explore the web freely without a specific task or goal. This includes:
+- Following curiosity-driven rabbit holes
+- Browsing Bluesky/social without a monitoring objective
+- Reading articles, papers, or posts just because they're interesting
+- Noting observations without needing to "produce" anything
+
+The point: not everything needs a purpose. Some of the best insights come from wandering.
+
 ---
 
 Add whatever helps you do your job. This is your cheat sheet.
