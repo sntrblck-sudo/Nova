@@ -6,6 +6,11 @@ __pycache__/
 .git-credentials
 cdp-nova/agt-venv/
 backups/
+cdp-nova/xai_api_key.txt
+cdp-nova/xai-research.cjs
+*.key
+*.pem
+*.secret
 cdp-nova/.env
 cdp-nova/nova-wallet.json
 cdp-nova/gemini_oauth_client.json
