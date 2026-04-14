@@ -3,6 +3,7 @@ __pycache__/
 *.pyc
 .venv/
 .backup-passphrase
+.git-credentials
 cdp-nova/agt-venv/
 backups/
 cdp-nova/.env
