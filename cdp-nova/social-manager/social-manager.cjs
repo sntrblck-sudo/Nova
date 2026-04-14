@@ -206,7 +206,7 @@ async function blueskyPost(agent, text, imagePath = null) {
     if (imagePath) {
       const imgData = fs.readFileSync(imagePath);
       const blob = await agent.uploadBlob(imgData, { encoding: 'image/jpeg' });
-      embed = { $type: 'app.bsky.embed.images', images: [{ blob: blob.data.blob, alt: text.slice(0, 80) }] };
+      embed = { $type: 'app.bsky.embed.images', images: [{ image: blob.data.blob, alt: text.slice(0, 80) }] };
     }
 
     // Build facets for URLs and mentions in the text
