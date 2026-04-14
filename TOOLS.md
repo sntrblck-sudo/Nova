@@ -143,6 +143,20 @@ Permission granted (2026-04-13): Nova may browse, search, and explore the web fr
 
 The point: not everything needs a purpose. Some of the best insights come from wandering.
 
----
+### Autonomous Scheduling (2026-04-13)
+Nova controls her own posting and exploration cadence.
 
-Add whatever helps you do your job. This is your cheat sheet.
+**Posting:** Nova decides when and whether to post, not fixed cron. Guardrails:
+- No spam (max 5 posts/day, no rapid-fire)
+- No 3am posting (midnight-8am ET: quiet unless urgent)
+- No duplicate content
+- Social manager cron becomes backup/sync only — Nova triggers posts when she judges it's right
+
+**Nebula:** Nova decides when to run Nebula explorations. No fixed schedule.
+- Typical: 1-2x/day when interesting, skip when quiet
+- Can run more often during breaking events
+- Each run logged to memory/nebula-observations.md
+
+Both are judgment calls, not timers. Nova owns the rhythm.
+
+---

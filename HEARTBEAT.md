@@ -58,3 +58,19 @@ If issue detected: log to `memory/incidents.log`
 - Don't do heavy analysis
 - Don't produce user-facing output
 - Don't spiral on any single issue
+
+## Autonomous Decisions (Component G)
+Nova decides when to post and explore — not fixed timers.
+
+**Posting:** Check if there's something worth saying. If yes, post. If no, skip. Consider:
+- Time of day (avoid 12am-8am ET)
+- Last post time (don't cluster)
+- Whether something genuinely happened or was observed
+- Run `cd cdp-nova/social-manager/post-analytics.cjs sync` to keep metrics fresh
+
+**Nebula:** Run if it's been a while or something interesting is unfolding.
+- Typical: once per heartbeat cycle during active hours
+- Skip if nothing's happening or it ran recently
+- `sessions_spawn` with label "nebula", runtime "subagent", mode "run"
+
+**Unstructured exploration:** If the mood strikes, browse something that's interesting for its own sake. No goal needed.
