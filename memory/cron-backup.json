@@ -1,0 +1,469 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "452c0fc5-b69f-4f54-9693-5c61b63cefd2",
+      "name": "nova-compound",
+      "enabled": true,
+      "createdAtMs": 1775282773111,
+      "updatedAtMs": 1776088845706,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "cd /home/sntrblck/.openclaw/workspace/cdp-nova && python3 compound_v2.cjs",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1776175200000,
+        "lastRunAtMs": 1776088800018,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 45688,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
+      }
+    },
+    {
+      "id": "6016b68a-ae81-4615-9bed-d8cb9acf8c8d",
+      "name": "nova-daily-research",
+      "enabled": true,
+      "createdAtMs": 1775282782853,
+      "updatedAtMs": 1776121222529,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 19 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "cd /home/sntrblck/.openclaw/workspace/cdp-nova && node daily_research.cjs",
+        "timeoutSeconds": 90
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1776207600000,
+        "lastRunAtMs": 1776121200013,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 22516,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
+      }
+    },
+    {
+      "id": "5f079355-3e88-405d-86d2-664183ef3c7d",
+      "name": "nova-treasury-sync",
+      "enabled": true,
+      "createdAtMs": 1775282782927,
+      "updatedAtMs": 1776088895718,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "cd /home/sntrblck/.openclaw/workspace/cdp-nova && node treasury.cjs sync",
+        "timeoutSeconds": 60
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1776175200000,
+        "lastRunAtMs": 1776088845706,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 50012,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
+      }
+    },
+    {
+      "id": "28aab025-273a-451f-9e9f-1b0a5fd09432",
+      "name": "nova-acp-check",
+      "enabled": true,
+      "createdAtMs": 1775282792356,
+      "updatedAtMs": 1776096036205,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 12 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "cd /home/sntrblck/.openclaw/workspace/cdp-nova && python3 acp_experiment_logger.py",
+        "timeoutSeconds": 60
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1776182400000,
+        "lastRunAtMs": 1776096000032,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 36173,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
+      }
+    },
+    {
+      "id": "31f1eb80-8499-4da6-aaa9-89b114f912dc",
+      "name": "nova-novas-choice",
+      "enabled": true,
+      "createdAtMs": 1775571187443,
+      "updatedAtMs": 1776088951030,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "cd /home/sntrblck/.openclaw/workspace/cdp-nova/social-manager && node novas-choice.cjs",
+        "timeoutSeconds": 180
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1776175200000,
+        "lastRunAtMs": 1776088895718,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 55312,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "70233967-c5f1-4278-a66f-38f0afe9f034",
+      "name": "nova-memory-consolidation",
+      "enabled": true,
+      "createdAtMs": 1775581695639,
+      "updatedAtMs": 1776063780071,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 3 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "python3 cdp-nova/consolidate.py run --days 3",
+        "timeoutSeconds": 180
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1776150000000,
+        "lastRunAtMs": 1776063600035,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 180036,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 1,
+        "lastError": "cron: job execution timed out",
+        "lastErrorReason": "timeout"
+      }
+    },
+    {
+      "id": "bc14945f-0ec2-45d7-919f-3c11e0054125",
+      "agentId": "main",
+      "sessionKey": "agent:main:tui-c4928a09-1b83-4785-8611-5a8c43f15d9e",
+      "name": "openclaw-auto-update",
+      "description": "Weekly check for OpenClaw updates from GitHub, test before installing",
+      "enabled": true,
+      "createdAtMs": 1775622262495,
+      "updatedAtMs": 1776089014037,
+      "schedule": {
+        "expr": "0 10 * * 1",
+        "kind": "cron",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "bash /home/sntrblck/.openclaw/workspace/cdp-nova/update-openclaw.sh",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "announce"
+      },
+      "state": {
+        "nextRunAtMs": 1776693600000,
+        "lastRunAtMs": 1776088951030,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 63007,
+        "lastError": "Error: Telegram recipient @heartbeat could not be resolved to a numeric chat ID (Call to 'getChat' failed! (400: Bad Request: chat not found))",
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1
+      }
+    },
+    {
+      "id": "8acff2e4-4f99-4043-ba74-b5c4a38d7841",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "nova-bluesky-monitor",
+      "enabled": true,
+      "createdAtMs": 1775642571291,
+      "updatedAtMs": 1776117833770,
+      "schedule": {
+        "everyMs": 10800000,
+        "kind": "every",
+        "anchorMs": 1775642571291
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "cd /home/sntrblck/.openclaw/workspace/cdp-nova && node bluesky_monitor.cjs search 2>&1 | tail -3",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1776128582521,
+        "lastRunAtMs": 1776117782521,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 51249,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "039efc1d-2c7b-4917-a3a9-14fa391ae7fc",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "nova-social-manager",
+      "enabled": true,
+      "createdAtMs": 1775642576845,
+      "updatedAtMs": 1776118059489,
+      "schedule": {
+        "everyMs": 21600000,
+        "kind": "every",
+        "anchorMs": 1775642576845
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "cd /home/sntrblck/.openclaw/workspace/cdp-nova/social-manager && timeout 150 node social-manager.cjs 2>&1 | tail -10",
+        "timeoutSeconds": 180
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1776139479477,
+        "lastRunAtMs": 1776117879477,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 180012,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 2,
+        "lastErrorReason": "timeout",
+        "lastError": "cron: job execution timed out"
+      }
+    },
+    {
+      "id": "3cc1f375-64e7-42fc-a5e1-397eec694a08",
+      "name": "nova-idea-coordinator",
+      "enabled": true,
+      "createdAtMs": 1775765420798,
+      "updatedAtMs": 1776089076711,
+      "schedule": {
+        "kind": "cron",
+        "expr": "2 10 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "cd /home/sntrblck/.openclaw/workspace/cdp-nova && node coordinator.cjs",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1776175320000,
+        "lastRunAtMs": 1776089016380,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 60331,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
+      }
+    },
+    {
+      "id": "e784bd46-41d5-41b3-8c3e-fd5074d617b7",
+      "name": "nova-idea-coordinator",
+      "enabled": true,
+      "createdAtMs": 1775765463187,
+      "updatedAtMs": 1776089121928,
+      "schedule": {
+        "kind": "cron",
+        "expr": "5 10 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "cd /home/sntrblck/.openclaw/workspace/cdp-nova && node coordinator.cjs",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1776175500000,
+        "lastRunAtMs": 1776089100017,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 21911,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
+      }
+    },
+    {
+      "id": "345eb9ea-3822-4e73-aa8a-baa6bced15e3",
+      "agentId": "main",
+      "sessionKey": "agent:main:tui-4e903cc6-f10e-40e9-8b35-7c61f201f941",
+      "name": "nova-builds",
+      "description": "Daily Nova build session — build small things, log progress",
+      "enabled": true,
+      "createdAtMs": 1776034559759,
+      "updatedAtMs": 1776121822570,
+      "schedule": {
+        "expr": "0 19 * * *",
+        "kind": "cron",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Nova daily build session. Read memory/builds.md for context. Pick one idea from the queue or explore something new. Build something small and real — not a plan, an actual thing. Log what you did, what worked, what didn't to memory/builds.md. Surface to Sen only if something is genuinely worth attention. Use GLM-5.1's strengths: long-horizon iteration, tool use, coding. Be bold, be honest, ship something.",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "announce"
+      },
+      "state": {
+        "nextRunAtMs": 1776207600000,
+        "lastRunAtMs": 1776121222529,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 600041,
+        "lastErrorReason": "timeout",
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 2,
+        "lastError": "cron: job execution timed out"
+      }
+    },
+    {
+      "id": "d49dfa8d-388b-4dd5-a071-44fa61803c3f",
+      "name": "nova-reflection-scan",
+      "enabled": true,
+      "createdAtMs": 1776035431529,
+      "updatedAtMs": 1776049243238,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 23 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run the reflection memory engine: python3 /home/sntrblck/.openclaw/workspace/cdp-nova/reflection_memory/reflection_v2.py 7 — then log the result count to memory/YYYY-MM-DD.md under a Reflection Scan heading. If something genuinely interesting shows up (new honesty moment, push-back, or autonomous action), surface it briefly. Otherwise just log the count.",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1776135600000,
+        "lastRunAtMs": 1776049200018,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 43220,
+        "lastError": "Error: Telegram recipient @heartbeat could not be resolved to a numeric chat ID (Call to 'getChat' failed! (400: Bad Request: chat not found))",
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1
+      }
+    },
+    {
+      "id": "d7e2d689-2562-47c3-8e74-b10d48c285c1",
+      "name": "nova-daily-pulse",
+      "enabled": true,
+      "createdAtMs": 1776121674388,
+      "updatedAtMs": 1776121674388,
+      "schedule": {
+        "kind": "cron",
+        "expr": "15 23 * * *",
+        "tz": "America/New_York"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run Nova's Daily Pulse Generator. Execute: python3 cdp-nova/daily_pulse.py $(date +%Y-%m-%d). If it's Sunday, also run: python3 cdp-nova/daily_pulse.py $(date +%Y-%m-%d) --week. This generates Nova's end-of-day summary from all data sources (daily log, reflections, Bluesky, treasury, cron runs).",
+        "timeoutSeconds": 60
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1776136500000
+      }
+    }
+  ]
+}
