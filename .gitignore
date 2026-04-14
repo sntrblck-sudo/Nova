@@ -2,6 +2,7 @@ node_modules/
 __pycache__/
 *.pyc
 .venv/
+.backup-passphrase
 cdp-nova/agt-venv/
 cdp-nova/.env
 cdp-nova/nova-wallet.json
