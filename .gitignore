@@ -2,3 +2,12 @@ node_modules/
 __pycache__/
 *.pyc
 .venv/
+cdp-nova/agt-venv/
+cdp-nova/.env
+cdp-nova/nova-wallet.json
+cdp-nova/gemini_oauth_client.json
+cdp-nova/backup-wallet-*.json
+cdp-nova/email_config.json
+cdp-nova/social-manager/social-state.json
+memory/*.db
+media/
